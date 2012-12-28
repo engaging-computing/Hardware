@@ -1,0 +1,76 @@
+C:\Users\Christopher D. Granz\Dropbox\Work\Engaging Computing Group\iSENSE Data Logger\V5.0\PC Software\bin\x86\Debug\uPINPoint Live.exe.config
+C:\Users\Christopher D. Granz\Dropbox\Work\Engaging Computing Group\iSENSE Data Logger\V5.0\PC Software\bin\x86\Debug\uPINPoint Live.exe.manifest
+C:\Users\Christopher D. Granz\Dropbox\Work\Engaging Computing Group\iSENSE Data Logger\V5.0\PC Software\bin\x86\Debug\uPINPoint Live.application
+C:\Users\Christopher D. Granz\Dropbox\Work\Engaging Computing Group\iSENSE Data Logger\V5.0\PC Software\bin\x86\Debug\uPINPoint Live.exe
+C:\Users\Christopher D. Granz\Dropbox\Work\Engaging Computing Group\iSENSE Data Logger\V5.0\PC Software\bin\x86\Debug\uPINPoint Live.pdb
+C:\Users\Christopher D. Granz\Dropbox\Work\Engaging Computing Group\iSENSE Data Logger\V5.0\PC Software\bin\x86\Debug\ZedGraph.dll
+C:\Users\Christopher D. Granz\Dropbox\Work\Engaging Computing Group\iSENSE Data Logger\V5.0\PC Software\bin\x86\Debug\ZedGraph.xml
+C:\Users\Christopher D. Granz\Dropbox\Work\Engaging Computing Group\iSENSE Data Logger\V5.0\PC Software\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Christopher D. Granz\Dropbox\Work\Engaging Computing Group\iSENSE Data Logger\V5.0\PC Software\obj\x86\Debug\PINPoint_v5_0.AboutBox.resources
+C:\Users\Christopher D. Granz\Dropbox\Work\Engaging Computing Group\iSENSE Data Logger\V5.0\PC Software\obj\x86\Debug\PINPoint_v5_0.FormMain.resources
+C:\Users\Christopher D. Granz\Dropbox\Work\Engaging Computing Group\iSENSE Data Logger\V5.0\PC Software\obj\x86\Debug\PINPoint_v5_0.FormMessage.resources
+C:\Users\Christopher D. Granz\Dropbox\Work\Engaging Computing Group\iSENSE Data Logger\V5.0\PC Software\obj\x86\Debug\uPINPoint_Live.Properties.Resources.resources
+C:\Users\Christopher D. Granz\Dropbox\Work\Engaging Computing Group\iSENSE Data Logger\V5.0\PC Software\obj\x86\Debug\ResGen.read.1.tlog
+C:\Users\Christopher D. Granz\Dropbox\Work\Engaging Computing Group\iSENSE Data Logger\V5.0\PC Software\obj\x86\Debug\ResGen.write.1.tlog
+C:\Users\Christopher D. Granz\Dropbox\Work\Engaging Computing Group\iSENSE Data Logger\V5.0\PC Software\obj\x86\Debug\uPINPoint Live.TrustInfo.xml
+C:\Users\Christopher D. Granz\Dropbox\Work\Engaging Computing Group\iSENSE Data Logger\V5.0\PC Software\obj\x86\Debug\uPINPoint Live.exe.manifest
+C:\Users\Christopher D. Granz\Dropbox\Work\Engaging Computing Group\iSENSE Data Logger\V5.0\PC Software\obj\x86\Debug\uPINPoint Live.application
+C:\Users\Christopher D. Granz\Dropbox\Work\Engaging Computing Group\iSENSE Data Logger\V5.0\PC Software\obj\x86\Debug\uPINPoint Live.exe
+C:\Users\Christopher D. Granz\Dropbox\Work\Engaging Computing Group\iSENSE Data Logger\V5.0\PC Software\obj\x86\Debug\uPINPoint Live.pdb
+E:\Dropbox\Work\Engaging Computing Group\iSENSE Data Logger\V5.0\PC Software\bin\x86\Debug\uPINPoint Live.exe.config
+E:\Dropbox\Work\Engaging Computing Group\iSENSE Data Logger\V5.0\PC Software\obj\x86\Debug\uPINPoint Live.exe
+E:\Dropbox\Work\Engaging Computing Group\iSENSE Data Logger\V5.0\PC Software\obj\x86\Debug\uPINPoint Live.pdb
+E:\Dropbox\Work\Engaging Computing Group\iSENSE Data Logger\V5.0\PC Software\bin\x86\Debug\uPINPoint Live.exe.manifest
+E:\Dropbox\Work\Engaging Computing Group\iSENSE Data Logger\V5.0\PC Software\bin\x86\Debug\uPINPoint Live.application
+E:\Dropbox\Work\Engaging Computing Group\iSENSE Data Logger\V5.0\PC Software\bin\x86\Debug\uPINPoint Live.exe
+E:\Dropbox\Work\Engaging Computing Group\iSENSE Data Logger\V5.0\PC Software\bin\x86\Debug\uPINPoint Live.pdb
+E:\Dropbox\Work\Engaging Computing Group\iSENSE Data Logger\V5.0\PC Software\bin\x86\Debug\ZedGraph.dll
+E:\Dropbox\Work\Engaging Computing Group\iSENSE Data Logger\V5.0\PC Software\bin\x86\Debug\ZedGraph.xml
+E:\Dropbox\Work\Engaging Computing Group\iSENSE Data Logger\V5.0\PC Software\obj\x86\Debug\ResolveAssemblyReference.cache
+E:\Dropbox\Work\Engaging Computing Group\iSENSE Data Logger\V5.0\PC Software\obj\x86\Debug\PINPoint_v5_0.AboutBox.resources
+E:\Dropbox\Work\Engaging Computing Group\iSENSE Data Logger\V5.0\PC Software\obj\x86\Debug\PINPoint_v5_0.FormMain.resources
+E:\Dropbox\Work\Engaging Computing Group\iSENSE Data Logger\V5.0\PC Software\obj\x86\Debug\PINPoint_v5_0.FormMessage.resources
+E:\Dropbox\Work\Engaging Computing Group\iSENSE Data Logger\V5.0\PC Software\obj\x86\Debug\uPINPoint_Live.Properties.Resources.resources
+E:\Dropbox\Work\Engaging Computing Group\iSENSE Data Logger\V5.0\PC Software\obj\x86\Debug\ResGen.read.1.tlog
+E:\Dropbox\Work\Engaging Computing Group\iSENSE Data Logger\V5.0\PC Software\obj\x86\Debug\ResGen.write.1.tlog
+E:\Dropbox\Work\Engaging Computing Group\iSENSE Data Logger\V5.0\PC Software\obj\x86\Debug\uPINPoint Live.TrustInfo.xml
+E:\Dropbox\Work\Engaging Computing Group\iSENSE Data Logger\V5.0\PC Software\obj\x86\Debug\uPINPoint Live.exe.manifest
+E:\Dropbox\Work\Engaging Computing Group\iSENSE Data Logger\V5.0\PC Software\obj\x86\Debug\uPINPoint Live.application
+C:\Users\Christopher D. Granz\Dropbox\Work\ECG\iSENSE Data Logger\V5.0\PC Software\bin\x86\Debug\uPINPoint Live.exe.config
+C:\Users\Christopher D. Granz\Dropbox\Work\ECG\iSENSE Data Logger\V5.0\PC Software\obj\x86\Debug\uPINPoint Live.exe
+C:\Users\Christopher D. Granz\Dropbox\Work\ECG\iSENSE Data Logger\V5.0\PC Software\obj\x86\Debug\uPINPoint Live.pdb
+C:\Users\Christopher D. Granz\Dropbox\Work\ECG\iSENSE Data Logger\V5.0\PC Software\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Christopher D. Granz\Dropbox\Work\ECG\iSENSE Data Logger\V5.0\PC Software\obj\x86\Debug\PINPoint_v5_0.AboutBox.resources
+C:\Users\Christopher D. Granz\Dropbox\Work\ECG\iSENSE Data Logger\V5.0\PC Software\obj\x86\Debug\PINPoint_v5_0.FormMain.resources
+C:\Users\Christopher D. Granz\Dropbox\Work\ECG\iSENSE Data Logger\V5.0\PC Software\obj\x86\Debug\PINPoint_v5_0.FormMessage.resources
+C:\Users\Christopher D. Granz\Dropbox\Work\ECG\iSENSE Data Logger\V5.0\PC Software\obj\x86\Debug\uPINPoint_Live.Properties.Resources.resources
+C:\Users\Christopher D. Granz\Dropbox\Work\ECG\iSENSE Data Logger\V5.0\PC Software\obj\x86\Debug\ResGen.read.1.tlog
+C:\Users\Christopher D. Granz\Dropbox\Work\ECG\iSENSE Data Logger\V5.0\PC Software\obj\x86\Debug\ResGen.write.1.tlog
+C:\Users\Christopher D. Granz\Dropbox\Work\ECG\iSENSE Data Logger\V5.0\PC Software\bin\x86\Debug\uPINPoint Live.exe.manifest
+C:\Users\Christopher D. Granz\Dropbox\Work\ECG\iSENSE Data Logger\V5.0\PC Software\bin\x86\Debug\uPINPoint Live.application
+C:\Users\Christopher D. Granz\Dropbox\Work\ECG\iSENSE Data Logger\V5.0\PC Software\bin\x86\Debug\uPINPoint Live.exe
+C:\Users\Christopher D. Granz\Dropbox\Work\ECG\iSENSE Data Logger\V5.0\PC Software\bin\x86\Debug\uPINPoint Live.pdb
+C:\Users\Christopher D. Granz\Dropbox\Work\ECG\iSENSE Data Logger\V5.0\PC Software\bin\x86\Debug\ZedGraph.dll
+C:\Users\Christopher D. Granz\Dropbox\Work\ECG\iSENSE Data Logger\V5.0\PC Software\bin\x86\Debug\ZedGraph.xml
+C:\Users\Christopher D. Granz\Dropbox\Work\ECG\iSENSE Data Logger\V5.0\PC Software\obj\x86\Debug\uPINPoint Live.TrustInfo.xml
+C:\Users\Christopher D. Granz\Dropbox\Work\ECG\iSENSE Data Logger\V5.0\PC Software\obj\x86\Debug\uPINPoint Live.exe.manifest
+C:\Users\Christopher D. Granz\Dropbox\Work\ECG\iSENSE Data Logger\V5.0\PC Software\obj\x86\Debug\uPINPoint Live.application
+E:\Dropbox\Work\ECG\iSENSE Data Logger\V5.0\PC Software\bin\x86\Debug\uPINPoint Live.exe.config
+E:\Dropbox\Work\ECG\iSENSE Data Logger\V5.0\PC Software\obj\x86\Debug\uPINPoint Live.exe
+E:\Dropbox\Work\ECG\iSENSE Data Logger\V5.0\PC Software\obj\x86\Debug\uPINPoint Live.pdb
+E:\Dropbox\Work\ECG\iSENSE Data Logger\V5.0\PC Software\bin\x86\Debug\uPINPoint Live.exe.manifest
+E:\Dropbox\Work\ECG\iSENSE Data Logger\V5.0\PC Software\bin\x86\Debug\uPINPoint Live.application
+E:\Dropbox\Work\ECG\iSENSE Data Logger\V5.0\PC Software\bin\x86\Debug\uPINPoint Live.exe
+E:\Dropbox\Work\ECG\iSENSE Data Logger\V5.0\PC Software\bin\x86\Debug\uPINPoint Live.pdb
+E:\Dropbox\Work\ECG\iSENSE Data Logger\V5.0\PC Software\bin\x86\Debug\ZedGraph.dll
+E:\Dropbox\Work\ECG\iSENSE Data Logger\V5.0\PC Software\bin\x86\Debug\ZedGraph.xml
+E:\Dropbox\Work\ECG\iSENSE Data Logger\V5.0\PC Software\obj\x86\Debug\ResolveAssemblyReference.cache
+E:\Dropbox\Work\ECG\iSENSE Data Logger\V5.0\PC Software\obj\x86\Debug\PINPoint_v5_0.AboutBox.resources
+E:\Dropbox\Work\ECG\iSENSE Data Logger\V5.0\PC Software\obj\x86\Debug\PINPoint_v5_0.FormMain.resources
+E:\Dropbox\Work\ECG\iSENSE Data Logger\V5.0\PC Software\obj\x86\Debug\PINPoint_v5_0.FormMessage.resources
+E:\Dropbox\Work\ECG\iSENSE Data Logger\V5.0\PC Software\obj\x86\Debug\uPINPoint_Live.Properties.Resources.resources
+E:\Dropbox\Work\ECG\iSENSE Data Logger\V5.0\PC Software\obj\x86\Debug\ResGen.read.1.tlog
+E:\Dropbox\Work\ECG\iSENSE Data Logger\V5.0\PC Software\obj\x86\Debug\ResGen.write.1.tlog
+E:\Dropbox\Work\ECG\iSENSE Data Logger\V5.0\PC Software\obj\x86\Debug\uPINPoint Live.TrustInfo.xml
+E:\Dropbox\Work\ECG\iSENSE Data Logger\V5.0\PC Software\obj\x86\Debug\uPINPoint Live.exe.manifest
+E:\Dropbox\Work\ECG\iSENSE Data Logger\V5.0\PC Software\obj\x86\Debug\uPINPoint Live.application

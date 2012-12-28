@@ -1,0 +1,34 @@
+C:\data\Dropbox\Work\Fairchild Semi\Interface Board\PC Software\bin\x86\Debug\Applications Test Board.exe.config
+C:\data\Dropbox\Work\Fairchild Semi\Interface Board\PC Software\obj\x86\Debug\Applications Test Board.exe
+C:\data\Dropbox\Work\Fairchild Semi\Interface Board\PC Software\obj\x86\Debug\Applications Test Board.pdb
+C:\data\Dropbox\Work\Fairchild Semi\Interface Board\PC Software\bin\x86\Debug\Applications Test Board.exe.manifest
+C:\data\Dropbox\Work\Fairchild Semi\Interface Board\PC Software\bin\x86\Debug\Applications Test Board.application
+C:\data\Dropbox\Work\Fairchild Semi\Interface Board\PC Software\bin\x86\Debug\Applications Test Board.exe
+C:\data\Dropbox\Work\Fairchild Semi\Interface Board\PC Software\bin\x86\Debug\Applications Test Board.pdb
+C:\data\Dropbox\Work\Fairchild Semi\Interface Board\PC Software\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\data\Dropbox\Work\Fairchild Semi\Interface Board\PC Software\obj\x86\Debug\Applications_Test_Board.FormMain.resources
+C:\data\Dropbox\Work\Fairchild Semi\Interface Board\PC Software\obj\x86\Debug\Applications_Test_Board.FormMessage.resources
+C:\data\Dropbox\Work\Fairchild Semi\Interface Board\PC Software\obj\x86\Debug\Applications_Test_Board.Properties.Resources.resources
+C:\data\Dropbox\Work\Fairchild Semi\Interface Board\PC Software\obj\x86\Debug\Apps Test Board.csproj.GenerateResource.Cache
+C:\data\Dropbox\Work\Fairchild Semi\Interface Board\PC Software\obj\x86\Debug\Applications Test Board.TrustInfo.xml
+C:\data\Dropbox\Work\Fairchild Semi\Interface Board\PC Software\obj\x86\Debug\Applications Test Board.exe.manifest
+C:\data\Dropbox\Work\Fairchild Semi\Interface Board\PC Software\obj\x86\Debug\Applications Test Board.application
+C:\data\Dropbox\Work\Fairchild Semi\TB2-3 Interface Board\PC Software\bin\x86\Debug\Applications Test Board.exe.config
+C:\data\Dropbox\Work\Fairchild Semi\TB2-3 Interface Board\PC Software\obj\x86\Debug\Applications Test Board.exe
+C:\data\Dropbox\Work\Fairchild Semi\TB2-3 Interface Board\PC Software\obj\x86\Debug\Applications Test Board.pdb
+C:\data\Dropbox\Work\Fairchild Semi\TB2-3 Interface Board\PC Software\bin\x86\Release\Applications Test Board.exe.config
+C:\data\Dropbox\Work\Fairchild Semi\TB2-3 Interface Board\PC Software\obj\x86\Release\Applications Test Board.exe
+C:\data\Dropbox\Work\Fairchild Semi\TB2-3 Interface Board\PC Software\obj\x86\Release\Applications Test Board.pdb
+C:\data\Dropbox\Work\Fairchild Semi\TB2-3 Interface Board\PC Software\bin\x86\Release\Applications Test Board.exe.manifest
+C:\data\Dropbox\Work\Fairchild Semi\TB2-3 Interface Board\PC Software\bin\x86\Release\Applications Test Board.application
+C:\data\Dropbox\Work\Fairchild Semi\TB2-3 Interface Board\PC Software\bin\x86\Release\Applications Test Board.exe
+C:\data\Dropbox\Work\Fairchild Semi\TB2-3 Interface Board\PC Software\bin\x86\Release\Applications Test Board.pdb
+C:\data\Dropbox\Work\Fairchild Semi\TB2-3 Interface Board\PC Software\obj\x86\Release\ResolveAssemblyReference.cache
+C:\data\Dropbox\Work\Fairchild Semi\TB2-3 Interface Board\PC Software\obj\x86\Release\Applications_Test_Board.FormMain.resources
+C:\data\Dropbox\Work\Fairchild Semi\TB2-3 Interface Board\PC Software\obj\x86\Release\Applications_Test_Board.FormMessage.resources
+C:\data\Dropbox\Work\Fairchild Semi\TB2-3 Interface Board\PC Software\obj\x86\Release\Applications_Test_Board.Properties.Resources.resources
+C:\data\Dropbox\Work\Fairchild Semi\TB2-3 Interface Board\PC Software\obj\x86\Release\Apps Test Board.csproj.GenerateResource.Cache
+C:\data\Dropbox\Work\Fairchild Semi\TB2-3 Interface Board\PC Software\obj\x86\Release\Applications Test Board.TrustInfo.xml
+C:\data\Dropbox\Work\Fairchild Semi\TB2-3 Interface Board\PC Software\obj\x86\Release\Applications Test Board.exe.manifest
+C:\data\Dropbox\Work\Fairchild Semi\TB2-3 Interface Board\PC Software\obj\x86\Release\Applications Test Board.application
+C:\data\Dropbox\Work\Fairchild Semi\TB2-3 Interface Board\PC Software\obj\x86\Release\Applications_Test_Board.AboutBox.resources

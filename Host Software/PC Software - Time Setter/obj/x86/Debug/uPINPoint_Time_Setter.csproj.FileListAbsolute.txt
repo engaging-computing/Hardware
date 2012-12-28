@@ -1,0 +1,15 @@
+C:\Users\Christopher D. Granz\Dropbox\Work\ECG\uPINPoint\V1.0\PC Software - Time Setter\bin\x86\Debug\uPINPoint Time Setter.exe.config
+C:\Users\Christopher D. Granz\Dropbox\Work\ECG\uPINPoint\V1.0\PC Software - Time Setter\bin\x86\Debug\uPINPoint Time Setter.exe.manifest
+C:\Users\Christopher D. Granz\Dropbox\Work\ECG\uPINPoint\V1.0\PC Software - Time Setter\bin\x86\Debug\uPINPoint Time Setter.application
+C:\Users\Christopher D. Granz\Dropbox\Work\ECG\uPINPoint\V1.0\PC Software - Time Setter\bin\x86\Debug\uPINPoint Time Setter.exe
+C:\Users\Christopher D. Granz\Dropbox\Work\ECG\uPINPoint\V1.0\PC Software - Time Setter\bin\x86\Debug\uPINPoint Time Setter.pdb
+C:\Users\Christopher D. Granz\Dropbox\Work\ECG\uPINPoint\V1.0\PC Software - Time Setter\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Christopher D. Granz\Dropbox\Work\ECG\uPINPoint\V1.0\PC Software - Time Setter\obj\x86\Debug\PINPoint_v5_0.FormMain.resources
+C:\Users\Christopher D. Granz\Dropbox\Work\ECG\uPINPoint\V1.0\PC Software - Time Setter\obj\x86\Debug\uPINPoint_Time_Setter.Properties.Resources.resources
+C:\Users\Christopher D. Granz\Dropbox\Work\ECG\uPINPoint\V1.0\PC Software - Time Setter\obj\x86\Debug\ResGen.read.1.tlog
+C:\Users\Christopher D. Granz\Dropbox\Work\ECG\uPINPoint\V1.0\PC Software - Time Setter\obj\x86\Debug\ResGen.write.1.tlog
+C:\Users\Christopher D. Granz\Dropbox\Work\ECG\uPINPoint\V1.0\PC Software - Time Setter\obj\x86\Debug\uPINPoint Time Setter.TrustInfo.xml
+C:\Users\Christopher D. Granz\Dropbox\Work\ECG\uPINPoint\V1.0\PC Software - Time Setter\obj\x86\Debug\uPINPoint Time Setter.exe.manifest
+C:\Users\Christopher D. Granz\Dropbox\Work\ECG\uPINPoint\V1.0\PC Software - Time Setter\obj\x86\Debug\uPINPoint Time Setter.application
+C:\Users\Christopher D. Granz\Dropbox\Work\ECG\uPINPoint\V1.0\PC Software - Time Setter\obj\x86\Debug\uPINPoint Time Setter.exe
+C:\Users\Christopher D. Granz\Dropbox\Work\ECG\uPINPoint\V1.0\PC Software - Time Setter\obj\x86\Debug\uPINPoint Time Setter.pdb
