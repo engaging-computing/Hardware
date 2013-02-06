@@ -7,7 +7,8 @@
  * PMD1bits.ADC1MD = 1; to fully disable it and PMD1bits.ADC1MD = 0; to re-enable
  * (need to reinitialize all registers after re-enabling).
  */
-
+// ADCON1bits.ADON: A/D Operating Mode bit (0 = disabled, 1 = operating)
+// PMD1bits
 #include "ADC.h"
 
 
