@@ -1243,7 +1243,7 @@ static void InitializeSystem(void)
 //	sense feature by making sure "USE_USB_BUS_SENSE_IO" has been defined in the
 //	HardwareProfile.h file.    
 #if defined(USE_USB_BUS_SENSE_IO)
-    tris_usb_bus_sense = INPUT_PIN; // See HardwareProfile.h
+    tris_usb_bus_sense = INPUT_PIN; // See IOConfig.h
 #endif
     
 //	If the host PC sends a GetStatus (device) request, the firmware must respond
