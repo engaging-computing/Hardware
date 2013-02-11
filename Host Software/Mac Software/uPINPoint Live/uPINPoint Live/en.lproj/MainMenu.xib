@@ -214,7 +214,7 @@
 			<object class="NSWindowTemplate" id="972006081">
 				<int key="NSWindowStyleMask">15</int>
 				<int key="NSWindowBacking">2</int>
-				<string key="NSWindowRect">{{335, 390}, {1043, 486}}</string>
+				<string key="NSWindowRect">{{239, 220}, {1043, 486}}</string>
 				<int key="NSWTFlags">1954021376</int>
 				<string key="NSWindowTitle">uPINPoint Live</string>
 				<string key="NSWindowClass">NSWindow</string>
@@ -2473,6 +2473,14 @@ wGw</bytes>
 						<reference key="destination" ref="990585846"/>
 					</object>
 					<int key="connectionID">1641</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">battField</string>
+						<reference key="source" ref="976324537"/>
+						<reference key="destination" ref="911392379"/>
+					</object>
+					<int key="connectionID">1688</int>
 				</object>
 			</array>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -9174,7 +9182,7 @@ wGw</bytes>
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">1686</int>
+			<int key="maxID">1688</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -9193,6 +9201,7 @@ wGw</bytes>
 						</object>
 					</object>
 					<dictionary class="NSMutableDictionary" key="outlets">
+						<string key="battField">NSTextField</string>
 						<string key="cStatus">NSTextField</string>
 						<string key="dayField">NSTextField</string>
 						<string key="hourField">NSTextField</string>
@@ -9203,6 +9212,10 @@ wGw</bytes>
 						<string key="yearField">NSTextField</string>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="toOneOutletInfosByName">
+						<object class="IBToOneOutletInfo" key="battField">
+							<string key="name">battField</string>
+							<string key="candidateClassName">NSTextField</string>
+						</object>
 						<object class="IBToOneOutletInfo" key="cStatus">
 							<string key="name">cStatus</string>
 							<string key="candidateClassName">NSTextField</string>

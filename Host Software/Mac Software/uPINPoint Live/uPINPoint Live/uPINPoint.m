@@ -14,7 +14,7 @@
 AppDelegate* myAppDelegate;
 id selfRef;
 //Variables for data read from the READ ALL command
-@synthesize year, month, day, hour, minute, second;
+@synthesize year, month, day, hour, minute, second, battVolt;
 
 - (void) init:(IOHIDDeviceRef)ppt {
     selfRef = self;
@@ -58,10 +58,11 @@ static void Handle_IOHIDDeviceIOHIDReportCallback(void *          inContext,    
             minute = [[NSString stringWithFormat:@"%02x",inReport[6]] intValue];
             second = [[NSString stringWithFormat:@"%02x",inReport[7]] intValue];
             
-            [myAppDelegate showTime];
+            battVolt = ((int)inReport[8] << 24) + ((int)inReport[9] << 16) + ((int)inReport[10] << 8) + (int)inReport[11];
+            
+            [myAppDelegate showData];
             //NSLog(@"%d/%d/%d %d:%02d:%02d", month, day, year, hour, minute, second);
             
-            //int NewSensorDataBatteryVoltage = ((int)inReport[8] << 24) + ((int)inReport[9] << 16) + ((int)inReport[10] << 8) + (int)inReport[11];
             //int NewSensorDataTemperature = ((int)inReport[12] << 24) + ((int)inReport[13] << 16) + ((int)inReport[14] << 8) + (int)inReport[15];
             //other sensors go here
             //int NewSensorDataLight = ((int)inReport[40] << 24) + ((int)inReport[41] << 16) + ((int)inReport[42] << 8) + (int)inReport[43];

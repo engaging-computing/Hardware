@@ -19,12 +19,13 @@
 @property (unsafe_unretained) IBOutlet NSTextField *hourField;
 @property (unsafe_unretained) IBOutlet NSTextField *minuteField;
 @property (unsafe_unretained) IBOutlet NSTextField *secondField;
+@property (unsafe_unretained) IBOutlet NSTextField *battField;
 
 @property (assign) IBOutlet NSWindow *window;
 
 - (IBAction)setTime:(id)sender;
 
-- (void)showTime;
+- (void)showData;
 
 //HID Device Callbacks taken from tutorial at http://ontrak.net/xcode.htm
 // USB device added callback function

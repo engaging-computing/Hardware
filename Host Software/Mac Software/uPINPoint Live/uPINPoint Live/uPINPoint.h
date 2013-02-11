@@ -32,11 +32,13 @@ const static int CMD_FULL_DIAGNOSTICS = 0x79;
 - (void) deinit;
 - (void) readData:(uint8_t *)inReport;
 
+//Data read in from uPPT
 @property (nonatomic, assign) int month;
 @property (nonatomic, assign) int day;
 @property (nonatomic, assign) int year;
 @property (nonatomic, assign) int hour;
 @property (nonatomic, assign) int minute;
 @property (nonatomic, assign) int second;
+@property (nonatomic, assign) int battVolt;
 
 @end

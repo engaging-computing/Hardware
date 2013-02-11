@@ -72,13 +72,15 @@ uPINPoint *pinMan;
     NSLog(@"Pressed the set time button");
 }
 
-- (void)showTime {
+- (void)showData {
     [self.dayField setStringValue:[NSString stringWithFormat:@"%d", [pinMan day]]];
     [self.monthField setStringValue:[NSString stringWithFormat:@"%d", [pinMan month]]];
     [self.yearField setStringValue:[NSString stringWithFormat:@"%d", [pinMan year]]];
     [self.hourField setStringValue:[NSString stringWithFormat:@"%d", [pinMan hour]]];
     [self.minuteField setStringValue:[NSString stringWithFormat:@"%02d", [pinMan minute]]];
     [self.secondField setStringValue:[NSString stringWithFormat:@"%02d", [pinMan second]]];
+    
+    [self.battField setStringValue:[NSString stringWithFormat:@"%2f", ((double)[pinMan battVolt]/100)]];
 }
 
 static void Handle_DeviceMatchingCallback(void *inContext, IOReturn inResult, void *inSender, IOHIDDeviceRef inIOHIDDeviceRef){
