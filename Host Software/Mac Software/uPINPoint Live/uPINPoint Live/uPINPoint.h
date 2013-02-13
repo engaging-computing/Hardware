@@ -40,5 +40,6 @@ const static int CMD_FULL_DIAGNOSTICS = 0x79;
 @property (nonatomic, assign) int minute;
 @property (nonatomic, assign) int second;
 @property (nonatomic, assign) int battVolt;
+@property (nonatomic, assign) int temperature;
 
 @end

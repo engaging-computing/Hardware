@@ -80,7 +80,8 @@ uPINPoint *pinMan;
     [self.minuteField setStringValue:[NSString stringWithFormat:@"%02d", [pinMan minute]]];
     [self.secondField setStringValue:[NSString stringWithFormat:@"%02d", [pinMan second]]];
     
-    [self.battField setStringValue:[NSString stringWithFormat:@"%2f", ((double)[pinMan battVolt]/100)]];
+    [self.battField setStringValue:[NSString stringWithFormat:@"%.2f", ((double)[pinMan battVolt]/100.0)]];
+    [self.tempField setStringValue:[NSString stringWithFormat:@"%.1f", ((double)[pinMan temperature]/10.0)]];
 }
 
 static void Handle_DeviceMatchingCallback(void *inContext, IOReturn inResult, void *inSender, IOHIDDeviceRef inIOHIDDeviceRef){

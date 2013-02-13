@@ -2482,6 +2482,14 @@ wGw</bytes>
 					</object>
 					<int key="connectionID">1688</int>
 				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">tempField</string>
+						<reference key="source" ref="976324537"/>
+						<reference key="destination" ref="1049474061"/>
+					</object>
+					<int key="connectionID">1689</int>
+				</object>
 			</array>
 			<object class="IBMutableOrderedSet" key="objectRecords">
 				<array key="orderedObjects">
@@ -9182,7 +9190,7 @@ wGw</bytes>
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">1688</int>
+			<int key="maxID">1689</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -9208,6 +9216,7 @@ wGw</bytes>
 						<string key="minuteField">NSTextField</string>
 						<string key="monthField">NSTextField</string>
 						<string key="secondField">NSTextField</string>
+						<string key="tempField">NSTextField</string>
 						<string key="window">NSWindow</string>
 						<string key="yearField">NSTextField</string>
 					</dictionary>
@@ -9238,6 +9247,10 @@ wGw</bytes>
 						</object>
 						<object class="IBToOneOutletInfo" key="secondField">
 							<string key="name">secondField</string>
+							<string key="candidateClassName">NSTextField</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="tempField">
+							<string key="name">tempField</string>
 							<string key="candidateClassName">NSTextField</string>
 						</object>
 						<object class="IBToOneOutletInfo" key="window">

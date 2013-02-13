@@ -20,6 +20,7 @@
 @property (unsafe_unretained) IBOutlet NSTextField *minuteField;
 @property (unsafe_unretained) IBOutlet NSTextField *secondField;
 @property (unsafe_unretained) IBOutlet NSTextField *battField;
+@property (unsafe_unretained) IBOutlet NSTextField *tempField;
 
 @property (assign) IBOutlet NSWindow *window;
 
