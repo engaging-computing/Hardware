@@ -69,7 +69,29 @@ uPINPoint *pinMan;
 }
 
 - (IBAction)setTime:(id)sender {
-    NSLog(@"Pressed the set time button");
+    CFIndex reportSize = 64;
+    uint8_t *report = malloc(reportSize);
+    
+    NSDate *now = [NSDate date];
+    NSCalendar *calendar = [NSCalendar currentCalendar];
+    NSDateComponents *components = [calendar components:NSHourCalendarUnit fromDate:now];
+    
+    report[0] = CMD_SET_DATE_TIME;
+    //Convert to BCD for the device
+    report[1] = (uint8) (((([components year] - 2000)/10) << 4) | (([components year] - 2000) % 10));
+    report[2] = (uint8) ((([components month] / 10) << 4) | ([components month] % 10));
+    report[3] = (uint8) ((([components day] / 10) << 4) | ([components day] % 10));
+    report[4] = (uint8) [components weekday];
+    
+    report[5] = (uint8) ((([components hour] / 10) << 4) | ([components hour] % 10));
+    report[6] = (uint8) ((([components minute] / 10) << 4) | ([components minute] % 10));
+    report[7] = (uint8) ((([components second] / 10) << 4) | ([components second] % 10));
+    
+    for(int i = 8; i < 64; i++) { //Initialize unused bytes of report to 0xFF
+        report[i] = 0xFF;         //For lower power consumption on USB bus
+    }
+    
+    IOHIDDeviceSetReport(uPPT, kIOHIDReportTypeOutput, 0, report, reportSize);
 }
 
 - (void)showData {

@@ -58,7 +58,8 @@ static void Handle_IOHIDDeviceIOHIDReportCallback(void *          inContext,    
             second = [[NSString stringWithFormat:@"%02x",inReport[7]] intValue];
             
             battVolt = ((uint32)inReport[8] << 24) + ((uint32)inReport[9] << 16) + ((uint32)inReport[10] << 8) + (uint32)inReport[11];
-            temperature = ((uint32)inReport[12] << 24) + ((uint32)inReport[13] << 16) + ((uint32)inReport[14] << 8) + (uint32)inReport[15];
+            
+            //temperature = ((uint32)inReport[12] << 24) + ((uint32)inReport[13] << 16) + ((uint32)inReport[14] << 8) + (uint32)inReport[15];
             
             [myAppDelegate showData];
                         
