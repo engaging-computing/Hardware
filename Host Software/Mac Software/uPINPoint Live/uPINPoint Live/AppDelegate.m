@@ -70,11 +70,13 @@ uPINPoint *pinMan;
 
 - (IBAction)setTime:(id)sender {
     CFIndex reportSize = 64;
-    uint8_t *report = malloc(reportSize);
+    uint8_t *report = malloc(reportSize * sizeof(uint8_t));
     
+    unsigned unitFlags = NSYearCalendarUnit | NSMonthCalendarUnit |  NSDayCalendarUnit |
+                         NSHourCalendarUnit | NSMinuteCalendarUnit | NSSecondCalendarUnit;
     NSDate *now = [NSDate date];
     NSCalendar *calendar = [NSCalendar currentCalendar];
-    NSDateComponents *components = [calendar components:NSHourCalendarUnit fromDate:now];
+    NSDateComponents *components = [calendar components:unitFlags fromDate:now];
     
     report[0] = CMD_SET_DATE_TIME;
     //Convert to BCD for the device
