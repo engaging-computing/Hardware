@@ -65,6 +65,10 @@ static void Handle_IOHIDDeviceIOHIDReportCallback(void *          inContext,    
                         
             break;
         }
+        case CMD_TEST_LEDS:{
+            [myAppDelegate writeTextToConsole:@"Test LEDs: Did they both come on?\r\n"];
+            break;
+        }
         case CMD_READ_BUTTON:{
             NSMutableString *message = [NSMutableString stringWithString:@"Read button: "];
             
