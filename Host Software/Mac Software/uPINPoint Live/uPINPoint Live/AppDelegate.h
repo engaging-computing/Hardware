@@ -24,7 +24,12 @@
 
 @property (assign) IBOutlet NSWindow *window;
 
+//functions for UI button presses
 - (IBAction)setTime:(id)sender;
+- (IBAction)sendCmdTestLEDs:(id)sender;
+
+
+- (void)sendGenericCommand:(uint8_t)cmd;
 
 - (void)showData;
 

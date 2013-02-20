@@ -18,6 +18,7 @@ NSColor *colorRed, *colorGreen, *colorWhite;
 IOHIDDeviceRef uPPT;
 uPINPoint *pinMan;
 
+//Quit the application when there are no open windows
 - (BOOL)applicationShouldTerminateAfterLastWindowClosed:(NSApplication *)theApplication {
     return YES;
 }
@@ -56,6 +57,7 @@ uPINPoint *pinMan;
     
 }
 
+//Changes the connection status field in the UI
 - (void)changeConnectionStatusView:(Boolean)status {
     if(status) {
         [self.cStatus setStringValue:@"Connected"];
@@ -68,10 +70,12 @@ uPINPoint *pinMan;
     }
 }
 
+//Called when the Set Date/Time button is pressed. Sends the new date/time to the uPPT
 - (IBAction)setTime:(id)sender {
     CFIndex reportSize = 64;
     uint8_t *report = malloc(reportSize * sizeof(uint8_t));
     
+    //unitFlags to tell the NSDateComponents which components we're interested in
     unsigned unitFlags = NSYearCalendarUnit | NSMonthCalendarUnit |  NSDayCalendarUnit |
                          NSHourCalendarUnit | NSMinuteCalendarUnit | NSSecondCalendarUnit | NSWeekdayCalendarUnit;
     NSDate *now = [NSDate date];
@@ -93,9 +97,30 @@ uPINPoint *pinMan;
         report[i] = 0xFF;         //For lower power consumption on USB bus
     }
     
+    //Send the built report to the uPPT
     IOHIDDeviceSetReport(uPPT, kIOHIDReportTypeOutput, 0, report, reportSize);
 }
 
+//Called when the Test LEDs button is pressed
+- (IBAction)sendCmdTestLEDs:(id)sender {
+    [self sendGenericCommand:CMD_TEST_LEDS];
+}
+
+//Sends one of the generic single-byte command to the uPPT
+- (void)sendGenericCommand:(uint8_t)cmd {
+    CFIndex reportSize = 64;
+    uint8_t *report = malloc(reportSize * sizeof(uint8_t));
+
+    report[0] = cmd;              //Sets the first byte to the command to be sent
+    for(int i = 1; i < 64; i++) { //Initialize unused bytes of report to 0xFF
+        report[i] = 0xFF;         //For lower power consumption on USB bus
+    }
+    
+    //Send the built report to the uPPT
+    IOHIDDeviceSetReport(uPPT, kIOHIDReportTypeOutput, 0, report, reportSize);
+}
+
+//Displays data from the PPT's "CMD_READ_ALL" in the appropriate fields in the UI
 - (void)showData {
     [self.dayField setStringValue:[NSString stringWithFormat:@"%d", [pinMan day]]];
     [self.monthField setStringValue:[NSString stringWithFormat:@"%d", [pinMan month]]];
@@ -108,6 +133,7 @@ uPINPoint *pinMan;
     [self.tempField setStringValue:[NSString stringWithFormat:@"%.1f", ((double)[pinMan temperature]/10.0)]];
 }
 
+//Called when a new uPPT is plugged in
 static void Handle_DeviceMatchingCallback(void *inContext, IOReturn inResult, void *inSender, IOHIDDeviceRef inIOHIDDeviceRef){
     if(USBDeviceCount(inSender) == 1) {
         [selfRef changeConnectionStatusView:true];
@@ -116,6 +142,7 @@ static void Handle_DeviceMatchingCallback(void *inContext, IOReturn inResult, vo
     }
 }
 
+//Called when a uPPT is removed
 static void Handle_DeviceRemovalCallback(void *inContext, IOReturn inResult, void *inSender, IOHIDDeviceRef inIOHIDDeviceRef){
     if(USBDeviceCount(inSender) == 0) {
         [selfRef changeConnectionStatusView:false];
