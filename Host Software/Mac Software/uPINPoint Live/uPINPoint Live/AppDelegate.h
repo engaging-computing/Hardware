@@ -22,14 +22,20 @@
 @property (unsafe_unretained) IBOutlet NSTextField *battField;
 @property (unsafe_unretained) IBOutlet NSTextField *tempField;
 
+//Results Console in Diagnostics tab
+@property (unsafe_unretained) IBOutlet NSTextView *resConsole;
+
 @property (assign) IBOutlet NSWindow *window;
 
 //functions for UI button presses
 - (IBAction)setTime:(id)sender;
+- (IBAction)sendCmdReadButton:(id)sender;
 - (IBAction)sendCmdTestLEDs:(id)sender;
 
 
 - (void)sendGenericCommand:(uint8_t)cmd;
+
+- (void)writeTextToConsole:(NSString*)message;
 
 - (void)showData;
 

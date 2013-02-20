@@ -101,6 +101,10 @@ uPINPoint *pinMan;
     IOHIDDeviceSetReport(uPPT, kIOHIDReportTypeOutput, 0, report, reportSize);
 }
 
+- (IBAction)sendCmdReadButton:(id)sender {
+    [self sendGenericCommand:CMD_READ_BUTTON];
+}
+
 //Called when the Test LEDs button is pressed
 - (IBAction)sendCmdTestLEDs:(id)sender {
     [self sendGenericCommand:CMD_TEST_LEDS];
@@ -118,6 +122,11 @@ uPINPoint *pinMan;
     
     //Send the built report to the uPPT
     IOHIDDeviceSetReport(uPPT, kIOHIDReportTypeOutput, 0, report, reportSize);
+}
+
+//Writes a message to the console under the Diagnostics tab
+- (void)writeTextToConsole:(NSString*)message {
+    [self.resConsole insertText:message];
 }
 
 //Displays data from the PPT's "CMD_READ_ALL" in the appropriate fields in the UI

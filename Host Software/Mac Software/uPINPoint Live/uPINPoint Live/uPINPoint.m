@@ -65,6 +65,19 @@ static void Handle_IOHIDDeviceIOHIDReportCallback(void *          inContext,    
                         
             break;
         }
+        case CMD_READ_BUTTON:{
+            NSMutableString *message = [NSMutableString stringWithString:@"Read button: "];
+            
+            if (inReport[1] == 0) {
+                [message appendString:@"Button is DOWN\r\n"];
+            } else {
+                [message appendString:@"Button is UP\r\n"];
+            }
+            
+            [myAppDelegate writeTextToConsole:message];
+            
+            break;
+        }
     }
 }
 
