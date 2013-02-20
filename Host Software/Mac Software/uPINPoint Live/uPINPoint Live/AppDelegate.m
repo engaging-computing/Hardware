@@ -73,7 +73,7 @@ uPINPoint *pinMan;
     uint8_t *report = malloc(reportSize * sizeof(uint8_t));
     
     unsigned unitFlags = NSYearCalendarUnit | NSMonthCalendarUnit |  NSDayCalendarUnit |
-                         NSHourCalendarUnit | NSMinuteCalendarUnit | NSSecondCalendarUnit;
+                         NSHourCalendarUnit | NSMinuteCalendarUnit | NSSecondCalendarUnit | NSWeekdayCalendarUnit;
     NSDate *now = [NSDate date];
     NSCalendar *calendar = [NSCalendar currentCalendar];
     NSDateComponents *components = [calendar components:unitFlags fromDate:now];
