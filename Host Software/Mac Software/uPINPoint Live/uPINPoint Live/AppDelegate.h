@@ -25,6 +25,7 @@
 //Results Console in Diagnostics tab
 @property (unsafe_unretained) IBOutlet NSTextView *resConsole;
 
+
 @property (assign) IBOutlet NSWindow *window;
 
 //functions for UI button presses

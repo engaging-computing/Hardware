@@ -32,6 +32,8 @@ uPINPoint *pinMan;
     
     pinMan = [[uPINPoint alloc] init];
     
+    [self.resConsole setFont:[NSFont fontWithName:@"Courier" size:12]];
+    
     int vendorID = 0x04D8;
     int productID = 0x0054;
     //Create a HID Manager
@@ -126,7 +128,11 @@ uPINPoint *pinMan;
 
 //Writes a message to the console under the Diagnostics tab
 - (void)writeTextToConsole:(NSString*)message {
-    [self.resConsole insertText:message];
+    NSRange mRange;
+    mRange = NSMakeRange([[self.resConsole string] length], 0);
+    [self.resConsole replaceCharactersInRange:mRange withString:message];
+    [self.resConsole scrollRangeToVisible:mRange];
+    [self.resConsole display];
 }
 
 //Displays data from the PPT's "CMD_READ_ALL" in the appropriate fields in the UI

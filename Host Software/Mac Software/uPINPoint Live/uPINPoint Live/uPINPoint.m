@@ -49,7 +49,7 @@ static void Handle_IOHIDDeviceIOHIDReportCallback(void *          inContext,    
     //inReport[0] is the command, or response code
     //inReport[1-63] vary by type
     switch( inReport[0] ) {
-        case CMD_READ_ALL:{
+        case CMD_READ_ALL: { //NOTE TO SELF, THIS IS TEMPORARILY BROKEN BECAUSE OF THE OTHER SWITCH CASES. FIGURE IT OUT
             year = [[NSString stringWithFormat:@"%02x",inReport[1]] intValue] + 2000;
             month = [[NSString stringWithFormat:@"%02x",inReport[2]] intValue];
             day = [[NSString stringWithFormat:@"%02x",inReport[3]] intValue];
