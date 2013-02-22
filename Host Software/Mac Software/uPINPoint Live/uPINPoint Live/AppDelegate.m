@@ -103,6 +103,10 @@ uPINPoint *pinMan;
     IOHIDDeviceSetReport(uPPT, kIOHIDReportTypeOutput, 0, report, reportSize);
 }
 
+- (IBAction)sendCmdBattVolt:(id)sender {
+    [self sendGenericCommand:CMD_READ_BATTERY_VOLTAGE];
+}
+
 - (IBAction)sendCmdReadButton:(id)sender {
     [self sendGenericCommand:CMD_READ_BUTTON];
 }

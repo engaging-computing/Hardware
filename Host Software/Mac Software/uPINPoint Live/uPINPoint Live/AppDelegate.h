@@ -30,6 +30,7 @@
 
 //functions for UI button presses
 - (IBAction)setTime:(id)sender;
+- (IBAction)sendCmdBattVolt:(id)sender;
 - (IBAction)sendCmdReadButton:(id)sender;
 - (IBAction)sendCmdTestLEDs:(id)sender;
 

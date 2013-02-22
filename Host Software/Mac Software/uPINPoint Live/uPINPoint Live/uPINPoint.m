@@ -46,6 +46,9 @@ static void Handle_IOHIDDeviceIOHIDReportCallback(void *          inContext,    
     }
 }
 - (void) readData:(uint8_t *)inReport {
+    int temp; //temporary storage for values
+    uint32 utemp; //temporary storage for unsigned values
+    
     //inReport[0] is the command, or response code
     //inReport[1-63] vary by type
     switch( inReport[0] ) {
@@ -63,6 +66,13 @@ static void Handle_IOHIDDeviceIOHIDReportCallback(void *          inContext,    
             
             [myAppDelegate showData];
                         
+            break;
+        }
+        case CMD_READ_BATTERY_VOLTAGE: {
+            NSMutableString *message = [NSMutableString stringWithString:@"Read battery voltage: "];
+            temp = ((uint32)inReport[1] << 24) + ((uint32)inReport[2] << 16) + ((uint32)inReport[3] << 8) + (uint32)inReport[4];
+            [message appendString:[NSString stringWithFormat:@"%.2f V\r\n", ((double)temp/100.0)]];
+            [myAppDelegate writeTextToConsole:message];
             break;
         }
         case CMD_TEST_LEDS:{
