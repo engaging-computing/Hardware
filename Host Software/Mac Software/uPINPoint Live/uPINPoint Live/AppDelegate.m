@@ -152,6 +152,7 @@ IOHIDDeviceRef uPPT;
     
     [self.battField setStringValue:[NSString stringWithFormat:@"%.2f", ((double)battVolt/100.0)]];
     [self.tempField setStringValue:[NSString stringWithFormat:@"%.1f", ((double)temperature/10.0)]];
+    [self.pressureField setStringValue:[NSString stringWithFormat:@"%.3f", ((double)pressure/1000.0)]];
 }
 
 //Called when a new uPPT is plugged in
@@ -200,7 +201,7 @@ static long USBDeviceCount(IOHIDManagerRef HIDManager) {
 }
 
 - (void) readData:(uint8_t *)inReport {
-    int temp; //temporary storage for values
+    int temporary; //temporary storage for values
     
     //inReport[0] is the command, or response code
     //inReport[1-63] vary by type
@@ -226,9 +227,8 @@ static long USBDeviceCount(IOHIDManagerRef HIDManager) {
             break;
         }
         case CMD_READ_BATTERY_VOLTAGE: {
-            NSMutableString *message = [NSMutableString stringWithString:@"Read battery voltage: "];
-            temp = ((uint32)inReport[1] << 24) + ((uint32)inReport[2] << 16) + ((uint32)inReport[3] << 8) + (uint32)inReport[4];
-            [message appendString:[NSString stringWithFormat:@"%.2f V\r\n", ((double)temp/100.0)]];
+            temporary = ((uint32)inReport[1] << 24) + ((uint32)inReport[2] << 16) + ((uint32)inReport[3] << 8) + (uint32)inReport[4];
+            NSMutableString *message = [NSString stringWithFormat:@"Read battery voltage:  %.2f V\r\n", ((double)temporary/100.0)];
             [selfRef writeTextToConsole:message];
             break;
         }

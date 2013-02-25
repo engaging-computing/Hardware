@@ -38,8 +38,10 @@ const static int CMD_FULL_DIAGNOSTICS = 0x79;
 @property (unsafe_unretained) IBOutlet NSTextField *hourField;
 @property (unsafe_unretained) IBOutlet NSTextField *minuteField;
 @property (unsafe_unretained) IBOutlet NSTextField *secondField;
+//Other UI fields
 @property (unsafe_unretained) IBOutlet NSTextField *battField;
 @property (unsafe_unretained) IBOutlet NSTextField *tempField;
+@property (unsafe_unretained) IBOutlet NSTextField *pressureField;
 
 //Results Console in Diagnostics tab
 @property (unsafe_unretained) IBOutlet NSTextView *resConsole;

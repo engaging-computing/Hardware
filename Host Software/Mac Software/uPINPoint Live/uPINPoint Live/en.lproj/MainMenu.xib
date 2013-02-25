@@ -2360,6 +2360,14 @@
 					</object>
 					<int key="connectionID">1718</int>
 				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">pressureField</string>
+						<reference key="source" ref="976324537"/>
+						<reference key="destination" ref="654971237"/>
+					</object>
+					<int key="connectionID">1719</int>
+				</object>
 			</array>
 			<object class="IBMutableOrderedSet" key="objectRecords">
 				<array key="orderedObjects">
@@ -9060,7 +9068,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">1718</int>
+			<int key="maxID">1719</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -9103,6 +9111,7 @@
 						<string key="hourField">NSTextField</string>
 						<string key="minuteField">NSTextField</string>
 						<string key="monthField">NSTextField</string>
+						<string key="pressureField">NSTextField</string>
 						<string key="resConsole">NSTextView</string>
 						<string key="secondField">NSTextField</string>
 						<string key="tempField">NSTextField</string>
@@ -9132,6 +9141,10 @@
 						</object>
 						<object class="IBToOneOutletInfo" key="monthField">
 							<string key="name">monthField</string>
+							<string key="candidateClassName">NSTextField</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="pressureField">
+							<string key="name">pressureField</string>
 							<string key="candidateClassName">NSTextField</string>
 						</object>
 						<object class="IBToOneOutletInfo" key="resConsole">
