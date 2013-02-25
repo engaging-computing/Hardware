@@ -9,14 +9,15 @@
 #import "AppDelegate.h"
 #import <IOKit/Hid/IOHIDManager.h>
 #import <CoreFoundation/CFSet.h>
-#import "uPINPoint.h"
 
 @implementation AppDelegate
+
+//Variables for data read from the READ ALL command
+@synthesize year, month, day, hour, minute, second, battVolt, temperature, pressure, altitude;
 
 id selfRef;
 NSColor *colorRed, *colorGreen, *colorWhite;
 IOHIDDeviceRef uPPT;
-uPINPoint *pinMan;
 
 //Quit the application when there are no open windows
 - (BOOL)applicationShouldTerminateAfterLastWindowClosed:(NSApplication *)theApplication {
@@ -29,11 +30,9 @@ uPINPoint *pinMan;
     colorRed =  [NSColor colorWithCalibratedRed:0.7f green:0.0f blue:0.0f alpha:1.0f];
     colorGreen = [NSColor colorWithCalibratedRed:0.0f green:0.7f blue:0.0f alpha:1.0f];
     colorWhite = [NSColor colorWithCalibratedRed:1.0f green:1.0f blue:1.0f alpha:1.0f];
-    
-    pinMan = [[uPINPoint alloc] init];
-    
+        
     [self.resConsole setFont:[NSFont fontWithName:@"Courier" size:12]];
-    
+        
     int vendorID = 0x04D8;
     int productID = 0x0054;
     //Create a HID Manager
@@ -102,18 +101,21 @@ uPINPoint *pinMan;
     //Send the built report to the uPPT
     IOHIDDeviceSetReport(uPPT, kIOHIDReportTypeOutput, 0, report, reportSize);
 }
-
+//Called when the Read Battery Voltage button is pressed
 - (IBAction)sendCmdBattVolt:(id)sender {
     [self sendGenericCommand:CMD_READ_BATTERY_VOLTAGE];
 }
-
+//Called when the Read Button button is pressed
 - (IBAction)sendCmdReadButton:(id)sender {
     [self sendGenericCommand:CMD_READ_BUTTON];
 }
-
 //Called when the Test LEDs button is pressed
 - (IBAction)sendCmdTestLEDs:(id)sender {
     [self sendGenericCommand:CMD_TEST_LEDS];
+}
+//Called when the Check RTCC button is pressed
+- (IBAction)sendCmdCheckRTCC:(id)sender {
+    [self sendGenericCommand:CMD_CHECK_RTCC];
 }
 
 //Sends one of the generic single-byte command to the uPPT
@@ -141,23 +143,27 @@ uPINPoint *pinMan;
 
 //Displays data from the PPT's "CMD_READ_ALL" in the appropriate fields in the UI
 - (void)showData {
-    [self.dayField setStringValue:[NSString stringWithFormat:@"%d", [pinMan day]]];
-    [self.monthField setStringValue:[NSString stringWithFormat:@"%d", [pinMan month]]];
-    [self.yearField setStringValue:[NSString stringWithFormat:@"%d", [pinMan year]]];
-    [self.hourField setStringValue:[NSString stringWithFormat:@"%d", [pinMan hour]]];
-    [self.minuteField setStringValue:[NSString stringWithFormat:@"%02d", [pinMan minute]]];
-    [self.secondField setStringValue:[NSString stringWithFormat:@"%02d", [pinMan second]]];
+    [self.dayField setStringValue:[NSString stringWithFormat:@"%d", day]];
+    [self.monthField setStringValue:[NSString stringWithFormat:@"%d", month]];
+    [self.yearField setStringValue:[NSString stringWithFormat:@"%d", year]];
+    [self.hourField setStringValue:[NSString stringWithFormat:@"%d", hour]];
+    [self.minuteField setStringValue:[NSString stringWithFormat:@"%02d", minute]];
+    [self.secondField setStringValue:[NSString stringWithFormat:@"%02d", second]];
     
-    [self.battField setStringValue:[NSString stringWithFormat:@"%.2f", ((double)[pinMan battVolt]/100.0)]];
-    [self.tempField setStringValue:[NSString stringWithFormat:@"%.1f", ((double)[pinMan temperature]/10.0)]];
+    [self.battField setStringValue:[NSString stringWithFormat:@"%.2f", ((double)battVolt/100.0)]];
+    [self.tempField setStringValue:[NSString stringWithFormat:@"%.1f", ((double)temperature/10.0)]];
 }
 
 //Called when a new uPPT is plugged in
 static void Handle_DeviceMatchingCallback(void *inContext, IOReturn inResult, void *inSender, IOHIDDeviceRef inIOHIDDeviceRef){
     if(USBDeviceCount(inSender) == 1) {
-        [selfRef changeConnectionStatusView:true];
+        CFIndex reportSize = 64;
+        uint8_t report = (uint8_t) malloc(reportSize);
         uPPT = inIOHIDDeviceRef;
-        [pinMan init:uPPT];
+        [selfRef changeConnectionStatusView:true];
+        
+        //Register a callback for Input HID Reports
+        IOHIDDeviceRegisterInputReportCallback(uPPT, &report, reportSize, Handle_IOHIDDeviceIOHIDReportCallback, NULL);
     }
 }
 
@@ -165,10 +171,25 @@ static void Handle_DeviceMatchingCallback(void *inContext, IOReturn inResult, vo
 static void Handle_DeviceRemovalCallback(void *inContext, IOReturn inResult, void *inSender, IOHIDDeviceRef inIOHIDDeviceRef){
     if(USBDeviceCount(inSender) == 0) {
         [selfRef changeConnectionStatusView:false];
-        [pinMan deinit];
         uPPT = NULL;
+        //Deregister the callback for Input HID Reports
+        IOHIDDeviceRegisterInputReportCallback(NULL, NULL, NULL, Handle_IOHIDDeviceIOHIDReportCallback, NULL);
     }
 }
+
+static void Handle_IOHIDDeviceIOHIDReportCallback(void *          inContext,          //context from IOHIDDeviceRegisterInputReportCallback
+                                                  IOReturn        inResult,           //completion result for the input report operation
+                                                  void *          inSender,           //IOHIDDeviceRef of the device this report is from
+                                                  IOHIDReportType inType,             //the report type
+                                                  uint32_t        inReportID,         //the report ID
+                                                  uint8_t *       inReport,           //pointer to the report data
+                                                  CFIndex         inReportLength)     //the actual size of the input report
+{
+    if(inResult == kIOReturnSuccess) {
+        [selfRef readData:inReport];
+    }
+}
+
 
 static long USBDeviceCount(IOHIDManagerRef HIDManager) {
     CFSetRef devSet = IOHIDManagerCopyDevices (HIDManager);
@@ -176,5 +197,71 @@ static long USBDeviceCount(IOHIDManagerRef HIDManager) {
         return CFSetGetCount(devSet);
     }
     return 0;
+}
+
+- (void) readData:(uint8_t *)inReport {
+    int temp; //temporary storage for values
+    
+    //inReport[0] is the command, or response code
+    //inReport[1-63] vary by type
+    switch( inReport[0] ) {
+        case CMD_READ_ALL: { //NOTE TO SELF, THIS IS TEMPORARILY BROKEN BECAUSE OF THE OTHER SWITCH CASES. FIGURE IT OUT
+            year = [[NSString stringWithFormat:@"%02x",inReport[1]] intValue] + 2000;
+            month = [[NSString stringWithFormat:@"%02x",inReport[2]] intValue];
+            day = [[NSString stringWithFormat:@"%02x",inReport[3]] intValue];
+            hour = [[NSString stringWithFormat:@"%02x",inReport[5]] intValue];
+            minute = [[NSString stringWithFormat:@"%02x",inReport[6]] intValue];
+            second = [[NSString stringWithFormat:@"%02x",inReport[7]] intValue];
+            
+            battVolt = ((uint32)inReport[8] << 24) + ((uint32)inReport[9] << 16) + ((uint32)inReport[10] << 8) + (uint32)inReport[11];
+            
+            temperature = ((uint32)inReport[12] << 24) + ((uint32)inReport[13] << 16) + ((uint32)inReport[14] << 8) + (uint32)inReport[15];
+            
+            pressure = ((uint32)inReport[16] << 24) + ((uint32)inReport[17] << 16) + ((uint32)inReport[18] << 8) + (uint32)inReport[19];
+            
+            altitude = ((uint32)inReport[20] << 24) + ((uint32)inReport[21] << 16) + ((uint32)inReport[22] << 8) + (uint32)inReport[23];
+            
+            [selfRef showData];
+            
+            break;
+        }
+        case CMD_READ_BATTERY_VOLTAGE: {
+            NSMutableString *message = [NSMutableString stringWithString:@"Read battery voltage: "];
+            temp = ((uint32)inReport[1] << 24) + ((uint32)inReport[2] << 16) + ((uint32)inReport[3] << 8) + (uint32)inReport[4];
+            [message appendString:[NSString stringWithFormat:@"%.2f V\r\n", ((double)temp/100.0)]];
+            [selfRef writeTextToConsole:message];
+            break;
+        }
+        case CMD_TEST_LEDS:{
+            [selfRef writeTextToConsole:@"Test LEDs: Did they both come on?\r\n"];
+            break;
+        }
+        case CMD_READ_BUTTON:{
+            NSMutableString *message = [NSMutableString stringWithString:@"Read button: "];
+            
+            if (inReport[1] == 0) {
+                [message appendString:@"Button is DOWN\r\n"];
+            } else {
+                [message appendString:@"Button is UP\r\n"];
+            }
+            
+            [selfRef writeTextToConsole:message];
+            
+            break;
+        }
+        case CMD_CHECK_RTCC: {
+            NSMutableString *message = [NSMutableString stringWithString:@"Check RTCC: "];
+            
+            if (inReport[1] == 0) {
+                [message appendString:@"PASS, RTCC is running\r\n"];
+            } else {
+                [message appendString:@"FAIL, RTCC does not seem to be running\r\n"];
+            }
+            
+            [selfRef writeTextToConsole:message];
+            
+            break;
+        }
+    }
 }
 @end

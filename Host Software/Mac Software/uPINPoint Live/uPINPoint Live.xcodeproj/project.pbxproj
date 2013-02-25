@@ -18,7 +18,6 @@
 		6E480BDE169F2091002B3100 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E480BBE169F2090002B3100 /* Cocoa.framework */; };
 		6E480BE6169F2091002B3100 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6E480BE4169F2091002B3100 /* InfoPlist.strings */; };
 		6E480BE9169F2091002B3100 /* uPINPoint_LiveTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E480BE8169F2091002B3100 /* uPINPoint_LiveTests.m */; };
-		6ED5D58D16B6EE5A0054285F /* uPINPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ED5D58C16B6EE5A0054285F /* uPINPoint.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,8 +51,6 @@
 		6E480BE5169F2091002B3100 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		6E480BE7169F2091002B3100 /* uPINPoint_LiveTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = uPINPoint_LiveTests.h; sourceTree = "<group>"; };
 		6E480BE8169F2091002B3100 /* uPINPoint_LiveTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = uPINPoint_LiveTests.m; sourceTree = "<group>"; };
-		6ED5D58B16B6EE5A0054285F /* uPINPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = uPINPoint.h; sourceTree = "<group>"; };
-		6ED5D58C16B6EE5A0054285F /* uPINPoint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = uPINPoint.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,8 +122,6 @@
 				6E480BD1169F2090002B3100 /* AppDelegate.m */,
 				6E480BD3169F2090002B3100 /* MainMenu.xib */,
 				6E480BC5169F2090002B3100 /* Supporting Files */,
-				6ED5D58B16B6EE5A0054285F /* uPINPoint.h */,
-				6ED5D58C16B6EE5A0054285F /* uPINPoint.m */,
 			);
 			path = "uPINPoint Live";
 			sourceTree = "<group>";
@@ -272,7 +267,6 @@
 			files = (
 				6E480BCB169F2090002B3100 /* main.m in Sources */,
 				6E480BD2169F2090002B3100 /* AppDelegate.m in Sources */,
-				6ED5D58D16B6EE5A0054285F /* uPINPoint.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
