@@ -42,6 +42,7 @@ const static int CMD_FULL_DIAGNOSTICS = 0x79;
 @property (unsafe_unretained) IBOutlet NSTextField *battField;
 @property (unsafe_unretained) IBOutlet NSTextField *tempField;
 @property (unsafe_unretained) IBOutlet NSTextField *pressureField;
+@property (unsafe_unretained) IBOutlet NSTextField *altitudeField;
 
 //Results Console in Diagnostics tab
 @property (unsafe_unretained) IBOutlet NSTextView *resConsole;

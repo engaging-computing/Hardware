@@ -2368,6 +2368,14 @@
 					</object>
 					<int key="connectionID">1719</int>
 				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">altitudeField</string>
+						<reference key="source" ref="976324537"/>
+						<reference key="destination" ref="926236814"/>
+					</object>
+					<int key="connectionID">1720</int>
+				</object>
 			</array>
 			<object class="IBMutableOrderedSet" key="objectRecords">
 				<array key="orderedObjects">
@@ -9068,7 +9076,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">1719</int>
+			<int key="maxID">1720</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -9105,6 +9113,7 @@
 						</object>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="outlets">
+						<string key="altitudeField">NSTextField</string>
 						<string key="battField">NSTextField</string>
 						<string key="cStatus">NSTextField</string>
 						<string key="dayField">NSTextField</string>
@@ -9119,6 +9128,10 @@
 						<string key="yearField">NSTextField</string>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="toOneOutletInfosByName">
+						<object class="IBToOneOutletInfo" key="altitudeField">
+							<string key="name">altitudeField</string>
+							<string key="candidateClassName">NSTextField</string>
+						</object>
 						<object class="IBToOneOutletInfo" key="battField">
 							<string key="name">battField</string>
 							<string key="candidateClassName">NSTextField</string>

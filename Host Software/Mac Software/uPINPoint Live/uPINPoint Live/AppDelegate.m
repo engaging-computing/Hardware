@@ -153,6 +153,7 @@ IOHIDDeviceRef uPPT;
     [self.battField setStringValue:[NSString stringWithFormat:@"%.2f", ((double)battVolt/100.0)]];
     [self.tempField setStringValue:[NSString stringWithFormat:@"%.1f", ((double)temperature/10.0)]];
     [self.pressureField setStringValue:[NSString stringWithFormat:@"%.3f", ((double)pressure/1000.0)]];
+    [self.altitudeField setStringValue:[NSString stringWithFormat:@"%d", altitude]];
 }
 
 //Called when a new uPPT is plugged in
@@ -215,11 +216,8 @@ static long USBDeviceCount(IOHIDManagerRef HIDManager) {
             second = [[NSString stringWithFormat:@"%02x",inReport[7]] intValue];
             
             battVolt = ((uint32)inReport[8] << 24) + ((uint32)inReport[9] << 16) + ((uint32)inReport[10] << 8) + (uint32)inReport[11];
-            
             temperature = ((uint32)inReport[12] << 24) + ((uint32)inReport[13] << 16) + ((uint32)inReport[14] << 8) + (uint32)inReport[15];
-            
             pressure = ((uint32)inReport[16] << 24) + ((uint32)inReport[17] << 16) + ((uint32)inReport[18] << 8) + (uint32)inReport[19];
-            
             altitude = ((uint32)inReport[20] << 24) + ((uint32)inReport[21] << 16) + ((uint32)inReport[22] << 8) + (uint32)inReport[23];
             
             [selfRef showData];
