@@ -2409,12 +2409,28 @@
 					<int key="connectionID">1724</int>
 				</object>
 				<object class="IBConnectionRecord">
-					<object class="IBOutletConnection" key="connection">
-						<string key="label">lightField</string>
+					<object class="IBActionConnection" key="connection">
+						<string key="label">sendCmdScanMax:</string>
 						<reference key="source" ref="976324537"/>
-						<reference key="destination" ref="319510028"/>
+						<reference key="destination" ref="409241266"/>
 					</object>
-					<int key="connectionID">1725</int>
+					<int key="connectionID">1727</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBActionConnection" key="connection">
+						<string key="label">sendCmdScanBmp:</string>
+						<reference key="source" ref="976324537"/>
+						<reference key="destination" ref="704641718"/>
+					</object>
+					<int key="connectionID">1728</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBActionConnection" key="connection">
+						<string key="label">sendCmdScanAdxl:</string>
+						<reference key="source" ref="976324537"/>
+						<reference key="destination" ref="148880815"/>
+					</object>
+					<int key="connectionID">1729</int>
 				</object>
 			</array>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -9116,7 +9132,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">1725</int>
+			<int key="maxID">1729</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -9126,7 +9142,11 @@
 					<dictionary class="NSMutableDictionary" key="actions">
 						<string key="sendCmdBattVolt:">id</string>
 						<string key="sendCmdCheckRTCC:">id</string>
+						<string key="sendCmdMAX44007Sensor:">id</string>
 						<string key="sendCmdReadButton:">id</string>
+						<string key="sendCmdScanAdxl:">id</string>
+						<string key="sendCmdScanBmp:">id</string>
+						<string key="sendCmdScanMax:">id</string>
 						<string key="sendCmdTestLEDs:">id</string>
 						<string key="setTime:">id</string>
 					</dictionary>
@@ -9139,8 +9159,24 @@
 							<string key="name">sendCmdCheckRTCC:</string>
 							<string key="candidateClassName">id</string>
 						</object>
+						<object class="IBActionInfo" key="sendCmdMAX44007Sensor:">
+							<string key="name">sendCmdMAX44007Sensor:</string>
+							<string key="candidateClassName">id</string>
+						</object>
 						<object class="IBActionInfo" key="sendCmdReadButton:">
 							<string key="name">sendCmdReadButton:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="sendCmdScanAdxl:">
+							<string key="name">sendCmdScanAdxl:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="sendCmdScanBmp:">
+							<string key="name">sendCmdScanBmp:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="sendCmdScanMax:">
+							<string key="name">sendCmdScanMax:</string>
 							<string key="candidateClassName">id</string>
 						</object>
 						<object class="IBActionInfo" key="sendCmdTestLEDs:">

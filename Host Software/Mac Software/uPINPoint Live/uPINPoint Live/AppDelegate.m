@@ -117,6 +117,18 @@ IOHIDDeviceRef uPPT;
 - (IBAction)sendCmdCheckRTCC:(id)sender {
     [self sendGenericCommand:CMD_CHECK_RTCC];
 }
+//Called when the Scan BMP085 button is pressed
+- (IBAction)sendCmdScanBmp:(id)sender {
+    [self sendGenericCommand:CMD_SCAN_BMP085];
+}
+//Called when the Scan Max44007 button is pressed
+- (IBAction)sendCmdScanMax:(id)sender {
+    [self sendGenericCommand:CMD_SCAN_MAX44007];
+}
+//Called when the Scan ADXL345 button is pressed
+- (IBAction)sendCmdScanAdxl:(id)sender {
+    [self sendGenericCommand:CMD_SCAN_ADXL345];
+}
 
 //Sends one of the generic single-byte command to the uPPT
 - (void)sendGenericCommand:(uint8_t)cmd {
@@ -214,7 +226,7 @@ static long USBDeviceCount(IOHIDManagerRef HIDManager) {
     //inReport[0] is the command, or response code
     //inReport[1-63] vary by type
     switch( inReport[0] ) {
-        case CMD_READ_ALL: { //NOTE TO SELF, THIS IS TEMPORARILY BROKEN BECAUSE OF THE OTHER SWITCH CASES. FIGURE IT OUT
+        case CMD_READ_ALL: {
             year = [[NSString stringWithFormat:@"%02x",inReport[1]] intValue] + 2000;
             month = [[NSString stringWithFormat:@"%02x",inReport[2]] intValue];
             day = [[NSString stringWithFormat:@"%02x",inReport[3]] intValue];
@@ -270,6 +282,51 @@ static long USBDeviceCount(IOHIDManagerRef HIDManager) {
             } else {
                 [message appendString:@"FAIL, RTCC does not seem to be running\r\n"];
             }
+            
+            [selfRef writeTextToConsole:message];
+            
+            break;
+        }
+        case CMD_SCAN_BMP085: {
+            NSMutableString *message = [NSMutableString stringWithString:@"Scan BMP085: "];
+            
+            if (inReport[1] == 0) {
+                [message appendString:@"PASS, device responded to inquiry - "];
+            } else {
+                [message appendString:@"FAIL, no response from device - "];
+            }
+            
+            [message appendString:[NSString stringWithFormat:@"0x%.2x%.2x\r\n", inReport[2], inReport[3]]];
+            
+            [selfRef writeTextToConsole:message];
+            
+            break;
+        }
+        case CMD_SCAN_MAX44007: {
+            NSMutableString *message = [NSMutableString stringWithString:@"Scan MAX44007: "];
+            
+            if (inReport[1] == 0) {
+                [message appendString:@"PASS, device responded to inquiry - "];
+            } else {
+                [message appendString:@"FAIL, no response from device - "];
+            }
+            
+            [message appendString:[NSString stringWithFormat:@"0x%.2x%.2x\r\n", inReport[2], inReport[3]]];
+            
+            [selfRef writeTextToConsole:message];
+            
+            break;
+        }
+        case CMD_SCAN_ADXL345: {
+            NSMutableString *message = [NSMutableString stringWithString:@"Scan ADXL345: "];
+            
+            if (inReport[1] == 0) {
+                [message appendString:@"PASS, device responded to inquiry - "];
+            } else {
+                [message appendString:@"FAIL, no response from device - "];
+            }
+            
+            [message appendString:[NSString stringWithFormat:@"0x%.2x%.2x\r\n", inReport[2], inReport[3]]];
             
             [selfRef writeTextToConsole:message];
             

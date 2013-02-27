@@ -62,6 +62,9 @@ const static int CMD_FULL_DIAGNOSTICS = 0x79;
 - (IBAction)sendCmdReadButton:(id)sender;
 - (IBAction)sendCmdTestLEDs:(id)sender;
 - (IBAction)sendCmdCheckRTCC:(id)sender;
+- (IBAction)sendCmdScanBmp:(id)sender;
+- (IBAction)sendCmdScanMax:(id)sender;
+- (IBAction)sendCmdScanAdxl:(id)sender;
 
 - (void) readData:(uint8_t *)inReport;
 
