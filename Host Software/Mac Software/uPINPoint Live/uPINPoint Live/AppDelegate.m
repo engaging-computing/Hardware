@@ -13,7 +13,7 @@
 @implementation AppDelegate
 
 //Variables for data read from the READ ALL command
-@synthesize year, month, day, hour, minute, second, battVolt, temperature, pressure, altitude;
+@synthesize year, month, day, hour, minute, second, battVolt, temperature, pressure, altitude, accelX, accelY, accelZ, accelM, light;
 
 id selfRef;
 NSColor *colorRed, *colorGreen, *colorWhite;
@@ -154,6 +154,13 @@ IOHIDDeviceRef uPPT;
     [self.tempField setStringValue:[NSString stringWithFormat:@"%.1f", ((double)temperature/10.0)]];
     [self.pressureField setStringValue:[NSString stringWithFormat:@"%.3f", ((double)pressure/1000.0)]];
     [self.altitudeField setStringValue:[NSString stringWithFormat:@"%d", altitude]];
+    
+    [self.accelXField setStringValue:[NSString stringWithFormat:@"%.2f", ((double)accelX/100.0)]];
+    [self.accelYField setStringValue:[NSString stringWithFormat:@"%.2f", ((double)accelY/100.0)]];
+    [self.accelZField setStringValue:[NSString stringWithFormat:@"%.2f", ((double)accelZ/100.0)]];
+    [self.accelMField setStringValue:[NSString stringWithFormat:@"%.2f", ((double)accelM/100.0)]];
+    
+    [self.lightField setStringValue:[NSString stringWithFormat:@"%.1f", ((double)light/10.0)]];
 }
 
 //Called when a new uPPT is plugged in
@@ -217,8 +224,16 @@ static long USBDeviceCount(IOHIDManagerRef HIDManager) {
             
             battVolt = ((uint32)inReport[8] << 24) + ((uint32)inReport[9] << 16) + ((uint32)inReport[10] << 8) + (uint32)inReport[11];
             temperature = ((uint32)inReport[12] << 24) + ((uint32)inReport[13] << 16) + ((uint32)inReport[14] << 8) + (uint32)inReport[15];
+            
             pressure = ((uint32)inReport[16] << 24) + ((uint32)inReport[17] << 16) + ((uint32)inReport[18] << 8) + (uint32)inReport[19];
             altitude = ((uint32)inReport[20] << 24) + ((uint32)inReport[21] << 16) + ((uint32)inReport[22] << 8) + (uint32)inReport[23];
+            
+            accelX = ((uint32)inReport[24] << 24) + ((uint32)inReport[25] << 16) + ((uint32)inReport[26] << 8) + (uint32)inReport[27];
+            accelY = ((uint32)inReport[28] << 24) + ((uint32)inReport[29] << 16) + ((uint32)inReport[30] << 8) + (uint32)inReport[31];
+            accelZ = ((uint32)inReport[32] << 24) + ((uint32)inReport[33] << 16) + ((uint32)inReport[34] << 8) + (uint32)inReport[35];
+            accelM = ((uint32)inReport[36] << 24) + ((uint32)inReport[37] << 16) + ((uint32)inReport[38] << 8) + (uint32)inReport[39];
+            
+            light = ((uint32)inReport[40] << 24) + ((uint32)inReport[41] << 16) + ((uint32)inReport[42] << 8) + (uint32)inReport[43];
             
             [selfRef showData];
             

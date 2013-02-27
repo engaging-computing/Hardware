@@ -43,6 +43,13 @@ const static int CMD_FULL_DIAGNOSTICS = 0x79;
 @property (unsafe_unretained) IBOutlet NSTextField *tempField;
 @property (unsafe_unretained) IBOutlet NSTextField *pressureField;
 @property (unsafe_unretained) IBOutlet NSTextField *altitudeField;
+@property (unsafe_unretained) IBOutlet NSTextField *lightField;
+//Acceleration box fields
+@property (unsafe_unretained) IBOutlet NSTextField *accelXField;
+@property (unsafe_unretained) IBOutlet NSTextField *accelYField;
+@property (unsafe_unretained) IBOutlet NSTextField *accelZField;
+@property (unsafe_unretained) IBOutlet NSTextField *accelMField;
+
 
 //Results Console in Diagnostics tab
 @property (unsafe_unretained) IBOutlet NSTextView *resConsole;
@@ -86,5 +93,10 @@ static void Handle_IOHIDDeviceIOHIDReportCallback(void * inContext, IOReturn inR
 @property (nonatomic, assign) int temperature;
 @property (nonatomic, assign) int pressure;
 @property (nonatomic, assign) int altitude;
+@property (nonatomic, assign) int accelX;
+@property (nonatomic, assign) int accelY;
+@property (nonatomic, assign) int accelZ;
+@property (nonatomic, assign) int accelM;
+@property (nonatomic, assign) int light;
 
 @end

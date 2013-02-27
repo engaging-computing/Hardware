@@ -2376,6 +2376,46 @@
 					</object>
 					<int key="connectionID">1720</int>
 				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">accelXField</string>
+						<reference key="source" ref="976324537"/>
+						<reference key="destination" ref="457508845"/>
+					</object>
+					<int key="connectionID">1721</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">accelYField</string>
+						<reference key="source" ref="976324537"/>
+						<reference key="destination" ref="1050292084"/>
+					</object>
+					<int key="connectionID">1722</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">accelZField</string>
+						<reference key="source" ref="976324537"/>
+						<reference key="destination" ref="944110779"/>
+					</object>
+					<int key="connectionID">1723</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">AccelMField</string>
+						<reference key="source" ref="976324537"/>
+						<reference key="destination" ref="1027299116"/>
+					</object>
+					<int key="connectionID">1724</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">lightField</string>
+						<reference key="source" ref="976324537"/>
+						<reference key="destination" ref="319510028"/>
+					</object>
+					<int key="connectionID">1725</int>
+				</object>
 			</array>
 			<object class="IBMutableOrderedSet" key="objectRecords">
 				<array key="orderedObjects">
@@ -9076,7 +9116,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">1720</int>
+			<int key="maxID">1725</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -9113,11 +9153,16 @@
 						</object>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="outlets">
+						<string key="accelMField">NSTextField</string>
+						<string key="accelXField">NSTextField</string>
+						<string key="accelYField">NSTextField</string>
+						<string key="accelZField">NSTextField</string>
 						<string key="altitudeField">NSTextField</string>
 						<string key="battField">NSTextField</string>
 						<string key="cStatus">NSTextField</string>
 						<string key="dayField">NSTextField</string>
 						<string key="hourField">NSTextField</string>
+						<string key="lightField">NSTextField</string>
 						<string key="minuteField">NSTextField</string>
 						<string key="monthField">NSTextField</string>
 						<string key="pressureField">NSTextField</string>
@@ -9128,6 +9173,22 @@
 						<string key="yearField">NSTextField</string>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="toOneOutletInfosByName">
+						<object class="IBToOneOutletInfo" key="accelMField">
+							<string key="name">accelMField</string>
+							<string key="candidateClassName">NSTextField</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="accelXField">
+							<string key="name">accelXField</string>
+							<string key="candidateClassName">NSTextField</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="accelYField">
+							<string key="name">accelYField</string>
+							<string key="candidateClassName">NSTextField</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="accelZField">
+							<string key="name">accelZField</string>
+							<string key="candidateClassName">NSTextField</string>
+						</object>
 						<object class="IBToOneOutletInfo" key="altitudeField">
 							<string key="name">altitudeField</string>
 							<string key="candidateClassName">NSTextField</string>
@@ -9146,6 +9207,10 @@
 						</object>
 						<object class="IBToOneOutletInfo" key="hourField">
 							<string key="name">hourField</string>
+							<string key="candidateClassName">NSTextField</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="lightField">
+							<string key="name">lightField</string>
 							<string key="candidateClassName">NSTextField</string>
 						</object>
 						<object class="IBToOneOutletInfo" key="minuteField">
