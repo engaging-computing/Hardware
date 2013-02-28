@@ -933,6 +933,7 @@ int main(void)
         if (tempTakeOrRecordSample >= 1)
         {
             LED_GREEN = 0; // light green LED while sampling
+            LED_RED = 0; // light green LED while sampling
 
             DataPointYear = time.f.year;
             DataPointMonth = time.f.mon;
@@ -1006,6 +1007,7 @@ int main(void)
             }
 
             LED_GREEN = 1;
+            LED_RED = 1;
         }
 
         // handle USB transfers when attached

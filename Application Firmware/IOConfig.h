@@ -10,16 +10,16 @@
     #define LED_RED_TRIS		TRISBbits.TRISB12
     #define LED_GREEN_TRIS		TRISBbits.TRISB13
     #define BUTTON				PORTBbits.RB14
-    #define LED_RED				PORTBbits.RB12
-    #define LED_GREEN			PORTBbits.RB13
+    #define LED_RED				LATBbits.LATB12
+    #define LED_GREEN			LATBbits.LATB13
 
 	#define SD_PWR_TRIS			TRISBbits.TRISB3
-	#define SD_PWR				PORTBbits.RB3
+	#define SD_PWR				LATBbits.LATB3
 
 	#define BMP085_EOC_TRIS		TRISDbits.TRISD0
 	#define BMP085_XCLR_TRIS	TRISDbits.TRISD11
 	#define BMP085_EOC			PORTDbits.RD0
-	#define BMP085_XCLR			PORTDbits.RD11
+	#define BMP085_XCLR			LATDbits.LATD11
 
 	#define ADXL_INTR_TRIS		TRISDbits.TRISD8
 	#define ADXL_INTR			PORTDbits.RD8
