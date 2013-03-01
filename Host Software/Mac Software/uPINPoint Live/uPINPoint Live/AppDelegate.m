@@ -71,6 +71,26 @@ IOHIDDeviceRef uPPT;
     }
 }
 
+
+//Enables or disables all the buttons that interact with the PINPoint
+- (void)setButtonsEnabled:(Boolean)status {
+    [self.btnDateTime setEnabled:status];
+    [self.btnDiagnostics setEnabled:status];
+    [self.btnReadInfo setEnabled:status];
+    [self.btnBattVolt setEnabled:status];
+    [self.btnReadButton setEnabled:status];
+    [self.btnTestLEDs setEnabled:status];
+    [self.btnCheckRTCC setEnabled:status];
+    [self.btnBMP085 setEnabled:status];
+    [self.btnMAX44007 setEnabled:status];
+    [self.btnADXL345 setEnabled:status];
+    [self.btnSetCalibration setEnabled:status];
+    [self.btnWriteCalibration setEnabled:status];
+    [self.btnReadCalibration setEnabled:status];
+}
+
+
+
 //Called when the Set Date/Time button is pressed. Sends the new date/time to the uPPT
 - (IBAction)setTime:(id)sender {
     CFIndex reportSize = 64;
@@ -182,6 +202,7 @@ static void Handle_DeviceMatchingCallback(void *inContext, IOReturn inResult, vo
         uint8_t report = (uint8_t) malloc(reportSize);
         uPPT = inIOHIDDeviceRef;
         [selfRef changeConnectionStatusView:true];
+        [selfRef setButtonsEnabled:true];
         
         //Register a callback for Input HID Reports
         IOHIDDeviceRegisterInputReportCallback(uPPT, &report, reportSize, Handle_IOHIDDeviceIOHIDReportCallback, NULL);
@@ -192,6 +213,7 @@ static void Handle_DeviceMatchingCallback(void *inContext, IOReturn inResult, vo
 static void Handle_DeviceRemovalCallback(void *inContext, IOReturn inResult, void *inSender, IOHIDDeviceRef inIOHIDDeviceRef){
     if(USBDeviceCount(inSender) == 0) {
         [selfRef changeConnectionStatusView:false];
+        [selfRef setButtonsEnabled:false];
         uPPT = NULL;
         //Deregister the callback for Input HID Reports
         IOHIDDeviceRegisterInputReportCallback(NULL, NULL, NULL, Handle_IOHIDDeviceIOHIDReportCallback, NULL);

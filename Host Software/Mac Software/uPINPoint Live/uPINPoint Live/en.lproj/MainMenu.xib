@@ -529,7 +529,7 @@
 							<string key="NSReuseIdentifierKey">_NS:9</string>
 							<bool key="NSEnabled">YES</bool>
 							<object class="NSButtonCell" key="NSCell" id="59628279">
-								<int key="NSCellFlags">67108864</int>
+								<int key="NSCellFlags">603979776</int>
 								<int key="NSCellFlags2">134217728</int>
 								<string key="NSContents">Set Device Date/Time</string>
 								<reference key="NSSupport" ref="188013070"/>
@@ -911,7 +911,7 @@
 												<string key="NSReuseIdentifierKey">_NS:9</string>
 												<bool key="NSEnabled">YES</bool>
 												<object class="NSButtonCell" key="NSCell" id="990279370">
-													<int key="NSCellFlags">67108864</int>
+													<int key="NSCellFlags">603979776</int>
 													<int key="NSCellFlags2">134217728</int>
 													<string key="NSContents">Run Full Diagnostics</string>
 													<object class="NSFont" key="NSSupport" id="671218101">
@@ -940,7 +940,7 @@
 												<string key="NSReuseIdentifierKey">_NS:9</string>
 												<bool key="NSEnabled">YES</bool>
 												<object class="NSButtonCell" key="NSCell" id="244990985">
-													<int key="NSCellFlags">67108864</int>
+													<int key="NSCellFlags">603979776</int>
 													<int key="NSCellFlags2">134217728</int>
 													<string key="NSContents">Read System Info</string>
 													<reference key="NSSupport" ref="521917754"/>
@@ -965,7 +965,7 @@
 												<string key="NSReuseIdentifierKey">_NS:9</string>
 												<bool key="NSEnabled">YES</bool>
 												<object class="NSButtonCell" key="NSCell" id="600332365">
-													<int key="NSCellFlags">67108864</int>
+													<int key="NSCellFlags">603979776</int>
 													<int key="NSCellFlags2">134217728</int>
 													<string key="NSContents">Read Battery Voltage</string>
 													<reference key="NSSupport" ref="521917754"/>
@@ -990,7 +990,7 @@
 												<string key="NSReuseIdentifierKey">_NS:9</string>
 												<bool key="NSEnabled">YES</bool>
 												<object class="NSButtonCell" key="NSCell" id="9972750">
-													<int key="NSCellFlags">67108864</int>
+													<int key="NSCellFlags">603979776</int>
 													<int key="NSCellFlags2">134217728</int>
 													<string key="NSContents">Read Button</string>
 													<reference key="NSSupport" ref="521917754"/>
@@ -1015,7 +1015,7 @@
 												<string key="NSReuseIdentifierKey">_NS:9</string>
 												<bool key="NSEnabled">YES</bool>
 												<object class="NSButtonCell" key="NSCell" id="982555294">
-													<int key="NSCellFlags">67108864</int>
+													<int key="NSCellFlags">603979776</int>
 													<int key="NSCellFlags2">134217728</int>
 													<string key="NSContents">Test LEDs</string>
 													<reference key="NSSupport" ref="521917754"/>
@@ -1040,7 +1040,7 @@
 												<string key="NSReuseIdentifierKey">_NS:9</string>
 												<bool key="NSEnabled">YES</bool>
 												<object class="NSButtonCell" key="NSCell" id="576845238">
-													<int key="NSCellFlags">67108864</int>
+													<int key="NSCellFlags">603979776</int>
 													<int key="NSCellFlags2">134217728</int>
 													<string key="NSContents">Check RTCC</string>
 													<reference key="NSSupport" ref="521917754"/>
@@ -1065,7 +1065,7 @@
 												<string key="NSReuseIdentifierKey">_NS:9</string>
 												<bool key="NSEnabled">YES</bool>
 												<object class="NSButtonCell" key="NSCell" id="716874855">
-													<int key="NSCellFlags">67108864</int>
+													<int key="NSCellFlags">603979776</int>
 													<int key="NSCellFlags2">134217728</int>
 													<string key="NSContents">Scan BMP085 Sensor</string>
 													<reference key="NSSupport" ref="521917754"/>
@@ -1090,7 +1090,7 @@
 												<string key="NSReuseIdentifierKey">_NS:9</string>
 												<bool key="NSEnabled">YES</bool>
 												<object class="NSButtonCell" key="NSCell" id="899224341">
-													<int key="NSCellFlags">67108864</int>
+													<int key="NSCellFlags">603979776</int>
 													<int key="NSCellFlags2">134217728</int>
 													<string key="NSContents">Scan MAX44007 Sensor</string>
 													<reference key="NSSupport" ref="521917754"/>
@@ -1115,7 +1115,7 @@
 												<string key="NSReuseIdentifierKey">_NS:9</string>
 												<bool key="NSEnabled">YES</bool>
 												<object class="NSButtonCell" key="NSCell" id="430149727">
-													<int key="NSCellFlags">67108864</int>
+													<int key="NSCellFlags">603979776</int>
 													<int key="NSCellFlags2">134217728</int>
 													<string key="NSContents">Scan ADXL345 Accelerometer</string>
 													<reference key="NSSupport" ref="521917754"/>
@@ -1165,7 +1165,7 @@
 												<string key="NSReuseIdentifierKey">_NS:9</string>
 												<bool key="NSEnabled">YES</bool>
 												<object class="NSButtonCell" key="NSCell" id="797866309">
-													<int key="NSCellFlags">67108864</int>
+													<int key="NSCellFlags">603979776</int>
 													<int key="NSCellFlags2">134217728</int>
 													<string key="NSContents">Set Calibration</string>
 													<reference key="NSSupport" ref="521917754"/>
@@ -1190,7 +1190,7 @@
 												<string key="NSReuseIdentifierKey">_NS:9</string>
 												<bool key="NSEnabled">YES</bool>
 												<object class="NSButtonCell" key="NSCell" id="300276052">
-													<int key="NSCellFlags">67108864</int>
+													<int key="NSCellFlags">603979776</int>
 													<int key="NSCellFlags2">134217728</int>
 													<string key="NSContents">Write Calibration to Flash</string>
 													<reference key="NSSupport" ref="521917754"/>
@@ -1214,7 +1214,7 @@
 												<string key="NSReuseIdentifierKey">_NS:9</string>
 												<bool key="NSEnabled">YES</bool>
 												<object class="NSButtonCell" key="NSCell" id="271285372">
-													<int key="NSCellFlags">67108864</int>
+													<int key="NSCellFlags">603979776</int>
 													<int key="NSCellFlags2">134217728</int>
 													<string key="NSContents">Read Calibration from Flash</string>
 													<reference key="NSSupport" ref="521917754"/>
@@ -2401,14 +2401,6 @@
 					<int key="connectionID">1723</int>
 				</object>
 				<object class="IBConnectionRecord">
-					<object class="IBOutletConnection" key="connection">
-						<string key="label">AccelMField</string>
-						<reference key="source" ref="976324537"/>
-						<reference key="destination" ref="1027299116"/>
-					</object>
-					<int key="connectionID">1724</int>
-				</object>
-				<object class="IBConnectionRecord">
 					<object class="IBActionConnection" key="connection">
 						<string key="label">sendCmdScanMax:</string>
 						<reference key="source" ref="976324537"/>
@@ -2431,6 +2423,126 @@
 						<reference key="destination" ref="148880815"/>
 					</object>
 					<int key="connectionID">1729</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">lightField</string>
+						<reference key="source" ref="976324537"/>
+						<reference key="destination" ref="319510028"/>
+					</object>
+					<int key="connectionID">1730</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">accelMField</string>
+						<reference key="source" ref="976324537"/>
+						<reference key="destination" ref="1027299116"/>
+					</object>
+					<int key="connectionID">1731</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">btnDateTime</string>
+						<reference key="source" ref="976324537"/>
+						<reference key="destination" ref="960096195"/>
+					</object>
+					<int key="connectionID">1732</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">btnDiagnostics</string>
+						<reference key="source" ref="976324537"/>
+						<reference key="destination" ref="730526300"/>
+					</object>
+					<int key="connectionID">1733</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">btnReadInfo</string>
+						<reference key="source" ref="976324537"/>
+						<reference key="destination" ref="623052422"/>
+					</object>
+					<int key="connectionID">1734</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">btnBattVolt</string>
+						<reference key="source" ref="976324537"/>
+						<reference key="destination" ref="315266948"/>
+					</object>
+					<int key="connectionID">1735</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">btnReadButton</string>
+						<reference key="source" ref="976324537"/>
+						<reference key="destination" ref="728420856"/>
+					</object>
+					<int key="connectionID">1736</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">btnTestLEDs</string>
+						<reference key="source" ref="976324537"/>
+						<reference key="destination" ref="232036793"/>
+					</object>
+					<int key="connectionID">1737</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">btnCheckRTCC</string>
+						<reference key="source" ref="976324537"/>
+						<reference key="destination" ref="616880670"/>
+					</object>
+					<int key="connectionID">1738</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">btnBMP085</string>
+						<reference key="source" ref="976324537"/>
+						<reference key="destination" ref="704641718"/>
+					</object>
+					<int key="connectionID">1739</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">btnMAX44007</string>
+						<reference key="source" ref="976324537"/>
+						<reference key="destination" ref="409241266"/>
+					</object>
+					<int key="connectionID">1740</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">btnADXL345</string>
+						<reference key="source" ref="976324537"/>
+						<reference key="destination" ref="148880815"/>
+					</object>
+					<int key="connectionID">1741</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">btnSetCalibration</string>
+						<reference key="source" ref="976324537"/>
+						<reference key="destination" ref="678133823"/>
+					</object>
+					<int key="connectionID">1742</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">btnWriteCalibration</string>
+						<reference key="source" ref="976324537"/>
+						<reference key="destination" ref="733104851"/>
+					</object>
+					<int key="connectionID">1743</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">btnReadCalibration</string>
+						<reference key="source" ref="976324537"/>
+						<reference key="destination" ref="469722838"/>
+					</object>
+					<int key="connectionID">1745</int>
 				</object>
 			</array>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -9132,7 +9244,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">1729</int>
+			<int key="maxID">1745</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -9142,7 +9254,6 @@
 					<dictionary class="NSMutableDictionary" key="actions">
 						<string key="sendCmdBattVolt:">id</string>
 						<string key="sendCmdCheckRTCC:">id</string>
-						<string key="sendCmdMAX44007Sensor:">id</string>
 						<string key="sendCmdReadButton:">id</string>
 						<string key="sendCmdScanAdxl:">id</string>
 						<string key="sendCmdScanBmp:">id</string>
@@ -9157,10 +9268,6 @@
 						</object>
 						<object class="IBActionInfo" key="sendCmdCheckRTCC:">
 							<string key="name">sendCmdCheckRTCC:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBActionInfo" key="sendCmdMAX44007Sensor:">
-							<string key="name">sendCmdMAX44007Sensor:</string>
 							<string key="candidateClassName">id</string>
 						</object>
 						<object class="IBActionInfo" key="sendCmdReadButton:">
@@ -9195,6 +9302,19 @@
 						<string key="accelZField">NSTextField</string>
 						<string key="altitudeField">NSTextField</string>
 						<string key="battField">NSTextField</string>
+						<string key="btnADXL345">NSButton</string>
+						<string key="btnBMP085">NSButton</string>
+						<string key="btnBattVolt">NSButton</string>
+						<string key="btnCheckRTCC">NSButton</string>
+						<string key="btnDateTime">NSButton</string>
+						<string key="btnDiagnostics">NSButton</string>
+						<string key="btnMAX44007">NSButton</string>
+						<string key="btnReadButton">NSButton</string>
+						<string key="btnReadCalibration">NSButton</string>
+						<string key="btnReadInfo">NSButton</string>
+						<string key="btnSetCalibration">NSButton</string>
+						<string key="btnTestLEDs">NSButton</string>
+						<string key="btnWriteCalibration">NSButton</string>
 						<string key="cStatus">NSTextField</string>
 						<string key="dayField">NSTextField</string>
 						<string key="hourField">NSTextField</string>
@@ -9232,6 +9352,58 @@
 						<object class="IBToOneOutletInfo" key="battField">
 							<string key="name">battField</string>
 							<string key="candidateClassName">NSTextField</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="btnADXL345">
+							<string key="name">btnADXL345</string>
+							<string key="candidateClassName">NSButton</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="btnBMP085">
+							<string key="name">btnBMP085</string>
+							<string key="candidateClassName">NSButton</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="btnBattVolt">
+							<string key="name">btnBattVolt</string>
+							<string key="candidateClassName">NSButton</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="btnCheckRTCC">
+							<string key="name">btnCheckRTCC</string>
+							<string key="candidateClassName">NSButton</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="btnDateTime">
+							<string key="name">btnDateTime</string>
+							<string key="candidateClassName">NSButton</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="btnDiagnostics">
+							<string key="name">btnDiagnostics</string>
+							<string key="candidateClassName">NSButton</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="btnMAX44007">
+							<string key="name">btnMAX44007</string>
+							<string key="candidateClassName">NSButton</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="btnReadButton">
+							<string key="name">btnReadButton</string>
+							<string key="candidateClassName">NSButton</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="btnReadCalibration">
+							<string key="name">btnReadCalibration</string>
+							<string key="candidateClassName">NSButton</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="btnReadInfo">
+							<string key="name">btnReadInfo</string>
+							<string key="candidateClassName">NSButton</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="btnSetCalibration">
+							<string key="name">btnSetCalibration</string>
+							<string key="candidateClassName">NSButton</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="btnTestLEDs">
+							<string key="name">btnTestLEDs</string>
+							<string key="candidateClassName">NSButton</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="btnWriteCalibration">
+							<string key="name">btnWriteCalibration</string>
+							<string key="candidateClassName">NSButton</string>
 						</object>
 						<object class="IBToOneOutletInfo" key="cStatus">
 							<string key="name">cStatus</string>

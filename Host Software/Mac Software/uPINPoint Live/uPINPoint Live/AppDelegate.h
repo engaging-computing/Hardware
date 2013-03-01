@@ -31,6 +31,21 @@ const static int CMD_FULL_DIAGNOSTICS = 0x79;
 //Connection status field
 @property (unsafe_unretained) IBOutlet NSTextField *cStatus;
 
+//Buttons
+@property (unsafe_unretained) IBOutlet NSButton *btnDateTime;
+@property (unsafe_unretained) IBOutlet NSButton *btnDiagnostics;
+@property (unsafe_unretained) IBOutlet NSButton *btnReadInfo;
+@property (unsafe_unretained) IBOutlet NSButton *btnBattVolt;
+@property (unsafe_unretained) IBOutlet NSButton *btnReadButton;
+@property (unsafe_unretained) IBOutlet NSButton *btnTestLEDs;
+@property (unsafe_unretained) IBOutlet NSButton *btnCheckRTCC;
+@property (unsafe_unretained) IBOutlet NSButton *btnBMP085;
+@property (unsafe_unretained) IBOutlet NSButton *btnMAX44007;
+@property (unsafe_unretained) IBOutlet NSButton *btnADXL345;
+@property (unsafe_unretained) IBOutlet NSButton *btnSetCalibration;
+@property (unsafe_unretained) IBOutlet NSButton *btnWriteCalibration;
+@property (unsafe_unretained) IBOutlet NSButton *btnReadCalibration;
+
 //Time and date fields
 @property (unsafe_unretained) IBOutlet NSTextField *monthField;
 @property (unsafe_unretained) IBOutlet NSTextField *dayField;
@@ -49,7 +64,6 @@ const static int CMD_FULL_DIAGNOSTICS = 0x79;
 @property (unsafe_unretained) IBOutlet NSTextField *accelYField;
 @property (unsafe_unretained) IBOutlet NSTextField *accelZField;
 @property (unsafe_unretained) IBOutlet NSTextField *accelMField;
-
 
 //Results Console in Diagnostics tab
 @property (unsafe_unretained) IBOutlet NSTextView *resConsole;
@@ -73,6 +87,9 @@ const static int CMD_FULL_DIAGNOSTICS = 0x79;
 - (void)writeTextToConsole:(NSString*)message;
 
 - (void)showData;
+
+- (void)changeConnectionStatusView:(Boolean)status;
+- (void)setButtonsEnabled:(Boolean)status;
 
 //HID Device Callbacks taken from tutorial at http://ontrak.net/xcode.htm
 // USB device added callback function
