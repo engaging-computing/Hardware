@@ -71,7 +71,6 @@ IOHIDDeviceRef uPPT;
     }
 }
 
-
 //Enables or disables all the buttons that interact with the PINPoint
 - (void)setButtonsEnabled:(Boolean)status {
     [self.btnDateTime setEnabled:status];
@@ -88,8 +87,6 @@ IOHIDDeviceRef uPPT;
     [self.btnWriteCalibration setEnabled:status];
     [self.btnReadCalibration setEnabled:status];
 }
-
-
 
 //Called when the Set Date/Time button is pressed. Sends the new date/time to the uPPT
 - (IBAction)setTime:(id)sender {
@@ -200,12 +197,13 @@ static void Handle_DeviceMatchingCallback(void *inContext, IOReturn inResult, vo
     if(USBDeviceCount(inSender) == 1) {
         CFIndex reportSize = 64;
         uint8_t report = (uint8_t) malloc(reportSize);
+        
         uPPT = inIOHIDDeviceRef;
         [selfRef changeConnectionStatusView:true];
         [selfRef setButtonsEnabled:true];
         
         //Register a callback for Input HID Reports
-        IOHIDDeviceRegisterInputReportCallback(uPPT, &report, reportSize, Handle_IOHIDDeviceIOHIDReportCallback, NULL);
+        IOHIDDeviceRegisterInputReportCallback(uPPT, &report, kIOHIDMaxInputReportSizeKey, Handle_IOHIDDeviceIOHIDReportCallback, NULL);
     }
 }
 
@@ -216,8 +214,16 @@ static void Handle_DeviceRemovalCallback(void *inContext, IOReturn inResult, voi
         [selfRef setButtonsEnabled:false];
         uPPT = NULL;
         //Deregister the callback for Input HID Reports
-        IOHIDDeviceRegisterInputReportCallback(NULL, NULL, NULL, Handle_IOHIDDeviceIOHIDReportCallback, NULL);
+        IOHIDDeviceRegisterInputReportCallback(NULL, NULL, NULL, NULL, NULL);
     }
+}
+
+static long USBDeviceCount(IOHIDManagerRef HIDManager) {
+    CFSetRef devSet = IOHIDManagerCopyDevices (HIDManager);
+    if( devSet ) {
+        return CFSetGetCount(devSet);
+    }
+    return 0;
 }
 
 static void Handle_IOHIDDeviceIOHIDReportCallback(void *          inContext,          //context from IOHIDDeviceRegisterInputReportCallback
@@ -231,15 +237,6 @@ static void Handle_IOHIDDeviceIOHIDReportCallback(void *          inContext,    
     if(inResult == kIOReturnSuccess) {
         [selfRef readData:inReport];
     }
-}
-
-
-static long USBDeviceCount(IOHIDManagerRef HIDManager) {
-    CFSetRef devSet = IOHIDManagerCopyDevices (HIDManager);
-    if( devSet ) {
-        return CFSetGetCount(devSet);
-    }
-    return 0;
 }
 
 - (void) readData:(uint8_t *)inReport {
