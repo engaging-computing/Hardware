@@ -195,15 +195,15 @@ IOHIDDeviceRef uPPT;
 //Called when a new uPPT is plugged in
 static void Handle_DeviceMatchingCallback(void *inContext, IOReturn inResult, void *inSender, IOHIDDeviceRef inIOHIDDeviceRef){
     if(USBDeviceCount(inSender) == 1) {
-        CFIndex reportSize = 64;
-        uint8_t report = (uint8_t) malloc(reportSize);
+        CFIndex reportSize = IOHIDDeviceGetProperty(inIOHIDDeviceRef, CFSTR(kIOHIDMaxInputReportSizeKey));
+        uint8_t mReport = (uint8_t) malloc(reportSize);
         
         uPPT = inIOHIDDeviceRef;
         [selfRef changeConnectionStatusView:true];
         [selfRef setButtonsEnabled:true];
-        
+
         //Register a callback for Input HID Reports
-        IOHIDDeviceRegisterInputReportCallback(uPPT, &report, kIOHIDMaxInputReportSizeKey, Handle_IOHIDDeviceIOHIDReportCallback, NULL);
+        IOHIDDeviceRegisterInputReportCallback(inIOHIDDeviceRef, &mReport, reportSize, Handle_IOHIDDeviceIOHIDReportCallback, NULL);
     }
 }
 
