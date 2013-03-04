@@ -167,10 +167,9 @@ IOHIDDeviceRef uPPT;
 
 //Writes a message to the console under the Diagnostics tab
 - (void)writeTextToConsole:(NSString*)message {
-    NSRange mRange;
-    mRange = NSMakeRange([[self.resConsole string] length], 0);
+    NSRange mRange = NSMakeRange([[self.resConsole string] length], 0);
     [self.resConsole replaceCharactersInRange:mRange withString:message];
-    [self.resConsole scrollRangeToVisible:mRange];
+    [self.resConsole scrollRangeToVisible:NSMakeRange([[self.resConsole string] length], 0)];
     [self.resConsole display];
 }
 
@@ -200,14 +199,14 @@ IOHIDDeviceRef uPPT;
 static void Handle_DeviceMatchingCallback(void *inContext, IOReturn inResult, void *inSender, IOHIDDeviceRef inIOHIDDeviceRef){
     if(USBDeviceCount(inSender) == 1) {
         CFIndex reportSize = IOHIDDeviceGetProperty(inIOHIDDeviceRef, CFSTR(kIOHIDMaxInputReportSizeKey));
-        uint8_t mReport = (uint8_t) malloc(reportSize);
+        uint8_t* mReport = (uint8_t*) malloc(reportSize * sizeof(uint8_t));
         
         uPPT = inIOHIDDeviceRef;
         [selfRef changeConnectionStatusView:true];
         [selfRef setButtonsEnabled:true];
 
         //Register a callback for Input HID Reports
-        IOHIDDeviceRegisterInputReportCallback(inIOHIDDeviceRef, &mReport, reportSize, Handle_IOHIDDeviceIOHIDReportCallback, NULL);
+        IOHIDDeviceRegisterInputReportCallback(inIOHIDDeviceRef, mReport, reportSize, Handle_IOHIDDeviceIOHIDReportCallback, NULL);
     }
 }
 
@@ -277,9 +276,9 @@ static void Handle_IOHIDDeviceIOHIDReportCallback(void *          inContext,    
         }
         case CMD_READ_SYSTEM_INFO: {
             NSMutableString *message = [NSMutableString stringWithString:@"Read System Info:\r\n"];
-            [message appendString:[NSString stringWithFormat:@"--Firmware version 0x%2x%2x\r\n", inReport[1], inReport[2]]];
+            [message appendString:[NSString stringWithFormat:@"--Firmware version: 0x%.2x%.2x\r\n", inReport[1], inReport[2]]];
             utemp = ((uint32)inReport[3] << 24) + ((uint32)inReport[4] << 16) + ((uint32)inReport[5] << 8) + (uint32)inReport[6];
-            [message appendString:[NSString stringWithFormat:@"--Serial #%u\r\n", utemp]];
+            [message appendString:[NSString stringWithFormat:@"--Serial Number: #%u\r\n", utemp]];
             temporary = ((uint32)inReport[7] << 24) + ((uint32)inReport[8] << 16) + ((uint32)inReport[9] << 8) + (uint32)inReport[10];
             [message appendString:[NSString stringWithFormat:@"--Temperature Offset: %d\r\n", temporary]];
             temporary = ((uint32)inReport[11] << 24) + ((uint32)inReport[12] << 16) + ((uint32)inReport[13] << 8) + (uint32)inReport[14];
@@ -375,6 +374,9 @@ static void Handle_IOHIDDeviceIOHIDReportCallback(void *          inContext,    
             
             [selfRef writeTextToConsole:message];
             
+            break;
+        }
+        default: {
             break;
         }
     }
