@@ -2544,6 +2544,14 @@
 					</object>
 					<int key="connectionID">1745</int>
 				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBActionConnection" key="connection">
+						<string key="label">sendCmdSysInfo:</string>
+						<reference key="source" ref="976324537"/>
+						<reference key="destination" ref="623052422"/>
+					</object>
+					<int key="connectionID">1757</int>
+				</object>
 			</array>
 			<object class="IBMutableOrderedSet" key="objectRecords">
 				<array key="orderedObjects">
@@ -9244,7 +9252,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">1755</int>
+			<int key="maxID">1757</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -9258,6 +9266,7 @@
 						<string key="sendCmdScanAdxl:">id</string>
 						<string key="sendCmdScanBmp:">id</string>
 						<string key="sendCmdScanMax:">id</string>
+						<string key="sendCmdSysInfo:">id</string>
 						<string key="sendCmdTestLEDs:">id</string>
 						<string key="setTime:">id</string>
 					</dictionary>
@@ -9284,6 +9293,10 @@
 						</object>
 						<object class="IBActionInfo" key="sendCmdScanMax:">
 							<string key="name">sendCmdScanMax:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="sendCmdSysInfo:">
+							<string key="name">sendCmdSysInfo:</string>
 							<string key="candidateClassName">id</string>
 						</object>
 						<object class="IBActionInfo" key="sendCmdTestLEDs:">

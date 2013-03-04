@@ -122,6 +122,10 @@ IOHIDDeviceRef uPPT;
 - (IBAction)sendCmdBattVolt:(id)sender {
     [self sendGenericCommand:CMD_READ_BATTERY_VOLTAGE];
 }
+//Called when the Read System Info button is pressed
+- (IBAction)sendCmdSysInfo:(id)sender {
+    [self sendGenericCommand:CMD_READ_SYSTEM_INFO];
+}
 //Called when the Read Button button is pressed
 - (IBAction)sendCmdReadButton:(id)sender {
     [self sendGenericCommand:CMD_READ_BUTTON];
@@ -241,6 +245,7 @@ static void Handle_IOHIDDeviceIOHIDReportCallback(void *          inContext,    
 
 - (void) readData:(uint8_t *)inReport {
     int temporary; //temporary storage for values
+    unsigned utemp; //unsigned temporary storage
     
     //inReport[0] is the command, or response code
     //inReport[1-63] vary by type
@@ -270,14 +275,31 @@ static void Handle_IOHIDDeviceIOHIDReportCallback(void *          inContext,    
             
             break;
         }
+        case CMD_READ_SYSTEM_INFO: {
+            NSMutableString *message = [NSMutableString stringWithString:@"Read System Info:\r\n"];
+            [message appendString:[NSString stringWithFormat:@"--Firmware version 0x%2x%2x\r\n", inReport[1], inReport[2]]];
+            utemp = ((uint32)inReport[3] << 24) + ((uint32)inReport[4] << 16) + ((uint32)inReport[5] << 8) + (uint32)inReport[6];
+            [message appendString:[NSString stringWithFormat:@"--Serial #%u\r\n", utemp]];
+            temporary = ((uint32)inReport[7] << 24) + ((uint32)inReport[8] << 16) + ((uint32)inReport[9] << 8) + (uint32)inReport[10];
+            [message appendString:[NSString stringWithFormat:@"--Temperature Offset: %d\r\n", temporary]];
+            temporary = ((uint32)inReport[11] << 24) + ((uint32)inReport[12] << 16) + ((uint32)inReport[13] << 8) + (uint32)inReport[14];
+            [message appendString:[NSString stringWithFormat:@"--Pressure Offset: %d\r\n", temporary]];
+            temporary = ((uint32)inReport[15] << 24) + ((uint32)inReport[16] << 16) + ((uint32)inReport[17] << 8) + (uint32)inReport[18];
+            [message appendString:[NSString stringWithFormat:@"--Accel X Offset: %d\r\n", temporary]];
+            temporary = ((uint32)inReport[19] << 24) + ((uint32)inReport[20] << 16) + ((uint32)inReport[21] << 8) + (uint32)inReport[22];
+            [message appendString:[NSString stringWithFormat:@"--Accel Y Offset: %d\r\n", temporary]];
+            temporary = ((uint32)inReport[23] << 24) + ((uint32)inReport[24] << 16) + ((uint32)inReport[25] << 8) + (uint32)inReport[26];
+            [message appendString:[NSString stringWithFormat:@"--Accel Z Offset: %d\r\n", temporary]];
+            temporary = ((uint32)inReport[27] << 24) + ((uint32)inReport[28] << 16) + ((uint32)inReport[29] << 8) + (uint32)inReport[30];
+            [message appendString:[NSString stringWithFormat:@"--Light Offset: %d\r\n", temporary]];
+            
+            [selfRef writeTextToConsole:message];
+            break;
+        }
         case CMD_READ_BATTERY_VOLTAGE: {
             temporary = ((uint32)inReport[1] << 24) + ((uint32)inReport[2] << 16) + ((uint32)inReport[3] << 8) + (uint32)inReport[4];
             NSMutableString *message = [NSString stringWithFormat:@"Read battery voltage:  %.2f V\r\n", ((double)temporary/100.0)];
             [selfRef writeTextToConsole:message];
-            break;
-        }
-        case CMD_TEST_LEDS:{
-            [selfRef writeTextToConsole:@"Test LEDs: Did they both come on?\r\n"];
             break;
         }
         case CMD_READ_BUTTON:{
@@ -291,6 +313,10 @@ static void Handle_IOHIDDeviceIOHIDReportCallback(void *          inContext,    
             
             [selfRef writeTextToConsole:message];
             
+            break;
+        }
+        case CMD_TEST_LEDS:{
+            [selfRef writeTextToConsole:@"Test LEDs: Did they both come on?\r\n"];
             break;
         }
         case CMD_CHECK_RTCC: {
