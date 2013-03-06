@@ -65,6 +65,10 @@ const static int CMD_FULL_DIAGNOSTICS = 0x79;
 @property (unsafe_unretained) IBOutlet NSTextField *accelZField;
 @property (unsafe_unretained) IBOutlet NSTextField *accelMField;
 
+//Pressure/Temp/Altitude/Light tab view
+@property (unsafe_unretained) IBOutlet NSView *viewTab1;
+
+
 //Results Console in Diagnostics tab
 @property (unsafe_unretained) IBOutlet NSTextView *resConsole;
 
