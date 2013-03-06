@@ -72,6 +72,7 @@ const static int CMD_FULL_DIAGNOSTICS = 0x79;
 
 //functions for UI button presses
 - (IBAction)setTime:(id)sender;
+- (IBAction)sendCmdRunDiagnostics:(id)sender;
 - (IBAction)sendCmdBattVolt:(id)sender;
 - (IBAction)sendCmdSysInfo:(id)sender;
 - (IBAction)sendCmdReadButton:(id)sender;

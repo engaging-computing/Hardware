@@ -118,6 +118,10 @@ IOHIDDeviceRef uPPT;
     //Send the built report to the uPPT
     IOHIDDeviceSetReport(uPPT, kIOHIDReportTypeOutput, 0, report, reportSize);
 }
+//Called when the Run Full Diagnostics button is pressed
+- (IBAction)sendCmdRunDiagnostics:(id)sender {
+    [self sendGenericCommand:CMD_FULL_DIAGNOSTICS];
+}
 //Called when the Read Battery Voltage button is pressed
 - (IBAction)sendCmdBattVolt:(id)sender {
     [self sendGenericCommand:CMD_READ_BATTERY_VOLTAGE];
@@ -151,7 +155,7 @@ IOHIDDeviceRef uPPT;
     [self sendGenericCommand:CMD_SCAN_ADXL345];
 }
 
-//Sends one of the generic single-byte command to the uPPT
+//Sends a generic single-byte command to the uPPT
 - (void)sendGenericCommand:(uint8_t)cmd {
     CFIndex reportSize = 64;
     uint8_t *report = malloc(reportSize * sizeof(uint8_t));
@@ -275,7 +279,7 @@ static void Handle_IOHIDDeviceIOHIDReportCallback(void *          inContext,    
             break;
         }
         case CMD_READ_SYSTEM_INFO: {
-            NSMutableString *message = [NSMutableString stringWithString:@"Read System Info:\r\n"];
+            NSMutableString *message = [NSMutableString stringWithString:@"System Info:\r\n"];
             [message appendString:[NSString stringWithFormat:@"--Firmware version: 0x%.2x%.2x\r\n", inReport[1], inReport[2]]];
             utemp = ((uint32)inReport[3] << 24) + ((uint32)inReport[4] << 16) + ((uint32)inReport[5] << 8) + (uint32)inReport[6];
             [message appendString:[NSString stringWithFormat:@"--Serial Number: #%u\r\n", utemp]];
@@ -375,6 +379,52 @@ static void Handle_IOHIDDeviceIOHIDReportCallback(void *          inContext,    
             [selfRef writeTextToConsole:message];
             
             break;
+        }
+        case CMD_FULL_DIAGNOSTICS: {
+            NSMutableString *message = [NSMutableString stringWithFormat:@"Full Diagnostics:\r\n--Firmware version: 0x%.2x%.2x\r\n",
+                                        inReport[1], inReport[2]];
+            temporary = ((uint32)inReport[3] << 24) + ((uint32)inReport[4] << 16) + ((uint32)inReport[5] << 8) + (uint32)inReport[6];
+            if(temporary < 40) {
+                [message appendString:
+                 [NSString stringWithFormat:@"--Battery: FAIL, is the battery installed? - %.2fV\r\n", ((double)temporary/100.0)]];
+            } else {
+                [message appendString:[NSString stringWithFormat:@"--Battery: PASS - %.2fV\r\n", ((double)temporary/100.0)]];
+            }
+            if(inReport[7] == 0) {
+                [message appendString:@"--Button: Read as DOWN, is this correct?\r\n"];
+            } else {
+                [message appendString:@"--Button: Read as UP, is this correct?\r\n"];
+            }
+            [message appendString:@"--LEDs: Did they both come on?\r\n"];
+            if(inReport[8] == 0) {
+                [message appendString:@"--RTCC: PASS, RTCC is running\r\n"];
+            } else {
+                [message appendString:@"--RTCC: FAIL, RTCC does not appear to be running\r\n"];
+            }
+            if(inReport[9] == 0) {
+                [message appendString:
+                 [NSString stringWithFormat:@"--BMP085: PASS, device responded to inquiry - 0x%.2x%.2x\r\n", inReport[10], inReport[11]]];
+            } else {
+                [message appendString:
+                 [NSString stringWithFormat:@"--BMP085: FAIL, no response from device - 0x%.2x%.2x\r\n", inReport[10], inReport[11]]];
+            }
+            if(inReport[12] == 0) {
+                [message appendString:
+                 [NSString stringWithFormat:@"--MAX44007: PASS, device responded to inquiry - 0x%.2x%.2x\r\n", inReport[13], inReport[14]]];
+            } else {
+                [message appendString:
+                 [NSString stringWithFormat:@"--MAX44007: FAIL, no response from device - 0x%.2x%.2x\r\n", inReport[13], inReport[14]]];
+            }
+            if(inReport[15] == 0) {
+                [message appendString:
+                 [NSString stringWithFormat:@"--ADXL345: PASS, device responded to inquiry - 0x%.2x%.2x\r\n", inReport[16], inReport[17]]];
+            } else {
+                [message appendString:
+                 [NSString stringWithFormat:@"--ADXL345: FAIL, no response from device - 0x%.2x%.2x\r\n", inReport[16], inReport[17]]];
+            }
+            
+            
+            [selfRef writeTextToConsole:message];
         }
         default: {
             break;
