@@ -86,6 +86,8 @@ const static int CMD_FULL_DIAGNOSTICS = 0x79;
 - (IBAction)sendCmdScanMax:(id)sender;
 - (IBAction)sendCmdScanAdxl:(id)sender;
 
+- (void) initializeGraphs;
+
 - (void) readData:(uint8_t *)inReport;
 
 - (void)sendGenericCommand:(uint8_t)cmd;

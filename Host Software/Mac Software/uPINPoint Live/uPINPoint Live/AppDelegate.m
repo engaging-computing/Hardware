@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import <IOKit/Hid/IOHIDManager.h>
 #import <CoreFoundation/CFSet.h>
+#import "CorePlot.h"
 
 @implementation AppDelegate
 
@@ -55,6 +56,12 @@ IOHIDDeviceRef uPPT;
     //Open the HID Manager
     IOReturn IOReturn = IOHIDManagerOpen(hidManager, kIOHIDOptionsTypeNone);
     if(IOReturn) NSLog(@"IOHIDManagerOpen failed."); //Couldn't open the HID Manager!
+    
+    [self initializeGraphs];
+}
+
+- (void) initializeGraphs {
+    CPTGraph *graph = [[CPTXYGraph alloc] initWithFrame:self.viewTab1.bounds];
     
 }
 

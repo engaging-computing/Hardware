@@ -19,6 +19,7 @@
 		6E480BE6169F2091002B3100 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6E480BE4169F2091002B3100 /* InfoPlist.strings */; };
 		6E480BE9169F2091002B3100 /* uPINPoint_LiveTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E480BE8169F2091002B3100 /* uPINPoint_LiveTests.m */; };
 		6EAACF2316E7BE4D0016DB79 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EAACF2216E7BE4D0016DB79 /* QuartzCore.framework */; };
+		6ED6C28316F22AF500DB9E74 /* CorePlot.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EAACF1F16E7BD610016DB79 /* CorePlot.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6ED6C28316F22AF500DB9E74 /* CorePlot.framework in Frameworks */,
 				6EAACF2316E7BE4D0016DB79 /* QuartzCore.framework in Frameworks */,
 				6E202F3416B0594100F47A1F /* IOKit.framework in Frameworks */,
 				6E480BBF169F2090002B3100 /* Cocoa.framework in Frameworks */,
@@ -440,9 +442,13 @@
 		6E480BED169F2091002B3100 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "uPINPoint Live/uPINPoint Live-Prefix.pch";
+				"HEADER_SEARCH_PATHS[arch=*]" = (
+					"\"/Users/NickAVV/Documents/Actual Documents/XCode Frameworks/CorePlot_1.1/Source/framework/\"",
+				);
 				INFOPLIST_FILE = "uPINPoint Live/uPINPoint Live-Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -453,9 +459,13 @@
 		6E480BEE169F2091002B3100 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "uPINPoint Live/uPINPoint Live-Prefix.pch";
+				"HEADER_SEARCH_PATHS[arch=*]" = (
+					"\"/Users/NickAVV/Documents/Actual Documents/XCode Frameworks/CorePlot_1.1/Source/framework/\"",
+				);
 				INFOPLIST_FILE = "uPINPoint Live/uPINPoint Live-Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				PRODUCT_NAME = "$(TARGET_NAME)";
