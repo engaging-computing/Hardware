@@ -120,6 +120,7 @@ IOHIDDeviceRef uPPT;
 }
 //Called when the Run Full Diagnostics button is pressed
 - (IBAction)sendCmdRunDiagnostics:(id)sender {
+    [self writeTextToConsole:@"Running full diagnostics...\r\n"];
     [self sendGenericCommand:CMD_FULL_DIAGNOSTICS];
 }
 //Called when the Read Battery Voltage button is pressed
