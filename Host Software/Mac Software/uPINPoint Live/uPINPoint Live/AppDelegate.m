@@ -62,20 +62,27 @@ IOHIDDeviceRef uPPT;
 
 - (void) initializeGraphs {
     
+    CPTTheme *theme = [CPTTheme themeNamed:kCPTPlainWhiteTheme];
+    
+    
     CPTXYGraph *graphP = [[CPTXYGraph alloc] initWithFrame:CGRectZero];
     graphP.title = @"Pressure";
+    [graphP applyTheme:theme];
     self.graphPressure.hostedGraph = graphP;
     
     CPTXYGraph *graphT = [[CPTXYGraph alloc] initWithFrame:CGRectZero];
     graphT.title = @"Temperature";
+    [graphT applyTheme:theme];
     self.graphTemperature.hostedGraph = graphT;
     
     CPTXYGraph *graphA = [[CPTXYGraph alloc] initWithFrame:CGRectZero];
     graphA.title = @"Altitude";
+    [graphA applyTheme:theme];
     self.graphAltitude.hostedGraph = graphA;
     
     CPTXYGraph *graphL = [[CPTXYGraph alloc] initWithFrame:CGRectZero];
     graphL.title = @"Light";
+    [graphL applyTheme:theme];
     self.graphLight.hostedGraph = graphL;
 }
 
