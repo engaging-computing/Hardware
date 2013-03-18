@@ -8,6 +8,7 @@
 
 #import <Cocoa/Cocoa.h>
 #import <IOKit/hid/IOHIDManager.h>
+#import "CorePlot.h"
 
 //define uPPT Command Bytes
 const static int CMD_READ_ALL = 0x80;
@@ -65,8 +66,11 @@ const static int CMD_FULL_DIAGNOSTICS = 0x79;
 @property (unsafe_unretained) IBOutlet NSTextField *accelZField;
 @property (unsafe_unretained) IBOutlet NSTextField *accelMField;
 
-//Pressure/Temp/Altitude/Light tab view
-@property (unsafe_unretained) IBOutlet NSView *viewTab1;
+//Pressure/Temp/Altitude/Light tab views
+@property (unsafe_unretained) IBOutlet CPTGraphHostingView *graphPressure;
+@property (unsafe_unretained) IBOutlet CPTGraphHostingView *graphTemperature;
+@property (unsafe_unretained) IBOutlet CPTGraphHostingView *graphAltitude;
+@property (unsafe_unretained) IBOutlet CPTGraphHostingView *graphLight;
 
 
 //Results Console in Diagnostics tab

@@ -61,8 +61,22 @@ IOHIDDeviceRef uPPT;
 }
 
 - (void) initializeGraphs {
-    CPTGraph *graph = [[CPTXYGraph alloc] initWithFrame:self.viewTab1.bounds];
     
+    CPTXYGraph *graphP = [[CPTXYGraph alloc] initWithFrame:CGRectZero];
+    graphP.title = @"Pressure";
+    self.graphPressure.hostedGraph = graphP;
+    
+    CPTXYGraph *graphT = [[CPTXYGraph alloc] initWithFrame:CGRectZero];
+    graphT.title = @"Temperature";
+    self.graphTemperature.hostedGraph = graphT;
+    
+    CPTXYGraph *graphA = [[CPTXYGraph alloc] initWithFrame:CGRectZero];
+    graphA.title = @"Altitude";
+    self.graphAltitude.hostedGraph = graphA;
+    
+    CPTXYGraph *graphL = [[CPTXYGraph alloc] initWithFrame:CGRectZero];
+    graphL.title = @"Light";
+    self.graphLight.hostedGraph = graphL;
 }
 
 //Changes the connection status field in the UI
