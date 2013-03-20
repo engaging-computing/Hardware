@@ -63,26 +63,65 @@ IOHIDDeviceRef uPPT;
 - (void) initializeGraphs {
     
     CPTTheme *theme = [CPTTheme themeNamed:kCPTPlainWhiteTheme];
+    CPTMutableTextStyle *axisTitleTextStyle = [[CPTMutableTextStyle alloc] init];
+    axisTitleTextStyle.fontName = @"Helvetica";
+    axisTitleTextStyle.fontSize = 14.0;
+    CPTMutableTextStyle *axisLabelTextStyle = [[CPTMutableTextStyle alloc] init];
+    axisLabelTextStyle.fontName = @"Helvetica";
+    axisLabelTextStyle.fontSize = 10.0;
     
-    
+    //Set up the pressure graph
     CPTXYGraph *graphP = [[CPTXYGraph alloc] initWithFrame:CGRectZero];
     graphP.title = @"Pressure";
     [graphP applyTheme:theme];
     self.graphPressure.hostedGraph = graphP;
     
+    //Set up the temperature graph
     CPTXYGraph *graphT = [[CPTXYGraph alloc] initWithFrame:CGRectZero];
     graphT.title = @"Temperature";
     [graphT applyTheme:theme];
     self.graphTemperature.hostedGraph = graphT;
     
+    //Set up the altitude graph
     CPTXYGraph *graphA = [[CPTXYGraph alloc] initWithFrame:CGRectZero];
     graphA.title = @"Altitude";
     [graphA applyTheme:theme];
     self.graphAltitude.hostedGraph = graphA;
     
+    //Set up the light graph
     CPTXYGraph *graphL = [[CPTXYGraph alloc] initWithFrame:CGRectZero];
     graphL.title = @"Light";
     [graphL applyTheme:theme];
+    graphL.paddingLeft = 10.0;
+    graphL.paddingRight = 10.0;
+    graphL.plotAreaFrame.paddingTop    = 10.0;
+    graphL.plotAreaFrame.paddingBottom = 20.0;
+    graphL.plotAreaFrame.paddingLeft   = 50.0;
+    graphL.plotAreaFrame.paddingRight  = 20.0;
+    graphL.plotAreaFrame.borderLineStyle = nil;
+    graphL.titleTextStyle = axisTitleTextStyle;
+    CPTXYAxisSet *axisSetL = (CPTXYAxisSet *)graphL.axisSet;
+    CPTXYPlotSpace *plotSpaceL = (CPTXYPlotSpace *)graphL.defaultPlotSpace;
+    plotSpaceL.xRange = [CPTPlotRange plotRangeWithLocation:CPTDecimalFromFloat(0)
+                                                     length:CPTDecimalFromFloat(50)];
+    plotSpaceL.yRange = [CPTPlotRange plotRangeWithLocation:CPTDecimalFromFloat(0)
+                                                     length:CPTDecimalFromFloat(7000)];
+    CPTXYAxis *xL = axisSetL.xAxis;
+    xL.majorIntervalLength = CPTDecimalFromFloat(10);
+    xL.minorTicksPerInterval = 4;
+    xL.title = @"Time (seconds)";
+    xL.labelTextStyle = axisLabelTextStyle;
+    xL.titleTextStyle = axisLabelTextStyle;
+
+    CPTXYAxis *yL = axisSetL.yAxis;
+    yL.majorIntervalLength = CPTDecimalFromFloat(1000);
+    yL.minorTicksPerInterval = 4;
+    yL.title = @"Light (lux)";
+    yL.labelTextStyle = axisLabelTextStyle;
+    yL.titleTextStyle = axisLabelTextStyle;
+    yL.labelOffset = -5.0;
+    yL.labelRotation = -370;
+    
     self.graphLight.hostedGraph = graphL;
 }
 
