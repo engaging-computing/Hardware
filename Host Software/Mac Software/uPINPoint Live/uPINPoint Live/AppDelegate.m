@@ -10,6 +10,7 @@
 #import <IOKit/Hid/IOHIDManager.h>
 #import <CoreFoundation/CFSet.h>
 #import "CorePlot.h"
+#import "MDataSource.h"
 
 @implementation AppDelegate
 
@@ -19,6 +20,14 @@
 id selfRef;
 NSColor *colorRed, *colorGreen, *colorWhite;
 IOHIDDeviceRef uPPT;
+
+//Graph objects
+CPTXYGraph *graphP, *graphT, *graphL, *graphA;
+
+//Array objects to hold recent data, for graphing
+int tickNumber = 0;
+NSMutableArray *lightArray;
+MDataSource *dataSourceL;
 
 //Quit the application when there are no open windows
 - (BOOL)applicationShouldTerminateAfterLastWindowClosed:(NSApplication *)theApplication {
@@ -31,7 +40,10 @@ IOHIDDeviceRef uPPT;
     colorRed =  [NSColor colorWithCalibratedRed:0.7f green:0.0f blue:0.0f alpha:1.0f];
     colorGreen = [NSColor colorWithCalibratedRed:0.0f green:0.7f blue:0.0f alpha:1.0f];
     colorWhite = [NSColor colorWithCalibratedRed:1.0f green:1.0f blue:1.0f alpha:1.0f];
-        
+    
+    lightArray = [[NSMutableArray alloc] init];
+    dataSourceL = [[MDataSource alloc] init];
+    
     [self.resConsole setFont:[NSFont fontWithName:@"Courier" size:12]];
         
     int vendorID = 0x04D8;
@@ -71,25 +83,25 @@ IOHIDDeviceRef uPPT;
     axisLabelTextStyle.fontSize = 10.0;
     
     //Set up the pressure graph
-    CPTXYGraph *graphP = [[CPTXYGraph alloc] initWithFrame:CGRectZero];
+    graphP = [[CPTXYGraph alloc] initWithFrame:CGRectZero];
     graphP.title = @"Pressure";
     [graphP applyTheme:theme];
     self.graphPressure.hostedGraph = graphP;
     
     //Set up the temperature graph
-    CPTXYGraph *graphT = [[CPTXYGraph alloc] initWithFrame:CGRectZero];
+    graphT = [[CPTXYGraph alloc] initWithFrame:CGRectZero];
     graphT.title = @"Temperature";
     [graphT applyTheme:theme];
     self.graphTemperature.hostedGraph = graphT;
     
     //Set up the altitude graph
-    CPTXYGraph *graphA = [[CPTXYGraph alloc] initWithFrame:CGRectZero];
+    graphA = [[CPTXYGraph alloc] initWithFrame:CGRectZero];
     graphA.title = @"Altitude";
     [graphA applyTheme:theme];
     self.graphAltitude.hostedGraph = graphA;
     
     //Set up the light graph
-    CPTXYGraph *graphL = [[CPTXYGraph alloc] initWithFrame:CGRectZero];
+    graphL = [[CPTXYGraph alloc] initWithFrame:CGRectZero];
     graphL.title = @"Light";
     [graphL applyTheme:theme];
     graphL.paddingLeft = 10.0;
@@ -122,6 +134,8 @@ IOHIDDeviceRef uPPT;
     yL.labelOffset = -5.0;
     yL.labelRotation = -370;
     
+    CPTScatterPlot *lightScatter = [[CPTScatterPlot alloc] init];
+    lightScatter.dataSource = dataSourceL;
     self.graphLight.hostedGraph = graphL;
 }
 
@@ -265,6 +279,23 @@ IOHIDDeviceRef uPPT;
     [self.accelMField setStringValue:[NSString stringWithFormat:@"%.2f", ((double)accelM/100.0)]];
     
     [self.lightField setStringValue:[NSString stringWithFormat:@"%.1f", ((double)light/10.0)]];
+    
+    //Update the arrays for graphing
+    NSNumber *currTick = [NSNumber numberWithFloat:(float)tickNumber];
+    
+    NSNumber *tempLight = [NSNumber numberWithFloat:((double)light/10.0)];
+    if([lightArray count] > 50) {
+        [lightArray removeObjectAtIndex:0];
+    }
+    //Build an array with an X and Y of the current tick number and current light value
+    NSMutableArray *tempLightPoint = [[NSMutableArray alloc] init];
+    [tempLightPoint addObject:currTick];
+    [tempLightPoint addObject:tempLight];
+    [lightArray addObject:tempLightPoint]; //Add that array to the data set
+    [dataSourceL setDataArray:lightArray]; //Set that array into the Light Graph data source
+    [graphL reloadData];
+    
+    tickNumber ++;
 }
 
 //Called when a new uPPT is plugged in
