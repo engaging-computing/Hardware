@@ -23,6 +23,7 @@ IOHIDDeviceRef uPPT;
 
 //Graph objects
 CPTXYGraph *graphP, *graphT, *graphL, *graphA;
+CPTXYPlotSpace *plotSpaceL;
 
 //Array objects to hold recent data, for graphing
 int tickNumber = 0;
@@ -113,11 +114,11 @@ MDataSource *dataSourceL;
     graphL.plotAreaFrame.borderLineStyle = nil;
     graphL.titleTextStyle = axisTitleTextStyle;
     CPTXYAxisSet *axisSetL = (CPTXYAxisSet *)graphL.axisSet;
-    CPTXYPlotSpace *plotSpaceL = (CPTXYPlotSpace *)graphL.defaultPlotSpace;
+    plotSpaceL = (CPTXYPlotSpace *)graphL.defaultPlotSpace;
     plotSpaceL.xRange = [CPTPlotRange plotRangeWithLocation:CPTDecimalFromFloat(0)
                                                      length:CPTDecimalFromFloat(50)];
     plotSpaceL.yRange = [CPTPlotRange plotRangeWithLocation:CPTDecimalFromFloat(0)
-                                                     length:CPTDecimalFromFloat(7000)];
+                                                     length:CPTDecimalFromFloat(8000)];
     CPTXYAxis *xL = axisSetL.xAxis;
     xL.majorIntervalLength = CPTDecimalFromFloat(10);
     xL.minorTicksPerInterval = 4;
@@ -136,6 +137,7 @@ MDataSource *dataSourceL;
     
     CPTScatterPlot *lightScatter = [[CPTScatterPlot alloc] init];
     lightScatter.dataSource = dataSourceL;
+    [graphL addPlot:lightScatter toPlotSpace:plotSpaceL];
     self.graphLight.hostedGraph = graphL;
 }
 
@@ -286,6 +288,8 @@ MDataSource *dataSourceL;
     NSNumber *tempLight = [NSNumber numberWithFloat:((double)light/10.0)];
     if([lightArray count] > 50) {
         [lightArray removeObjectAtIndex:0];
+        plotSpaceL.xRange = [CPTPlotRange plotRangeWithLocation:CPTDecimalFromFloat([lightArray count]-50)
+                                                         length:CPTDecimalFromFloat([lightArray count])];
     }
     //Build an array with an X and Y of the current tick number and current light value
     NSMutableArray *tempLightPoint = [[NSMutableArray alloc] init];

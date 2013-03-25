@@ -20,7 +20,17 @@
 }
 
 -(NSNumber *)numberForPlot:(CPTPlot *)plot field:(NSUInteger)fieldEnum recordIndex:(NSUInteger)index {
-    return [[myDataArray objectAtIndex: index] objectAtIndex: fieldEnum];
+    NSArray *subpoint = [myDataArray objectAtIndex:index];
+    
+    // FieldEnum determines if we return an X or Y value.
+    if ( fieldEnum == CPTScatterPlotFieldX )
+    {
+        return [NSNumber numberWithFloat:[[subpoint objectAtIndex:0] floatValue]];
+    }
+    else    // Y-Axis
+    {
+        return [NSNumber numberWithFloat:[[subpoint objectAtIndex:1] floatValue]];
+    }
 }
 
 @end
