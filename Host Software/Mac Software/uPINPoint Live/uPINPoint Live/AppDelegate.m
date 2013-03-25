@@ -22,14 +22,14 @@ NSColor *colorRed, *colorGreen, *colorWhite;
 IOHIDDeviceRef uPPT;
 
 //Graph objects
-CPTXYGraph *graphP, *graphT, *graphL, *graphA;
-CPTXYPlotSpace *plotSpaceL;
+CPTXYGraph *graphP, *graphT, *graphA, *graphL;
+CPTXYPlotSpace *plotSpaceP,*plotSpaceT, *plotSpaceA, *plotSpaceL;
 CPTMutableLineStyle *lineStyle;
 
 //Array objects to hold recent data, for graphing
 int tickNumber = 0;
-NSMutableArray *lightArray;
-MDataSource *dataSourceL;
+NSMutableArray *pressureArray, *temperatureArray, *altitudeArray, *lightArray;
+MDataSource *dataSourceP, *dataSourceT, *dataSourceA, *dataSourceL;
 
 //Quit the application when there are no open windows
 - (BOOL)applicationShouldTerminateAfterLastWindowClosed:(NSApplication *)theApplication {
@@ -42,6 +42,9 @@ MDataSource *dataSourceL;
     colorRed =  [NSColor colorWithCalibratedRed:0.7f green:0.0f blue:0.0f alpha:1.0f];
     colorGreen = [NSColor colorWithCalibratedRed:0.0f green:0.7f blue:0.0f alpha:1.0f];
     colorWhite = [NSColor colorWithCalibratedRed:1.0f green:1.0f blue:1.0f alpha:1.0f];
+    
+    temperatureArray = [[NSMutableArray alloc] init];
+    dataSourceT = [[MDataSource alloc] init];
     
     lightArray = [[NSMutableArray alloc] init];
     dataSourceL = [[MDataSource alloc] init];
@@ -92,7 +95,7 @@ MDataSource *dataSourceL;
     //Set up the gradient for the area under the graph
     CPTGradient *areaGradient = [CPTGradient gradientWithBeginningColor:[CPTColor redColor]
                                                           endingColor:[CPTColor clearColor]];
-    areaGradient.angle = -90.0f;
+    areaGradient.angle = -70.0f;
     CPTFill *areaGradientFill = [CPTFill fillWithGradient:areaGradient];
     
     //Set up the pressure graph
@@ -105,6 +108,44 @@ MDataSource *dataSourceL;
     graphT = [[CPTXYGraph alloc] initWithFrame:CGRectZero];
     graphT.title = @"Temperature";
     [graphT applyTheme:theme];
+    graphT.paddingLeft = 10.0;
+    graphT.paddingRight = 10.0;
+    graphT.plotAreaFrame.paddingTop    = 10.0;
+    graphT.plotAreaFrame.paddingBottom = 20.0;
+    graphT.plotAreaFrame.paddingLeft   = 50.0;
+    graphT.plotAreaFrame.paddingRight  = 20.0;
+    graphT.plotAreaFrame.borderLineStyle = nil;
+    graphT.titleTextStyle = axisTitleTextStyle;
+    CPTXYAxisSet *axisSetT = (CPTXYAxisSet *)graphT.axisSet;
+    plotSpaceT = (CPTXYPlotSpace *)graphT.defaultPlotSpace;
+    plotSpaceT.xRange = [CPTPlotRange plotRangeWithLocation:CPTDecimalFromFloat(0)
+                                                     length:CPTDecimalFromFloat(50)];
+    plotSpaceT.yRange = [CPTPlotRange plotRangeWithLocation:CPTDecimalFromFloat(-25)
+                                                     length:CPTDecimalFromFloat(75)];
+    CPTXYAxis *xT = axisSetT.xAxis;
+    xT.majorIntervalLength = CPTDecimalFromFloat(10);
+    xT.minorTicksPerInterval = 4;
+    xT.labelTextStyle = axisLabelTextStyle;
+    xT.titleTextStyle = axisLabelTextStyle;
+    
+    CPTXYAxis *yT = axisSetT.yAxis;
+    yT.majorIntervalLength = CPTDecimalFromFloat(15);
+    yT.minorTicksPerInterval = 4;
+    yT.title = @"Temperature (ºC)";
+    yT.labelTextStyle = axisLabelTextStyle;
+    yT.titleTextStyle = axisLabelTextStyle;
+    yT.labelOffset = -5.0;
+    yT.labelRotation = -370;
+    yT.axisConstraints = [CPTConstraints constraintWithLowerOffset:0.0];
+    
+    CPTScatterPlot *temperatureScatter = [[CPTScatterPlot alloc] init];
+    temperatureScatter.dataSource = dataSourceL;
+    
+    [temperatureScatter setDataLineStyle:lineStyle];
+    [temperatureScatter setAreaFill:areaGradientFill];
+    [temperatureScatter setAreaBaseValue:CPTDecimalFromFloat(0.0)];
+    
+    [graphT addPlot:temperatureScatter toPlotSpace:plotSpaceT];
     self.graphTemperature.hostedGraph = graphT;
     
     //Set up the altitude graph
@@ -134,7 +175,6 @@ MDataSource *dataSourceL;
     CPTXYAxis *xL = axisSetL.xAxis;
     xL.majorIntervalLength = CPTDecimalFromFloat(10);
     xL.minorTicksPerInterval = 4;
-    xL.title = @"Time (seconds)";
     xL.labelTextStyle = axisLabelTextStyle;
     xL.titleTextStyle = axisLabelTextStyle;
 
@@ -303,8 +343,23 @@ MDataSource *dataSourceL;
     //Update the arrays for graphing
     NSNumber *currTick = [NSNumber numberWithFloat:(float)tickNumber];
     
+    //Update Temperature Graph
+    NSNumber *tempTemp = [NSNumber numberWithFloat:((double)temperature/10.0)];
+    if([temperatureArray count] > 50) {
+        [temperatureArray removeObjectAtIndex:0];
+        plotSpaceT.xRange = [CPTPlotRange plotRangeWithLocation:CPTDecimalFromFloat(tickNumber - 50)
+                                                         length:CPTDecimalFromFloat(50)];
+    }
+    //Build an array with an X and Y of the current tick number and current light value
+    NSMutableArray *tempTempPoint = [[NSMutableArray alloc] init];
+    [tempTempPoint addObject:currTick];
+    [tempTempPoint addObject:tempTemp];
+    [temperatureArray addObject:tempTempPoint]; //Add that array to the data set
+    [dataSourceT setDataArray:temperatureArray]; //Set that array into the Light Graph data source
+    [graphT reloadData];
+    
+    //Update Light Graph
     NSNumber *tempLight = [NSNumber numberWithFloat:((double)light/10.0)];
-
     if([lightArray count] > 50) {
         [lightArray removeObjectAtIndex:0];
         plotSpaceL.xRange = [CPTPlotRange plotRangeWithLocation:CPTDecimalFromFloat(tickNumber - 50)
