@@ -24,6 +24,7 @@ IOHIDDeviceRef uPPT;
 //Graph objects
 CPTXYGraph *graphP, *graphT, *graphL, *graphA;
 CPTXYPlotSpace *plotSpaceL;
+CPTMutableLineStyle *lineStyle;
 
 //Array objects to hold recent data, for graphing
 int tickNumber = 0;
@@ -83,6 +84,17 @@ MDataSource *dataSourceL;
     axisLabelTextStyle.fontName = @"Helvetica";
     axisLabelTextStyle.fontSize = 10.0;
     
+    //Set up the line style
+    lineStyle = [[CPTMutableLineStyle alloc] init];
+    lineStyle.lineWidth = 1.5f;
+    lineStyle.lineColor = [CPTColor blueColor];
+    
+    //Set up the gradient for the area under the graph
+    CPTGradient *areaGradient = [CPTGradient gradientWithBeginningColor:[CPTColor redColor]
+                                                          endingColor:[CPTColor clearColor]];
+    areaGradient.angle = -90.0f;
+    CPTFill *areaGradientFill = [CPTFill fillWithGradient:areaGradient];
+    
     //Set up the pressure graph
     graphP = [[CPTXYGraph alloc] initWithFrame:CGRectZero];
     graphP.title = @"Pressure";
@@ -134,9 +146,15 @@ MDataSource *dataSourceL;
     yL.titleTextStyle = axisLabelTextStyle;
     yL.labelOffset = -5.0;
     yL.labelRotation = -370;
+    yL.axisConstraints = [CPTConstraints constraintWithLowerOffset:0.0];
     
     CPTScatterPlot *lightScatter = [[CPTScatterPlot alloc] init];
     lightScatter.dataSource = dataSourceL;
+
+    [lightScatter setDataLineStyle:lineStyle];
+    [lightScatter setAreaFill:areaGradientFill];
+    [lightScatter setAreaBaseValue:CPTDecimalFromFloat(0.0)];
+    
     [graphL addPlot:lightScatter toPlotSpace:plotSpaceL];
     self.graphLight.hostedGraph = graphL;
 }
@@ -286,10 +304,11 @@ MDataSource *dataSourceL;
     NSNumber *currTick = [NSNumber numberWithFloat:(float)tickNumber];
     
     NSNumber *tempLight = [NSNumber numberWithFloat:((double)light/10.0)];
+
     if([lightArray count] > 50) {
         [lightArray removeObjectAtIndex:0];
-        plotSpaceL.xRange = [CPTPlotRange plotRangeWithLocation:CPTDecimalFromFloat([lightArray count]-50)
-                                                         length:CPTDecimalFromFloat([lightArray count])];
+        plotSpaceL.xRange = [CPTPlotRange plotRangeWithLocation:CPTDecimalFromFloat(tickNumber - 50)
+                                                         length:CPTDecimalFromFloat(50)];
     }
     //Build an array with an X and Y of the current tick number and current light value
     NSMutableArray *tempLightPoint = [[NSMutableArray alloc] init];
