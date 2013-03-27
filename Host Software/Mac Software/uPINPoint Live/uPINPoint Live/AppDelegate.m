@@ -43,8 +43,14 @@ MDataSource *dataSourceP, *dataSourceT, *dataSourceA, *dataSourceL;
     colorGreen = [NSColor colorWithCalibratedRed:0.0f green:0.7f blue:0.0f alpha:1.0f];
     colorWhite = [NSColor colorWithCalibratedRed:1.0f green:1.0f blue:1.0f alpha:1.0f];
     
+    pressureArray = [[NSMutableArray alloc] init];
+    dataSourceP = [[MDataSource alloc] init];
+    
     temperatureArray = [[NSMutableArray alloc] init];
     dataSourceT = [[MDataSource alloc] init];
+    
+    altitudeArray = [[NSMutableArray alloc] init];
+    dataSourceA = [[MDataSource alloc] init];
     
     lightArray = [[NSMutableArray alloc] init];
     dataSourceL = [[MDataSource alloc] init];
@@ -102,6 +108,44 @@ MDataSource *dataSourceP, *dataSourceT, *dataSourceA, *dataSourceL;
     graphP = [[CPTXYGraph alloc] initWithFrame:CGRectZero];
     graphP.title = @"Pressure";
     [graphP applyTheme:theme];
+    graphP.paddingLeft = 10.0;
+    graphP.paddingRight = 10.0;
+    graphP.plotAreaFrame.paddingTop    = 10.0;
+    graphP.plotAreaFrame.paddingBottom = 20.0;
+    graphP.plotAreaFrame.paddingLeft   = 50.0;
+    graphP.plotAreaFrame.paddingRight  = 20.0;
+    graphP.plotAreaFrame.borderLineStyle = nil;
+    graphP.titleTextStyle = axisTitleTextStyle;
+    CPTXYAxisSet *axisSetP = (CPTXYAxisSet *)graphP.axisSet;
+    plotSpaceP = (CPTXYPlotSpace *)graphP.defaultPlotSpace;
+    plotSpaceP.xRange = [CPTPlotRange plotRangeWithLocation:CPTDecimalFromFloat(0)
+                                                     length:CPTDecimalFromFloat(50)];
+    plotSpaceP.yRange = [CPTPlotRange plotRangeWithLocation:CPTDecimalFromFloat(0)
+                                                     length:CPTDecimalFromFloat(110)];
+    CPTXYAxis *xP = axisSetP.xAxis;
+    xP.majorIntervalLength = CPTDecimalFromFloat(10);
+    xP.minorTicksPerInterval = 4;
+    xP.labelTextStyle = axisLabelTextStyle;
+    xP.titleTextStyle = axisLabelTextStyle;
+    
+    CPTXYAxis *yP = axisSetP.yAxis;
+    yP.majorIntervalLength = CPTDecimalFromFloat(20);
+    yP.minorTicksPerInterval = 5;
+    yP.title = @"Pressure (kPa)";
+    yP.labelTextStyle = axisLabelTextStyle;
+    yP.titleTextStyle = axisLabelTextStyle;
+    yP.labelOffset = -5.0;
+    yP.labelRotation = -370;
+    yP.axisConstraints = [CPTConstraints constraintWithLowerOffset:0.0];
+    
+    CPTScatterPlot *pressureScatter = [[CPTScatterPlot alloc] init];
+    pressureScatter.dataSource = dataSourceP;
+    
+    [pressureScatter setDataLineStyle:lineStyle];
+    [pressureScatter setAreaFill:areaGradientFill];
+    [pressureScatter setAreaBaseValue:CPTDecimalFromFloat(0.0)];
+    
+    [graphP addPlot:pressureScatter toPlotSpace:plotSpaceP];
     self.graphPressure.hostedGraph = graphP;
     
     //Set up the temperature graph
@@ -152,6 +196,44 @@ MDataSource *dataSourceP, *dataSourceT, *dataSourceA, *dataSourceL;
     graphA = [[CPTXYGraph alloc] initWithFrame:CGRectZero];
     graphA.title = @"Altitude";
     [graphA applyTheme:theme];
+    graphA.paddingLeft = 10.0;
+    graphA.paddingRight = 10.0;
+    graphA.plotAreaFrame.paddingTop    = 10.0;
+    graphA.plotAreaFrame.paddingBottom = 20.0;
+    graphA.plotAreaFrame.paddingLeft   = 50.0;
+    graphA.plotAreaFrame.paddingRight  = 20.0;
+    graphA.plotAreaFrame.borderLineStyle = nil;
+    graphA.titleTextStyle = axisTitleTextStyle;
+    CPTXYAxisSet *axisSetA = (CPTXYAxisSet *)graphA.axisSet;
+    plotSpaceA = (CPTXYPlotSpace *)graphA.defaultPlotSpace;
+    plotSpaceA.xRange = [CPTPlotRange plotRangeWithLocation:CPTDecimalFromFloat(0)
+                                                     length:CPTDecimalFromFloat(50)];
+    plotSpaceA.yRange = [CPTPlotRange plotRangeWithLocation:CPTDecimalFromFloat(0)
+                                                     length:CPTDecimalFromFloat(500)];
+    CPTXYAxis *xA = axisSetA.xAxis;
+    xA.majorIntervalLength = CPTDecimalFromFloat(10);
+    xA.minorTicksPerInterval = 4;
+    xA.labelTextStyle = axisLabelTextStyle;
+    xA.titleTextStyle = axisLabelTextStyle;
+    
+    CPTXYAxis *yA = axisSetA.yAxis;
+    yA.majorIntervalLength = CPTDecimalFromFloat(100);
+    yA.minorTicksPerInterval = 4;
+    yA.title = @"Altitiude (m)";
+    yA.labelTextStyle = axisLabelTextStyle;
+    yA.titleTextStyle = axisLabelTextStyle;
+    yA.labelOffset = -5.0;
+    yA.labelRotation = -370;
+    yA.axisConstraints = [CPTConstraints constraintWithLowerOffset:0.0];
+    
+    CPTScatterPlot *altitudeScatter = [[CPTScatterPlot alloc] init];
+    altitudeScatter.dataSource = dataSourceA;
+    
+    [altitudeScatter setDataLineStyle:lineStyle];
+    [altitudeScatter setAreaFill:areaGradientFill];
+    [altitudeScatter setAreaBaseValue:CPTDecimalFromFloat(0.0)];
+    
+    [graphA addPlot:altitudeScatter toPlotSpace:plotSpaceA];
     self.graphAltitude.hostedGraph = graphA;
     
     //Set up the light graph
@@ -343,23 +425,53 @@ MDataSource *dataSourceP, *dataSourceT, *dataSourceA, *dataSourceL;
     //Update the arrays for graphing
     NSNumber *currTick = [NSNumber numberWithFloat:(float)tickNumber];
     
+    //Update Pressure Graph
+    NSNumber *tempPressure = [NSNumber numberWithDouble:((double)pressure/1000.0)];
+    if([pressureArray count] > 50) {
+        [pressureArray removeObjectAtIndex:0];
+        plotSpaceP.xRange = [CPTPlotRange plotRangeWithLocation:CPTDecimalFromFloat(tickNumber - 50)
+                                                         length:CPTDecimalFromFloat(50)];
+    }
+    //Build an array with an X and Y of the current tick number and current pressure value
+    NSMutableArray *tempPressurePoint = [[NSMutableArray alloc] init];
+    [tempPressurePoint addObject:currTick];
+    [tempPressurePoint addObject:tempPressure];
+    [pressureArray addObject:tempPressurePoint]; //Add that array to the data set
+    [dataSourceP setDataArray:pressureArray]; //Set that array into the Pressure Graph data source
+    [graphP reloadData];
+    
     //Update Temperature Graph
-    NSNumber *tempTemp = [NSNumber numberWithFloat:((double)temperature/10.0)];
+    NSNumber *tempTemp = [NSNumber numberWithDouble:((double)temperature/10.0)];
     if([temperatureArray count] > 50) {
         [temperatureArray removeObjectAtIndex:0];
         plotSpaceT.xRange = [CPTPlotRange plotRangeWithLocation:CPTDecimalFromFloat(tickNumber - 50)
                                                          length:CPTDecimalFromFloat(50)];
     }
-    //Build an array with an X and Y of the current tick number and current light value
+    //Build an array with an X and Y of the current tick number and current temperature value
     NSMutableArray *tempTempPoint = [[NSMutableArray alloc] init];
     [tempTempPoint addObject:currTick];
     [tempTempPoint addObject:tempTemp];
     [temperatureArray addObject:tempTempPoint]; //Add that array to the data set
-    [dataSourceT setDataArray:temperatureArray]; //Set that array into the Light Graph data source
+    [dataSourceT setDataArray:temperatureArray]; //Set that array into the Temperature Graph data source
     [graphT reloadData];
     
+    //Update Altitude Graph
+    NSNumber *tempAlt = [NSNumber numberWithDouble:(altitude)];
+    if([altitudeArray count] > 50) {
+        [altitudeArray removeObjectAtIndex:0];
+        plotSpaceA.xRange = [CPTPlotRange plotRangeWithLocation:CPTDecimalFromFloat(tickNumber - 50)
+                                                         length:CPTDecimalFromFloat(50)];
+    }
+    //Build an array with an X and Y of the current tick number and current altitude value
+    NSMutableArray *tempAltPoint = [[NSMutableArray alloc] init];
+    [tempAltPoint addObject:currTick];
+    [tempAltPoint addObject:tempAlt];
+    [altitudeArray addObject:tempAltPoint]; //Add that array to the data set
+    [dataSourceA setDataArray:altitudeArray]; //Set that array into the Altitude Graph data source
+    [graphA reloadData];
+
     //Update Light Graph
-    NSNumber *tempLight = [NSNumber numberWithFloat:((double)light/10.0)];
+    NSNumber *tempLight = [NSNumber numberWithDouble:((double)light/10.0)];
     if([lightArray count] > 50) {
         [lightArray removeObjectAtIndex:0];
         plotSpaceL.xRange = [CPTPlotRange plotRangeWithLocation:CPTDecimalFromFloat(tickNumber - 50)
