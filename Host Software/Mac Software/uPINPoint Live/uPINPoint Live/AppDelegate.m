@@ -22,14 +22,14 @@ NSColor *colorRed, *colorGreen, *colorWhite;
 IOHIDDeviceRef uPPT;
 
 //Graph objects
-CPTXYGraph *graphP, *graphT, *graphA, *graphL;
-CPTXYPlotSpace *plotSpaceP,*plotSpaceT, *plotSpaceA, *plotSpaceL;
+CPTXYGraph *graphP, *graphT, *graphA, *graphL, *graphAc;
+CPTXYPlotSpace *plotSpaceP,*plotSpaceT, *plotSpaceA, *plotSpaceL, *plotSpaceAc;
 CPTMutableLineStyle *lineStyle;
 
 //Array objects to hold recent data, for graphing
 int tickNumber = 0;
-NSMutableArray *pressureArray, *temperatureArray, *altitudeArray, *lightArray;
-MDataSource *dataSourceP, *dataSourceT, *dataSourceA, *dataSourceL;
+NSMutableArray *pressureArray, *temperatureArray, *altitudeArray, *lightArray, *xArray, *yArray, *zArray;
+MDataSource *dataSourceP, *dataSourceT, *dataSourceA, *dataSourceL, *dataSourceX, *dataSourceY, *dataSourceZ;
 
 //Quit the application when there are no open windows
 - (BOOL)applicationShouldTerminateAfterLastWindowClosed:(NSApplication *)theApplication {
@@ -43,17 +43,23 @@ MDataSource *dataSourceP, *dataSourceT, *dataSourceA, *dataSourceL;
     colorGreen = [NSColor colorWithCalibratedRed:0.0f green:0.7f blue:0.0f alpha:1.0f];
     colorWhite = [NSColor colorWithCalibratedRed:1.0f green:1.0f blue:1.0f alpha:1.0f];
     
+    //Initialize data sources for first tab graphs
     pressureArray = [[NSMutableArray alloc] init];
     dataSourceP = [[MDataSource alloc] init];
-    
     temperatureArray = [[NSMutableArray alloc] init];
     dataSourceT = [[MDataSource alloc] init];
-    
     altitudeArray = [[NSMutableArray alloc] init];
     dataSourceA = [[MDataSource alloc] init];
-    
     lightArray = [[NSMutableArray alloc] init];
     dataSourceL = [[MDataSource alloc] init];
+    
+    //initialize data sources for accelerometer graph
+    xArray = [[NSMutableArray alloc] init];
+    dataSourceX = [[MDataSource alloc] init];
+    yArray = [[NSMutableArray alloc] init];
+    dataSourceY = [[MDataSource alloc] init];
+    zArray = [[NSMutableArray alloc] init];
+    dataSourceZ = [[MDataSource alloc] init];
     
     [self.resConsole setFont:[NSFont fontWithName:@"Courier" size:12]];
         
@@ -279,6 +285,68 @@ MDataSource *dataSourceP, *dataSourceT, *dataSourceA, *dataSourceL;
     
     [graphL addPlot:lightScatter toPlotSpace:plotSpaceL];
     self.graphLight.hostedGraph = graphL;
+    
+    //Set up acceleration graph (there are multiple plots on this graph)
+    //Set up the line styles
+    CPTMutableLineStyle *lineStyleX = [[CPTMutableLineStyle alloc] init];
+    lineStyleX.lineWidth = 3.0f;
+    lineStyleX.lineColor = [CPTColor redColor];
+    CPTMutableLineStyle *lineStyleY = [[CPTMutableLineStyle alloc] init];
+    lineStyleY.lineWidth = 3.0f;
+    lineStyleY.lineColor = [CPTColor greenColor];
+    CPTMutableLineStyle *lineStyleZ = [[CPTMutableLineStyle alloc] init];
+    lineStyleZ.lineWidth = 3.0f;
+    lineStyleZ.lineColor = [CPTColor blueColor];
+    
+    graphAc = [[CPTXYGraph alloc] initWithFrame:CGRectZero];
+    graphAc.title = @"Acceleration";
+    [graphAc applyTheme:theme];
+    graphAc.paddingLeft = 10.0;
+    graphAc.paddingRight = 10.0;
+    graphAc.plotAreaFrame.paddingTop    = 10.0;
+    graphAc.plotAreaFrame.paddingBottom = 20.0;
+    graphAc.plotAreaFrame.paddingLeft   = 50.0;
+    graphAc.plotAreaFrame.paddingRight  = 20.0;
+    graphAc.plotAreaFrame.borderLineStyle = nil;
+    graphAc.titleTextStyle = axisTitleTextStyle;
+    CPTXYAxisSet *axisSetAc = (CPTXYAxisSet *)graphAc.axisSet;
+    plotSpaceAc = (CPTXYPlotSpace *)graphAc.defaultPlotSpace;
+    plotSpaceAc.xRange = [CPTPlotRange plotRangeWithLocation:CPTDecimalFromFloat(0)
+                                                     length:CPTDecimalFromFloat(50)];
+    plotSpaceAc.yRange = [CPTPlotRange plotRangeWithLocation:CPTDecimalFromFloat(-12)
+                                                     length:CPTDecimalFromFloat(24)];
+    CPTXYAxis *xAc = axisSetAc.xAxis;
+    xAc.majorIntervalLength = CPTDecimalFromFloat(10);
+    xAc.minorTicksPerInterval = 4;
+    xAc.labelTextStyle = axisLabelTextStyle;
+    xAc.titleTextStyle = axisLabelTextStyle;
+    
+    CPTXYAxis *yAc = axisSetAc.yAxis;
+    yAc.majorIntervalLength = CPTDecimalFromFloat(4);
+    yAc.minorTicksPerInterval = 2;
+    yAc.title = [NSString stringWithUTF8String:"Acceleration (m/s\u00b2)"];
+    yAc.labelTextStyle = axisLabelTextStyle;
+    yAc.titleTextStyle = axisLabelTextStyle;
+    yAc.labelOffset = -5.0;
+    yAc.labelRotation = -370;
+    yAc.axisConstraints = [CPTConstraints constraintWithLowerOffset:0.0];
+    
+    CPTScatterPlot *xScatter = [[CPTScatterPlot alloc] init];
+    xScatter.dataSource = dataSourceX;
+    [xScatter setDataLineStyle:lineStyleX];
+    [graphAc addPlot:xScatter];
+    
+    CPTScatterPlot *yScatter = [[CPTScatterPlot alloc] init];
+    yScatter.dataSource = dataSourceY;
+    [yScatter setDataLineStyle:lineStyleY];
+    [graphAc addPlot:yScatter];
+    
+    CPTScatterPlot *zScatter = [[CPTScatterPlot alloc] init];
+    zScatter.dataSource = dataSourceZ;
+    [zScatter setDataLineStyle:lineStyleZ];
+    [graphAc addPlot:zScatter];
+    
+    self.graphAccel.hostedGraph = graphAc;
 }
 
 //Changes the connection status field in the UI
@@ -485,6 +553,37 @@ MDataSource *dataSourceP, *dataSourceT, *dataSourceA, *dataSourceL;
     [dataSourceL setDataArray:lightArray]; //Set that array into the Light Graph data source
     [graphL reloadData];
     
+    //Update Accel Graph
+    NSNumber *tempX = [NSNumber numberWithDouble:((double)accelX/100.0)];
+    NSNumber *tempY = [NSNumber numberWithDouble:((double)accelY/100.0)];
+    NSNumber *tempZ = [NSNumber numberWithDouble:((double)accelZ/100.0)];
+    if(tickNumber > 50) {
+        [xArray removeObjectAtIndex:0];
+        [yArray removeObjectAtIndex:0];
+        [zArray removeObjectAtIndex:0];
+        plotSpaceAc.xRange = [CPTPlotRange plotRangeWithLocation:CPTDecimalFromFloat(tickNumber - 50)
+                                                         length:CPTDecimalFromFloat(50)];
+    }
+    //Build an array with an X and Y of the current tick number and current acceleration values
+    NSMutableArray *tempXPoint = [[NSMutableArray alloc] init];
+    [tempXPoint addObject:currTick];
+    [tempXPoint addObject:tempX];
+    [xArray addObject:tempXPoint]; //Add that array to the data set
+    [dataSourceX setDataArray:xArray]; //Set that array into the Accel Graph data source
+    [[graphAc plotAtIndex:0] reloadData];
+    NSMutableArray *tempYPoint = [[NSMutableArray alloc] init];
+    [tempYPoint addObject:currTick];
+    [tempYPoint addObject:tempY];
+    [yArray addObject:tempYPoint]; //Add that array to the data set
+    [dataSourceY setDataArray:yArray]; //Set that array into the Accel Graph data source
+    [[graphAc plotAtIndex:1] reloadData];
+    NSMutableArray *tempZPoint = [[NSMutableArray alloc] init];
+    [tempZPoint addObject:currTick];
+    [tempZPoint addObject:tempZ];
+    [zArray addObject:tempZPoint]; //Add that array to the data set
+    [dataSourceZ setDataArray:zArray]; //Set that array into the Accel Graph data source
+    [[graphAc plotAtIndex:2] reloadData];
+
     tickNumber ++;
 }
 

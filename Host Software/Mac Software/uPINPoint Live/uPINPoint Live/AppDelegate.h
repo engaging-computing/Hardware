@@ -71,6 +71,7 @@ const static int CMD_FULL_DIAGNOSTICS = 0x79;
 @property (unsafe_unretained) IBOutlet CPTGraphHostingView *graphTemperature;
 @property (unsafe_unretained) IBOutlet CPTGraphHostingView *graphAltitude;
 @property (unsafe_unretained) IBOutlet CPTGraphHostingView *graphLight;
+@property (unsafe_unretained) IBOutlet CPTGraphHostingView *graphAccel;
 
 
 //Results Console in Diagnostics tab
