@@ -333,19 +333,24 @@ MDataSource *dataSourceP, *dataSourceT, *dataSourceA, *dataSourceL, *dataSourceX
     
     CPTScatterPlot *xScatter = [[CPTScatterPlot alloc] init];
     xScatter.dataSource = dataSourceX;
+    xScatter.title = @"Accel X";
     [xScatter setDataLineStyle:lineStyleX];
     [graphAc addPlot:xScatter];
     
     CPTScatterPlot *yScatter = [[CPTScatterPlot alloc] init];
     yScatter.dataSource = dataSourceY;
+    yScatter.title = @"Accel Y";
     [yScatter setDataLineStyle:lineStyleY];
     [graphAc addPlot:yScatter];
     
     CPTScatterPlot *zScatter = [[CPTScatterPlot alloc] init];
     zScatter.dataSource = dataSourceZ;
+    zScatter.title = @"Accel Z";
     [zScatter setDataLineStyle:lineStyleZ];
     [graphAc addPlot:zScatter];
     
+    graphAc.legend = [CPTLegend legendWithGraph:graphAc];
+    graphAc.legend.numberOfRows = 1;
     self.graphAccel.hostedGraph = graphAc;
 }
 
