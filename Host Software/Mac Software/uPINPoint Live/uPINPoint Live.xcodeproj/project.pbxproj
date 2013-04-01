@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		6E1EAD2016FCC94100898C8C /* MDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E1EAD1F16FCC94100898C8C /* MDataSource.m */; };
 		6E202F3416B0594100F47A1F /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E202F3316B0594100F47A1F /* IOKit.framework */; };
+		6E3E5EE11709FFC000719E54 /* CorePlot.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E3E5EDE1709FF2000719E54 /* CorePlot.framework */; };
+		6E3E5EE3170A015000719E54 /* CorePlot.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 6E3E5EDE1709FF2000719E54 /* CorePlot.framework */; };
+		6E3E5EE7170A068800719E54 /* uppt.iconset in Resources */ = {isa = PBXBuildFile; fileRef = 6E3E5EE6170A068800719E54 /* uppt.iconset */; };
 		6E480BBF169F2090002B3100 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E480BBE169F2090002B3100 /* Cocoa.framework */; };
 		6E480BC9169F2090002B3100 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6E480BC7169F2090002B3100 /* InfoPlist.strings */; };
 		6E480BCB169F2090002B3100 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E480BCA169F2090002B3100 /* main.m */; };
@@ -20,10 +23,23 @@
 		6E480BE6169F2091002B3100 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6E480BE4169F2091002B3100 /* InfoPlist.strings */; };
 		6E480BE9169F2091002B3100 /* uPINPoint_LiveTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E480BE8169F2091002B3100 /* uPINPoint_LiveTests.m */; };
 		6EAACF2316E7BE4D0016DB79 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EAACF2216E7BE4D0016DB79 /* QuartzCore.framework */; };
-		6ED6C28316F22AF500DB9E74 /* CorePlot.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EAACF1F16E7BD610016DB79 /* CorePlot.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		6E3E5EDD1709FF2000719E54 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6E3E5ED71709FF2000719E54 /* CorePlot.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8DC2EF5B0486A6940098B216;
+			remoteInfo = CorePlot;
+		};
+		6E3E5EDF1709FF2000719E54 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6E3E5ED71709FF2000719E54 /* CorePlot.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 0730F600109492D800E95162;
+			remoteInfo = UnitTests;
+		};
 		6E480BDF169F2091002B3100 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 6E480BB1169F2090002B3100 /* Project object */;
@@ -31,26 +47,27 @@
 			remoteGlobalIDString = 6E480BB9169F2090002B3100;
 			remoteInfo = "uPINPoint Live";
 		};
-		6EAACF1E16E7BD610016DB79 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 6EAACF1816E7BD610016DB79 /* CorePlot.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 8DC2EF5B0486A6940098B216;
-			remoteInfo = CorePlot;
-		};
-		6EAACF2016E7BD610016DB79 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 6EAACF1816E7BD610016DB79 /* CorePlot.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 0730F600109492D800E95162;
-			remoteInfo = UnitTests;
-		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		6E3E5EE2170A013B00719E54 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				6E3E5EE3170A015000719E54 /* CorePlot.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		6E1EAD1E16FCC94100898C8C /* MDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDataSource.h; sourceTree = "<group>"; };
 		6E1EAD1F16FCC94100898C8C /* MDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDataSource.m; sourceTree = "<group>"; };
 		6E202F3316B0594100F47A1F /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
+		6E3E5ED71709FF2000719E54 /* CorePlot.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CorePlot.xcodeproj; path = "../../../../../Documents/Actual Documents/XCode Frameworks/CorePlot_1.1/Source/framework/CorePlot.xcodeproj"; sourceTree = "<group>"; };
+		6E3E5EE6170A068800719E54 /* uppt.iconset */ = {isa = PBXFileReference; lastKnownFileType = folder.iconset; path = uppt.iconset; sourceTree = "<group>"; };
 		6E480BBA169F2090002B3100 /* uPINPoint Live.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "uPINPoint Live.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E480BBE169F2090002B3100 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		6E480BC1169F2090002B3100 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -70,7 +87,6 @@
 		6E480BE5169F2091002B3100 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		6E480BE7169F2091002B3100 /* uPINPoint_LiveTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = uPINPoint_LiveTests.h; sourceTree = "<group>"; };
 		6E480BE8169F2091002B3100 /* uPINPoint_LiveTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = uPINPoint_LiveTests.m; sourceTree = "<group>"; };
-		6EAACF1816E7BD610016DB79 /* CorePlot.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CorePlot.xcodeproj; path = "../../../../../Documents/Actual Documents/XCode Frameworks/CorePlot_1.1/Source/framework/CorePlot.xcodeproj"; sourceTree = "<group>"; };
 		6EAACF2216E7BE4D0016DB79 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -79,7 +95,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6ED6C28316F22AF500DB9E74 /* CorePlot.framework in Frameworks */,
+				6E3E5EE11709FFC000719E54 /* CorePlot.framework in Frameworks */,
 				6EAACF2316E7BE4D0016DB79 /* QuartzCore.framework in Frameworks */,
 				6E202F3416B0594100F47A1F /* IOKit.framework in Frameworks */,
 				6E480BBF169F2090002B3100 /* Cocoa.framework in Frameworks */,
@@ -98,11 +114,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6E3E5ED81709FF2000719E54 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6E3E5EDE1709FF2000719E54 /* CorePlot.framework */,
+				6E3E5EE01709FF2000719E54 /* UnitTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		6E480BAF169F2090002B3100 = {
 			isa = PBXGroup;
 			children = (
+				6E3E5EE6170A068800719E54 /* uppt.iconset */,
+				6E3E5ED71709FF2000719E54 /* CorePlot.xcodeproj */,
 				6EAACF2216E7BE4D0016DB79 /* QuartzCore.framework */,
-				6EAACF1816E7BD610016DB79 /* CorePlot.xcodeproj */,
 				6E202F3316B0594100F47A1F /* IOKit.framework */,
 				6E480BC4169F2090002B3100 /* uPINPoint Live */,
 				6E480BE1169F2091002B3100 /* uPINPoint LiveTests */,
@@ -184,15 +210,6 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		6EAACF1916E7BD610016DB79 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				6EAACF1F16E7BD610016DB79 /* CorePlot.framework */,
-				6EAACF2116E7BD610016DB79 /* UnitTests.octest */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -203,6 +220,7 @@
 				6E480BB6169F2090002B3100 /* Sources */,
 				6E480BB7169F2090002B3100 /* Frameworks */,
 				6E480BB8169F2090002B3100 /* Resources */,
+				6E3E5EE2170A013B00719E54 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -253,8 +271,8 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = 6EAACF1916E7BD610016DB79 /* Products */;
-					ProjectRef = 6EAACF1816E7BD610016DB79 /* CorePlot.xcodeproj */;
+					ProductGroup = 6E3E5ED81709FF2000719E54 /* Products */;
+					ProjectRef = 6E3E5ED71709FF2000719E54 /* CorePlot.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -266,18 +284,18 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		6EAACF1F16E7BD610016DB79 /* CorePlot.framework */ = {
+		6E3E5EDE1709FF2000719E54 /* CorePlot.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = CorePlot.framework;
-			remoteRef = 6EAACF1E16E7BD610016DB79 /* PBXContainerItemProxy */;
+			remoteRef = 6E3E5EDD1709FF2000719E54 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		6EAACF2116E7BD610016DB79 /* UnitTests.octest */ = {
+		6E3E5EE01709FF2000719E54 /* UnitTests.octest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
 			path = UnitTests.octest;
-			remoteRef = 6EAACF2016E7BD610016DB79 /* PBXContainerItemProxy */;
+			remoteRef = 6E3E5EDF1709FF2000719E54 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -290,6 +308,7 @@
 				6E480BC9169F2090002B3100 /* InfoPlist.strings in Resources */,
 				6E480BCF169F2090002B3100 /* Credits.rtf in Resources */,
 				6E480BD5169F2090002B3100 /* MainMenu.xib in Resources */,
+				6E3E5EE7170A068800719E54 /* uppt.iconset in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -453,10 +472,11 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "uPINPoint Live/uPINPoint Live-Prefix.pch";
 				"HEADER_SEARCH_PATHS[arch=*]" = (
-					"\"/Users/NickAVV/Documents/Actual Documents/XCode Frameworks/CorePlot_1.1/Source/framework/\"",
+					"\"/Users/NickAVV/Documents/Actual Documents/XCode Frameworks/CorePlot_1.1/Source/framework\"",
 				);
 				INFOPLIST_FILE = "uPINPoint Live/uPINPoint Live-Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -470,10 +490,11 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "uPINPoint Live/uPINPoint Live-Prefix.pch";
 				"HEADER_SEARCH_PATHS[arch=*]" = (
-					"\"/Users/NickAVV/Documents/Actual Documents/XCode Frameworks/CorePlot_1.1/Source/framework/\"",
+					"\"/Users/NickAVV/Documents/Actual Documents/XCode Frameworks/CorePlot_1.1/Source/framework\"",
 				);
 				INFOPLIST_FILE = "uPINPoint Live/uPINPoint Live-Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
