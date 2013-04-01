@@ -614,7 +614,7 @@ static void Handle_DeviceRemovalCallback(void *inContext, IOReturn inResult, voi
         [selfRef setButtonsEnabled:false];
         uPPT = NULL;
         //Deregister the callback for Input HID Reports
-        IOHIDDeviceRegisterInputReportCallback(NULL, NULL, NULL, NULL, NULL);
+        IOHIDDeviceRegisterInputReportCallback(inIOHIDDeviceRef, NULL, NULL, NULL, NULL);
     }
 }
 
