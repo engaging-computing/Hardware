@@ -213,7 +213,7 @@
 				<string key="NSName">_NSMainMenu</string>
 			</object>
 			<object class="NSWindowTemplate" id="972006081">
-				<int key="NSWindowStyleMask">15</int>
+				<int key="NSWindowStyleMask">7</int>
 				<int key="NSWindowBacking">2</int>
 				<string key="NSWindowRect">{{239, 220}, {1043, 558}}</string>
 				<int key="NSWTFlags">1954021376</int>
@@ -872,13 +872,13 @@
 							<string key="NSFrame">{{13, 29}, {1017, 437}}</string>
 							<reference key="NSSuperview" ref="439893737"/>
 							<reference key="NSWindow"/>
-							<reference key="NSNextKeyView" ref="260860749"/>
+							<reference key="NSNextKeyView" ref="685845000"/>
 							<string key="NSReuseIdentifierKey">_NS:9</string>
 							<array class="NSMutableArray" key="NSTabViewItems">
 								<object class="NSTabViewItem" id="656524398">
 									<string key="NSIdentifier">1</string>
 									<object class="NSView" key="NSView" id="685845000">
-										<nil key="NSNextResponder"/>
+										<reference key="NSNextResponder" ref="887798474"/>
 										<int key="NSvFlags">256</int>
 										<array class="NSMutableArray" key="NSSubviews">
 											<object class="NSCustomView" id="146964522">
@@ -886,6 +886,7 @@
 												<int key="NSvFlags">268</int>
 												<string key="NSFrame">{{17, 204}, {479, 184}}</string>
 												<reference key="NSSuperview" ref="685845000"/>
+												<reference key="NSWindow"/>
 												<reference key="NSNextKeyView" ref="474093914"/>
 												<bool key="NSViewIsLayerTreeHost">YES</bool>
 												<double key="NSViewAlphaValue">0.60000000000000009</double>
@@ -903,6 +904,7 @@
 												<int key="NSvFlags">268</int>
 												<string key="NSFrame">{{504, 204}, {476, 184}}</string>
 												<reference key="NSSuperview" ref="685845000"/>
+												<reference key="NSWindow"/>
 												<reference key="NSNextKeyView" ref="43832719"/>
 												<bool key="NSViewIsLayerTreeHost">YES</bool>
 												<double key="NSViewAlphaValue">0.60000000000000009</double>
@@ -920,6 +922,7 @@
 												<int key="NSvFlags">268</int>
 												<string key="NSFrame">{{17, 12}, {479, 184}}</string>
 												<reference key="NSSuperview" ref="685845000"/>
+												<reference key="NSWindow"/>
 												<reference key="NSNextKeyView" ref="507462936"/>
 												<bool key="NSViewIsLayerTreeHost">YES</bool>
 												<double key="NSViewAlphaValue">0.60000000000000009</double>
@@ -937,39 +940,6 @@
 												<int key="NSvFlags">268</int>
 												<string key="NSFrame">{{504, 12}, {476, 184}}</string>
 												<reference key="NSSuperview" ref="685845000"/>
-												<reference key="NSNextKeyView" ref="602832962"/>
-												<bool key="NSViewIsLayerTreeHost">YES</bool>
-												<double key="NSViewAlphaValue">0.60000000000000009</double>
-												<object class="NSShadow" key="NSViewShadow">
-													<double key="NSShadowHoriz">2</double>
-													<double key="NSShadowVert">-2</double>
-													<double key="NSShadowBlurRadius">2</double>
-													<reference key="NSShadowColor" ref="1041496444"/>
-												</object>
-												<string key="NSReuseIdentifierKey">_NS:9</string>
-												<string key="NSClassName">CPTGraphHostingView</string>
-											</object>
-										</array>
-										<string key="NSFrame">{{10, 33}, {997, 391}}</string>
-										<reference key="NSNextKeyView" ref="146964522"/>
-										<bool key="NSViewIsLayerTreeHost">YES</bool>
-										<string key="NSReuseIdentifierKey">_NS:11</string>
-									</object>
-									<string key="NSLabel">Pressure, Temperature, Altitude, Light</string>
-									<reference key="NSColor" ref="782587350"/>
-									<reference key="NSTabView" ref="887798474"/>
-								</object>
-								<object class="NSTabViewItem" id="401957155">
-									<string key="NSIdentifier">2</string>
-									<object class="NSView" key="NSView" id="260860749">
-										<reference key="NSNextResponder" ref="887798474"/>
-										<int key="NSvFlags">256</int>
-										<array class="NSMutableArray" key="NSSubviews">
-											<object class="NSCustomView" id="383687707">
-												<reference key="NSNextResponder" ref="260860749"/>
-												<int key="NSvFlags">268</int>
-												<string key="NSFrame">{{17, 17}, {963, 371}}</string>
-												<reference key="NSSuperview" ref="260860749"/>
 												<reference key="NSWindow"/>
 												<reference key="NSNextKeyView" ref="602832962"/>
 												<bool key="NSViewIsLayerTreeHost">YES</bool>
@@ -987,6 +957,39 @@
 										<string key="NSFrame">{{10, 33}, {997, 391}}</string>
 										<reference key="NSSuperview" ref="887798474"/>
 										<reference key="NSWindow"/>
+										<reference key="NSNextKeyView" ref="146964522"/>
+										<bool key="NSViewIsLayerTreeHost">YES</bool>
+										<string key="NSReuseIdentifierKey">_NS:11</string>
+									</object>
+									<string key="NSLabel">Pressure, Temperature, Altitude, Light</string>
+									<reference key="NSColor" ref="782587350"/>
+									<reference key="NSTabView" ref="887798474"/>
+								</object>
+								<object class="NSTabViewItem" id="401957155">
+									<string key="NSIdentifier">2</string>
+									<object class="NSView" key="NSView" id="260860749">
+										<nil key="NSNextResponder"/>
+										<int key="NSvFlags">256</int>
+										<array class="NSMutableArray" key="NSSubviews">
+											<object class="NSCustomView" id="383687707">
+												<reference key="NSNextResponder" ref="260860749"/>
+												<int key="NSvFlags">268</int>
+												<string key="NSFrame">{{17, 17}, {963, 371}}</string>
+												<reference key="NSSuperview" ref="260860749"/>
+												<reference key="NSNextKeyView" ref="602832962"/>
+												<bool key="NSViewIsLayerTreeHost">YES</bool>
+												<double key="NSViewAlphaValue">0.60000000000000009</double>
+												<object class="NSShadow" key="NSViewShadow">
+													<double key="NSShadowHoriz">2</double>
+													<double key="NSShadowVert">-2</double>
+													<double key="NSShadowBlurRadius">2</double>
+													<reference key="NSShadowColor" ref="1041496444"/>
+												</object>
+												<string key="NSReuseIdentifierKey">_NS:9</string>
+												<string key="NSClassName">CPTGraphHostingView</string>
+											</object>
+										</array>
+										<string key="NSFrame">{{10, 33}, {997, 391}}</string>
 										<reference key="NSNextKeyView" ref="383687707"/>
 										<bool key="NSViewIsLayerTreeHost">YES</bool>
 										<string key="NSReuseIdentifierKey">_NS:28</string>
@@ -1616,7 +1619,7 @@
 																<int key="NSvFlags">2322</int>
 																<string key="NSFrameSize">{946, 211}</string>
 																<reference key="NSSuperview" ref="497528202"/>
-																<reference key="NSNextKeyView" ref="31529488"/>
+																<reference key="NSNextKeyView" ref="184343802"/>
 																<string key="NSReuseIdentifierKey">_NS:13</string>
 																<object class="NSTextContainer" key="NSTextContainer" id="713360578">
 																	<object class="NSLayoutManager" key="NSLayoutManager">
@@ -1693,7 +1696,6 @@
 														<int key="NSvFlags">256</int>
 														<string key="NSFrame">{{947, 1}, {15, 211}}</string>
 														<reference key="NSSuperview" ref="242725910"/>
-														<reference key="NSNextKeyView" ref="602832962"/>
 														<string key="NSReuseIdentifierKey">_NS:83</string>
 														<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
 														<reference key="NSTarget" ref="242725910"/>
@@ -1718,7 +1720,7 @@
 												</array>
 												<string key="NSFrame">{{17, 12}, {963, 213}}</string>
 												<reference key="NSSuperview" ref="841426783"/>
-												<reference key="NSNextKeyView" ref="184343802"/>
+												<reference key="NSNextKeyView" ref="497528202"/>
 												<string key="NSReuseIdentifierKey">_NS:9</string>
 												<int key="NSsFlags">133138</int>
 												<reference key="NSVScroller" ref="31529488"/>
@@ -1737,13 +1739,13 @@
 									<reference key="NSTabView" ref="887798474"/>
 								</object>
 							</array>
-							<reference key="NSSelectedTabViewItem" ref="401957155"/>
+							<reference key="NSSelectedTabViewItem" ref="656524398"/>
 							<reference key="NSFont" ref="521917754"/>
 							<int key="NSTvFlags">0</int>
 							<bool key="NSAllowTruncatedLabels">YES</bool>
 							<bool key="NSDrawsBackground">YES</bool>
 							<array class="NSMutableArray" key="NSSubviews">
-								<reference ref="260860749"/>
+								<reference ref="685845000"/>
 							</array>
 						</object>
 						<object class="NSBox" id="602832962">
@@ -2186,6 +2188,7 @@
 							<string key="NSFrame">{{199, 7}, {824, 16}}</string>
 							<reference key="NSSuperview" ref="439893737"/>
 							<reference key="NSWindow"/>
+							<reference key="NSNextKeyView"/>
 							<string key="NSReuseIdentifierKey">_NS:9</string>
 							<bool key="NSEnabled">YES</bool>
 							<object class="NSLevelIndicatorCell" key="NSCell" id="728570123">
