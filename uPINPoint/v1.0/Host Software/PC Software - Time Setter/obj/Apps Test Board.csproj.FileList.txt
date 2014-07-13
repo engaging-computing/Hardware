@@ -1,0 +1,31 @@
+bin\Debug\Applications Test Board.exe.config
+bin\x86\Debug\Applications Test Board.exe.config
+obj\x86\Debug\ResolveAssemblyReference.cache
+obj\x86\Debug\Applications_Test_Board.Properties.Resources.resources
+obj\x86\Debug\Apps Test Board.csproj.GenerateResource.Cache
+bin\x86\Debug\Applications Test Board.exe
+bin\x86\Debug\Applications Test Board.pdb
+obj\x86\Debug\Applications Test Board.exe
+obj\x86\Debug\Applications Test Board.pdb
+obj\x86\Debug\Applications_Test_Board.FormMessage.resources
+obj\x86\Debug\Applications_Test_Board.FormMain.resources
+bin\x86\Debug\Applications Test Board.exe.manifest
+bin\x86\Debug\Applications Test Board.application
+obj\x86\Debug\Applications Test Board.TrustInfo.xml
+obj\x86\Debug\Applications Test Board.exe.manifest
+obj\x86\Debug\Applications Test Board.application
+bin\x86\Release\Applications Test Board.exe.config
+obj\x86\Release\Applications Test Board.exe
+obj\x86\Release\Applications Test Board.pdb
+bin\x86\Release\Applications Test Board.exe.manifest
+bin\x86\Release\Applications Test Board.application
+bin\x86\Release\Applications Test Board.exe
+bin\x86\Release\Applications Test Board.pdb
+obj\x86\Release\ResolveAssemblyReference.cache
+obj\x86\Release\Applications_Test_Board.FormMain.resources
+obj\x86\Release\Applications_Test_Board.FormMessage.resources
+obj\x86\Release\Applications_Test_Board.Properties.Resources.resources
+obj\x86\Release\Apps Test Board.csproj.GenerateResource.Cache
+obj\x86\Release\Applications Test Board.TrustInfo.xml
+obj\x86\Release\Applications Test Board.exe.manifest
+obj\x86\Release\Applications Test Board.application

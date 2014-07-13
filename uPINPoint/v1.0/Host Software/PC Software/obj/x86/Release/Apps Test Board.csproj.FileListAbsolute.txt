@@ -1,0 +1,16 @@
+C:\Users\Christopher D. Granz\Dropbox\Work\Engaging Computing Group\iSENSE Data Logger\V5.0\PC Software\obj\x86\Release\ResolveAssemblyReference.cache
+C:\Users\Christopher D. Granz\Dropbox\Work\Engaging Computing Group\iSENSE Data Logger\V5.0\PC Software\obj\x86\Release\Applications_Test_Board.AboutBox.resources
+C:\Users\Christopher D. Granz\Dropbox\Work\Engaging Computing Group\iSENSE Data Logger\V5.0\PC Software\obj\x86\Release\Applications_Test_Board.FormMain.resources
+C:\Users\Christopher D. Granz\Dropbox\Work\Engaging Computing Group\iSENSE Data Logger\V5.0\PC Software\obj\x86\Release\Applications_Test_Board.FormMessage.resources
+C:\Users\Christopher D. Granz\Dropbox\Work\Engaging Computing Group\iSENSE Data Logger\V5.0\PC Software\obj\x86\Release\Apps Test Board.csproj.GenerateResource.Cache
+C:\Users\Christopher D. Granz\Dropbox\Work\Engaging Computing Group\iSENSE Data Logger\V5.0\PC Software\bin\x86\Release\PINPoint v5.0.exe.config
+C:\Users\Christopher D. Granz\Dropbox\Work\Engaging Computing Group\iSENSE Data Logger\V5.0\PC Software\bin\x86\Release\PINPoint v5.0.exe.manifest
+C:\Users\Christopher D. Granz\Dropbox\Work\Engaging Computing Group\iSENSE Data Logger\V5.0\PC Software\bin\x86\Release\PINPoint v5.0.application
+C:\Users\Christopher D. Granz\Dropbox\Work\Engaging Computing Group\iSENSE Data Logger\V5.0\PC Software\bin\x86\Release\PINPoint v5.0.exe
+C:\Users\Christopher D. Granz\Dropbox\Work\Engaging Computing Group\iSENSE Data Logger\V5.0\PC Software\bin\x86\Release\PINPoint v5.0.pdb
+C:\Users\Christopher D. Granz\Dropbox\Work\Engaging Computing Group\iSENSE Data Logger\V5.0\PC Software\obj\x86\Release\PINPoint_v5_0.Properties.Resources.resources
+C:\Users\Christopher D. Granz\Dropbox\Work\Engaging Computing Group\iSENSE Data Logger\V5.0\PC Software\obj\x86\Release\PINPoint v5.0.TrustInfo.xml
+C:\Users\Christopher D. Granz\Dropbox\Work\Engaging Computing Group\iSENSE Data Logger\V5.0\PC Software\obj\x86\Release\PINPoint v5.0.exe.manifest
+C:\Users\Christopher D. Granz\Dropbox\Work\Engaging Computing Group\iSENSE Data Logger\V5.0\PC Software\obj\x86\Release\PINPoint v5.0.application
+C:\Users\Christopher D. Granz\Dropbox\Work\Engaging Computing Group\iSENSE Data Logger\V5.0\PC Software\obj\x86\Release\PINPoint v5.0.exe
+C:\Users\Christopher D. Granz\Dropbox\Work\Engaging Computing Group\iSENSE Data Logger\V5.0\PC Software\obj\x86\Release\PINPoint v5.0.pdb

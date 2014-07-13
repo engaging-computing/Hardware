@@ -1,0 +1,566 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		6E1EAD2016FCC94100898C8C /* MDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E1EAD1F16FCC94100898C8C /* MDataSource.m */; };
+		6E202F3416B0594100F47A1F /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E202F3316B0594100F47A1F /* IOKit.framework */; };
+		6E3E5EE11709FFC000719E54 /* CorePlot.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E3E5EDE1709FF2000719E54 /* CorePlot.framework */; };
+		6E3E5EE3170A015000719E54 /* CorePlot.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 6E3E5EDE1709FF2000719E54 /* CorePlot.framework */; };
+		6E3E5EE7170A068800719E54 /* uppt.iconset in Resources */ = {isa = PBXBuildFile; fileRef = 6E3E5EE6170A068800719E54 /* uppt.iconset */; };
+		6E480BBF169F2090002B3100 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E480BBE169F2090002B3100 /* Cocoa.framework */; };
+		6E480BC9169F2090002B3100 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6E480BC7169F2090002B3100 /* InfoPlist.strings */; };
+		6E480BCB169F2090002B3100 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E480BCA169F2090002B3100 /* main.m */; };
+		6E480BCF169F2090002B3100 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 6E480BCD169F2090002B3100 /* Credits.rtf */; };
+		6E480BD2169F2090002B3100 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E480BD1169F2090002B3100 /* AppDelegate.m */; };
+		6E480BD5169F2090002B3100 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6E480BD3169F2090002B3100 /* MainMenu.xib */; };
+		6E480BDD169F2091002B3100 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E480BDC169F2091002B3100 /* SenTestingKit.framework */; };
+		6E480BDE169F2091002B3100 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E480BBE169F2090002B3100 /* Cocoa.framework */; };
+		6E480BE6169F2091002B3100 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6E480BE4169F2091002B3100 /* InfoPlist.strings */; };
+		6E480BE9169F2091002B3100 /* uPINPoint_LiveTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E480BE8169F2091002B3100 /* uPINPoint_LiveTests.m */; };
+		6EAACF2316E7BE4D0016DB79 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EAACF2216E7BE4D0016DB79 /* QuartzCore.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		6E3E5EDD1709FF2000719E54 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6E3E5ED71709FF2000719E54 /* CorePlot.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8DC2EF5B0486A6940098B216;
+			remoteInfo = CorePlot;
+		};
+		6E3E5EDF1709FF2000719E54 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6E3E5ED71709FF2000719E54 /* CorePlot.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 0730F600109492D800E95162;
+			remoteInfo = UnitTests;
+		};
+		6E480BDF169F2091002B3100 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6E480BB1169F2090002B3100 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6E480BB9169F2090002B3100;
+			remoteInfo = "uPINPoint Live";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		6E3E5EE2170A013B00719E54 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				6E3E5EE3170A015000719E54 /* CorePlot.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		6E1EAD1E16FCC94100898C8C /* MDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDataSource.h; sourceTree = "<group>"; };
+		6E1EAD1F16FCC94100898C8C /* MDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDataSource.m; sourceTree = "<group>"; };
+		6E202F3316B0594100F47A1F /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
+		6E3E5ED71709FF2000719E54 /* CorePlot.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CorePlot.xcodeproj; path = "../../../../../Documents/Actual Documents/XCode Frameworks/CorePlot_1.1/Source/framework/CorePlot.xcodeproj"; sourceTree = "<group>"; };
+		6E3E5EE6170A068800719E54 /* uppt.iconset */ = {isa = PBXFileReference; lastKnownFileType = folder.iconset; path = uppt.iconset; sourceTree = "<group>"; };
+		6E480BBA169F2090002B3100 /* uPINPoint Live.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "uPINPoint Live.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6E480BBE169F2090002B3100 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		6E480BC1169F2090002B3100 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		6E480BC2169F2090002B3100 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		6E480BC3169F2090002B3100 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		6E480BC6169F2090002B3100 /* uPINPoint Live-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "uPINPoint Live-Info.plist"; sourceTree = "<group>"; };
+		6E480BC8169F2090002B3100 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		6E480BCA169F2090002B3100 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		6E480BCC169F2090002B3100 /* uPINPoint Live-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "uPINPoint Live-Prefix.pch"; sourceTree = "<group>"; };
+		6E480BCE169F2090002B3100 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		6E480BD0169F2090002B3100 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		6E480BD1169F2090002B3100 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		6E480BD4169F2090002B3100 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		6E480BDB169F2091002B3100 /* uPINPoint LiveTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "uPINPoint LiveTests.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6E480BDC169F2091002B3100 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		6E480BE3169F2091002B3100 /* uPINPoint LiveTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "uPINPoint LiveTests-Info.plist"; sourceTree = "<group>"; };
+		6E480BE5169F2091002B3100 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		6E480BE7169F2091002B3100 /* uPINPoint_LiveTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = uPINPoint_LiveTests.h; sourceTree = "<group>"; };
+		6E480BE8169F2091002B3100 /* uPINPoint_LiveTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = uPINPoint_LiveTests.m; sourceTree = "<group>"; };
+		6EAACF2216E7BE4D0016DB79 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		6E480BB7169F2090002B3100 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6E3E5EE11709FFC000719E54 /* CorePlot.framework in Frameworks */,
+				6EAACF2316E7BE4D0016DB79 /* QuartzCore.framework in Frameworks */,
+				6E202F3416B0594100F47A1F /* IOKit.framework in Frameworks */,
+				6E480BBF169F2090002B3100 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6E480BD7169F2091002B3100 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6E480BDD169F2091002B3100 /* SenTestingKit.framework in Frameworks */,
+				6E480BDE169F2091002B3100 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		6E3E5ED81709FF2000719E54 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6E3E5EDE1709FF2000719E54 /* CorePlot.framework */,
+				6E3E5EE01709FF2000719E54 /* UnitTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6E480BAF169F2090002B3100 = {
+			isa = PBXGroup;
+			children = (
+				6E3E5EE6170A068800719E54 /* uppt.iconset */,
+				6E3E5ED71709FF2000719E54 /* CorePlot.xcodeproj */,
+				6EAACF2216E7BE4D0016DB79 /* QuartzCore.framework */,
+				6E202F3316B0594100F47A1F /* IOKit.framework */,
+				6E480BC4169F2090002B3100 /* uPINPoint Live */,
+				6E480BE1169F2091002B3100 /* uPINPoint LiveTests */,
+				6E480BBD169F2090002B3100 /* Frameworks */,
+				6E480BBB169F2090002B3100 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		6E480BBB169F2090002B3100 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6E480BBA169F2090002B3100 /* uPINPoint Live.app */,
+				6E480BDB169F2091002B3100 /* uPINPoint LiveTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6E480BBD169F2090002B3100 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6E480BBE169F2090002B3100 /* Cocoa.framework */,
+				6E480BDC169F2091002B3100 /* SenTestingKit.framework */,
+				6E480BC0169F2090002B3100 /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6E480BC0169F2090002B3100 /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6E480BC1169F2090002B3100 /* AppKit.framework */,
+				6E480BC2169F2090002B3100 /* CoreData.framework */,
+				6E480BC3169F2090002B3100 /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		6E480BC4169F2090002B3100 /* uPINPoint Live */ = {
+			isa = PBXGroup;
+			children = (
+				6E480BD0169F2090002B3100 /* AppDelegate.h */,
+				6E480BD1169F2090002B3100 /* AppDelegate.m */,
+				6E480BD3169F2090002B3100 /* MainMenu.xib */,
+				6E480BC5169F2090002B3100 /* Supporting Files */,
+				6E1EAD1E16FCC94100898C8C /* MDataSource.h */,
+				6E1EAD1F16FCC94100898C8C /* MDataSource.m */,
+			);
+			path = "uPINPoint Live";
+			sourceTree = "<group>";
+		};
+		6E480BC5169F2090002B3100 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				6E480BC6169F2090002B3100 /* uPINPoint Live-Info.plist */,
+				6E480BC7169F2090002B3100 /* InfoPlist.strings */,
+				6E480BCA169F2090002B3100 /* main.m */,
+				6E480BCC169F2090002B3100 /* uPINPoint Live-Prefix.pch */,
+				6E480BCD169F2090002B3100 /* Credits.rtf */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		6E480BE1169F2091002B3100 /* uPINPoint LiveTests */ = {
+			isa = PBXGroup;
+			children = (
+				6E480BE7169F2091002B3100 /* uPINPoint_LiveTests.h */,
+				6E480BE8169F2091002B3100 /* uPINPoint_LiveTests.m */,
+				6E480BE2169F2091002B3100 /* Supporting Files */,
+			);
+			path = "uPINPoint LiveTests";
+			sourceTree = "<group>";
+		};
+		6E480BE2169F2091002B3100 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				6E480BE3169F2091002B3100 /* uPINPoint LiveTests-Info.plist */,
+				6E480BE4169F2091002B3100 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		6E480BB9169F2090002B3100 /* uPINPoint Live */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6E480BEC169F2091002B3100 /* Build configuration list for PBXNativeTarget "uPINPoint Live" */;
+			buildPhases = (
+				6E480BB6169F2090002B3100 /* Sources */,
+				6E480BB7169F2090002B3100 /* Frameworks */,
+				6E480BB8169F2090002B3100 /* Resources */,
+				6E3E5EE2170A013B00719E54 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "uPINPoint Live";
+			productName = "uPINPoint Live";
+			productReference = 6E480BBA169F2090002B3100 /* uPINPoint Live.app */;
+			productType = "com.apple.product-type.application";
+		};
+		6E480BDA169F2091002B3100 /* uPINPoint LiveTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6E480BEF169F2091002B3100 /* Build configuration list for PBXNativeTarget "uPINPoint LiveTests" */;
+			buildPhases = (
+				6E480BD6169F2091002B3100 /* Sources */,
+				6E480BD7169F2091002B3100 /* Frameworks */,
+				6E480BD8169F2091002B3100 /* Resources */,
+				6E480BD9169F2091002B3100 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6E480BE0169F2091002B3100 /* PBXTargetDependency */,
+			);
+			name = "uPINPoint LiveTests";
+			productName = "uPINPoint LiveTests";
+			productReference = 6E480BDB169F2091002B3100 /* uPINPoint LiveTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		6E480BB1169F2090002B3100 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0450;
+				ORGANIZATIONNAME = "Engaging Computing Group";
+			};
+			buildConfigurationList = 6E480BB4169F2090002B3100 /* Build configuration list for PBXProject "uPINPoint Live" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 6E480BAF169F2090002B3100;
+			productRefGroup = 6E480BBB169F2090002B3100 /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 6E3E5ED81709FF2000719E54 /* Products */;
+					ProjectRef = 6E3E5ED71709FF2000719E54 /* CorePlot.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				6E480BB9169F2090002B3100 /* uPINPoint Live */,
+				6E480BDA169F2091002B3100 /* uPINPoint LiveTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		6E3E5EDE1709FF2000719E54 /* CorePlot.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = CorePlot.framework;
+			remoteRef = 6E3E5EDD1709FF2000719E54 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		6E3E5EE01709FF2000719E54 /* UnitTests.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = UnitTests.octest;
+			remoteRef = 6E3E5EDF1709FF2000719E54 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXResourcesBuildPhase section */
+		6E480BB8169F2090002B3100 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6E480BC9169F2090002B3100 /* InfoPlist.strings in Resources */,
+				6E480BCF169F2090002B3100 /* Credits.rtf in Resources */,
+				6E480BD5169F2090002B3100 /* MainMenu.xib in Resources */,
+				6E3E5EE7170A068800719E54 /* uppt.iconset in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6E480BD8169F2091002B3100 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6E480BE6169F2091002B3100 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		6E480BD9169F2091002B3100 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		6E480BB6169F2090002B3100 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6E480BCB169F2090002B3100 /* main.m in Sources */,
+				6E480BD2169F2090002B3100 /* AppDelegate.m in Sources */,
+				6E1EAD2016FCC94100898C8C /* MDataSource.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6E480BD6169F2091002B3100 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6E480BE9169F2091002B3100 /* uPINPoint_LiveTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		6E480BE0169F2091002B3100 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6E480BB9169F2090002B3100 /* uPINPoint Live */;
+			targetProxy = 6E480BDF169F2091002B3100 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		6E480BC7169F2090002B3100 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6E480BC8169F2090002B3100 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		6E480BCD169F2090002B3100 /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6E480BCE169F2090002B3100 /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		6E480BD3169F2090002B3100 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6E480BD4169F2090002B3100 /* en */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+		6E480BE4169F2091002B3100 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6E480BE5169F2091002B3100 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		6E480BEA169F2091002B3100 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				ONLY_ACTIVE_ARCH = YES;
+				"OTHER_LDFLAGS[arch=*]" = (
+					"-ObjC",
+					"-all_load",
+				);
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		6E480BEB169F2091002B3100 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				"OTHER_LDFLAGS[arch=*]" = (
+					"-ObjC",
+					"-all_load",
+				);
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		6E480BED169F2091002B3100 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "uPINPoint Live/uPINPoint Live-Prefix.pch";
+				"HEADER_SEARCH_PATHS[arch=*]" = (
+					"\"/Users/NickAVV/Documents/Actual Documents/XCode Frameworks/CorePlot_1.1/Source/framework\"",
+				);
+				INFOPLIST_FILE = "uPINPoint Live/uPINPoint Live-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		6E480BEE169F2091002B3100 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "uPINPoint Live/uPINPoint Live-Prefix.pch";
+				"HEADER_SEARCH_PATHS[arch=*]" = (
+					"\"/Users/NickAVV/Documents/Actual Documents/XCode Frameworks/CorePlot_1.1/Source/framework\"",
+				);
+				INFOPLIST_FILE = "uPINPoint Live/uPINPoint Live-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				ONLY_ACTIVE_ARCH = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		6E480BF0169F2091002B3100 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/uPINPoint Live.app/Contents/MacOS/uPINPoint Live";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = "\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "uPINPoint Live/uPINPoint Live-Prefix.pch";
+				INFOPLIST_FILE = "uPINPoint LiveTests/uPINPoint LiveTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		6E480BF1169F2091002B3100 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/uPINPoint Live.app/Contents/MacOS/uPINPoint Live";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = "\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "uPINPoint Live/uPINPoint Live-Prefix.pch";
+				INFOPLIST_FILE = "uPINPoint LiveTests/uPINPoint LiveTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		6E480BB4169F2090002B3100 /* Build configuration list for PBXProject "uPINPoint Live" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6E480BEA169F2091002B3100 /* Debug */,
+				6E480BEB169F2091002B3100 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6E480BEC169F2091002B3100 /* Build configuration list for PBXNativeTarget "uPINPoint Live" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6E480BED169F2091002B3100 /* Debug */,
+				6E480BEE169F2091002B3100 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6E480BEF169F2091002B3100 /* Build configuration list for PBXNativeTarget "uPINPoint LiveTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6E480BF0169F2091002B3100 /* Debug */,
+				6E480BF1169F2091002B3100 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 6E480BB1169F2090002B3100 /* Project object */;
+}
